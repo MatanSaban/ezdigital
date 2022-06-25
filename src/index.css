@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "EllaSansThin";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Thin.woff") format("woff");
+}
+@font-face {
+    font-family: "EllaSansRegular";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "EllaSansBold";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "DanidinRegular";
+    src: local("Danidin"),
+        url("../public/fonts/Danidin/DanidinCondensed-SemiBold.woff")
+            format("woff");
+}
+/* @font-face {
+    font-family: "DanidinBold";
+    src: local("Danidin"),
+        url("../public/fonts/Danidin/DanidinCondensed-Bold.woff") format("woff");
+} */
+
+#root {
+    direction: rtl;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    /* DARK MODE */
+    --color-bg: #ffffff;
+    --color-bg-variant: #cecece36;
+    --color-primary: #fbb040;
+    --color-primary-variant: #b67f2d;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-text: rgba(255, 255, 255, 0.6);
+
+    --transition: all 400ms ease;
+
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+}
+
+body {
+    margin: 0;
+    font-family: "Danidin";
+    font-weight: 400;
+    scroll-behavior: smooth;
+    overflow-y: scroll !important;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: "Danidin";
+    font-weight: 400;
+}
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.centerText {
+    text-align: center;
+}
+.primaryColor {
+    color: var(--color-primary);
+}
+
+.blurFilter {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.swiper-pagination {
+    bottom: 0 !important;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+header {
+    min-height: 10vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+section {
+    min-height: 80vh;
+}
+.pageSection {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }

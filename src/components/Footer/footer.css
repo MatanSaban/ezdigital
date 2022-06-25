@@ -1,0 +1,11 @@
+footer {
+    background: rgb(212, 212, 212);
+    padding: 50px;
+}
+.footer__content {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.footer__content .logo {
+    width: 150px;
+}

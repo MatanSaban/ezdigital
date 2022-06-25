@@ -1,0 +1,78 @@
+{
+    "Home": {
+        "text": "עמוד הבית",
+        "link": "/"
+    },
+    "Services": {
+        "text": "השירותים שלנו",
+        "link": "/services",
+        "Submenu": {
+            "web-development": {
+                "text": "בניית אתרים",
+                "link": "/services/web-development",
+                "subSubmenu": {
+                    "landing-page": {
+                        "text": "דף נחיתה",
+                        "link": "/landing-page"
+                    },
+                    "official-website": {
+                        "text": "אתר תדמית",
+                        "link": "/official-website"
+                    },
+                    "online-store": {
+                        "text": "אתר חנות",
+                        "link": "/online-store"
+                    },
+                    "digital-asset": {
+                        "text": "נכס דיגיטלי",
+                        "link": "/digital-asset"
+                    }
+                }
+            },
+            "social-ads": {
+                "text": "פרסום ברשתות החברתיות",
+                "link": "/services/social-ads",
+                "subSubmenu": {
+                    "facebook-organic": {
+                        "text": "פרסום אורגני בפייסבוק",
+                        "link": "/facebook-organic"
+                    },
+                    "facebook-paid": {
+                        "text": "פרסום אורגני בפייסבוק",
+                        "link": "/facebook-paid"
+                    }
+                }
+            },
+            "google-ads": {
+                "text": "פרסום בגוגל",
+                "link": "/services/google-ads",
+                "subSubmenu": {
+                    "google-organic": {
+                        "text": "פרסום אורגני בגוגל",
+                        "link": "/google-organic"
+                    },
+                    "google-paid": {
+                        "text": "פרסום ממומן בגוגל",
+                        "link": "/google-paid"
+                    }
+                }
+            },
+            "branding": {
+                "text": "מיתוג עסקי",
+                "link": "/services/branding"
+            }
+        }
+    },
+    "Projects": {
+        "text": "פרויקטים",
+        "link": "/projects"
+    },
+    "Blog": {
+        "text": "הבלוג",
+        "link": "/blog"
+    },
+    "Contact": {
+        "text": "יצירת קשר",
+        "link": "/contact"
+    }
+}

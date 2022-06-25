@@ -1,0 +1,73 @@
+#projectsPage .theProjects {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 22% 22% 22% 22%;
+}
+#projectsPage .projectContainer {
+    height: 400px;
+    width: 100%;
+    margin: 7% auto;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: 20px;
+    position: relative;
+}
+#projectsPage .projectContainer a {
+    color: white;
+    text-shadow: 0 0 10px black;
+    font-size: 140%;
+    font-weight: bold;
+    width: 100% !important;
+}
+#projectsPage .projectContainer .projectContainerCover {
+    background-color: #00000090;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0%;
+    width: 0%;
+    transform: translate(0%, 0%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+#projectsPage .projectContainer:hover .projectContainerCover {
+    opacity: 1;
+    box-shadow: 0 0 10px black;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translate(0%, 0%);
+}
+#projectsPage .projectContainer .projectContainerContent {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+#projectsPage .projectContainer:hover .projectContainerContent {
+    z-index: 9;
+    opacity: 1;
+}
+
+@media only screen and (max-width: 1000px) {
+    #projectsPage .theProjects {
+        display: grid;
+        justify-content: space-around;
+        grid-template-columns: 90%;
+    }
+}

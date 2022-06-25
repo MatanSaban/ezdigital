@@ -1,0 +1,72 @@
+.cls-1 {
+    fill: #fbb141;
+}
+
+.cls-8 {
+    fill: #fbb143;
+}
+
+.cls-9 {
+    fill: #fbb041;
+}
+.cls-3 {
+    fill: #fbb142;
+}
+
+.cls-4 {
+    fill: #070808;
+}
+
+.cls-5 {
+    fill: #070707;
+}
+
+.cls-6 {
+    fill: #090a0a;
+}
+
+.cls-7 {
+    fill: #090909;
+}
+.cls-10 {
+    fill: #080909;
+}
+.cls-2 {
+    fill: #060707;
+}
+
+svg#Layer_2 {
+    width: 1000px;
+    height: 350px;
+}
+svg#Layer_2 .cls-2,
+svg#Layer_2 .cls-10,
+svg#Layer_2 .cls-7,
+svg#Layer_2 .cls-6,
+svg#Layer_2 .cls-5,
+svg#Layer_2 .cls-4 {
+    filter: drop-shadow(0px 0px 0px #00000000);
+    transition: all 0.6s ease;
+}
+svg#Layer_2:hover .cls-2,
+svg#Layer_2:hover .cls-10,
+svg#Layer_2:hover .cls-7,
+svg#Layer_2:hover .cls-6,
+svg#Layer_2:hover .cls-5,
+svg#Layer_2:hover .cls-4 {
+    filter: drop-shadow(20px 0px 10px #00000080);
+}
+svg#Layer_2 .cls-1,
+svg#Layer_2 .cls-8,
+svg#Layer_2 .cls-9,
+svg#Layer_2 .cls-3 {
+    filter: brightness(100px);
+    transition: all 0.6s ease;
+}
+svg#Layer_2:hover .cls-1,
+svg#Layer_2:hover .cls-8,
+svg#Layer_2:hover .cls-9,
+svg#Layer_2:hover .cls-3 {
+    fill: #fae163;
+    filter: drop-shadow(0px 0px 10px #f5e594);
+}

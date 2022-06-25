@@ -1,0 +1,141 @@
+#singleProject {
+}
+#singleProject .hero {
+    height: 80vh;
+    position: relative;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+#singleProject .hero .heroCover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000070;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#singleProject .hero h1,
+#singleProject .hero h3,
+#singleProject .hero pre,
+#singleProject .hero a {
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 0 0 20px black;
+    margin: 0;
+}
+#singleProject .hero h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+#singleProject .hero pre {
+    font-size: 1.5rem;
+    font-family: "Danidin";
+    text-align: center;
+}
+#singleProject .hero a {
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    border-radius: 15px;
+    color: black;
+}
+
+#singleProject section.passage {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+#singleProject section.passage h2,
+#singleProject section.passage .fontsContainer p {
+    margin: 0;
+    font-weight: bold;
+}
+#singleProject section.passage .fontsContainer {
+    display: flex;
+    width: 25%;
+    justify-content: space-around;
+}
+
+.mobileBgSection {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+    z-index: -1;
+}
+.mobileBgSection > div {
+    background: linear-gradient(90deg, transparent, rgb(127, 127, 127));
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mobileBgSection h5 {
+    font-size: 3rem;
+    color: white;
+}
+
+.colorsPassage {
+    height: 500px;
+    /* overflow: scroll; */
+}
+
+#singleProject .colorsPallete {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0 20px rgb(134, 134, 134);
+}
+#singleProject .colorsPallete > div {
+    padding: 25px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+#singleProject .colorsPallete > div > p {
+    text-shadow: 0 0 10px black;
+    font-weight: 600;
+}
+#singleProject .colorsDescription h3 {
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 20px rgb(120, 120, 120);
+}
+#singleProject .colorsDescription pre {
+    font-size: 1.5rem;
+    text-shadow: 0 0 15px rgb(85, 85, 85);
+    font-family: "Danidin";
+}
+.fontsPassage {
+    text-shadow: 0 0 20px rgb(103, 103, 103);
+}
+.projectSummary {
+    position: relative;
+}
+.projectSummaryCover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #000000dc;
+}
+.projectSummaryCover pre {
+    font-size: 2.2rem;
+    color: white;
+    font-family: "Danidin";
+    text-align: center;
+    text-shadow: 0 0 5px black;
+}
