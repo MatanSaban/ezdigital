@@ -92,6 +92,7 @@
     background: white;
     display: flex;
     justify-content: space-between;
+    position: relative;
     transition: all 0.3s ease;
 }
 .mainMenu__Item .mainMenu__subMenu .mainMenu__subMenu__item:hover {
