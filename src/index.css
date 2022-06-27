@@ -19,11 +19,11 @@
         url("../public/fonts/Danidin/DanidinCondensed-SemiBold.woff")
             format("woff");
 }
-/* @font-face {
+@font-face {
     font-family: "DanidinBold";
     src: local("Danidin"),
         url("../public/fonts/Danidin/DanidinCondensed-Bold.woff") format("woff");
-} */
+}
 
 #root {
     direction: rtl;
@@ -48,7 +48,7 @@
 
 body {
     margin: 0;
-    font-family: "Danidin";
+    font-family: "DanidinRegular";
     font-weight: 400;
     scroll-behavior: smooth;
     overflow-y: scroll !important;
@@ -68,7 +68,7 @@ h5,
 h6,
 input,
 textarea {
-    font-family: "Danidin";
+    font-family: "DanidinRegular";
     outline: none;
 }
 pre {
@@ -83,7 +83,7 @@ a {
 
 h1 {
     font-size: 3rem;
-    font-family: "Danidin";
+    font-family: "DanidinRegular";
     font-weight: 400;
 }
 h2 {

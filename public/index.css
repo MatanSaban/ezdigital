@@ -16,7 +16,8 @@
 @font-face {
     font-family: "DanidinRegular";
     src: local("Danidin"),
-        url("/fonts/Danidin/DanidinCondensed-SemiBold.woff") format("woff");
+        url("/fonts/public/fonts/Danidin/DanidinCondensed-SemiBold.woff")
+            format("woff");
 }
 /* @font-face {
     font-family: "DanidinBold";
