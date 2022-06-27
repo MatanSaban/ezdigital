@@ -72,7 +72,7 @@
             "font1": "אסיסטנט במשקל 300, 400 ו500",
             "font2": ""
         },
-        "mobileBG": "/media/projects/dmdesignPhonemockup.png",
+        "mobileBG": "/media/projects/dmdesignphonemockup.png",
         "mobileQuote": "\"מאז שעליתי לארץ הדבר שהכי חיבר אותי לישראליות זה דווקא המקצוע..\"",
         "colors": {
             "colorsDescription": "בתהליך המיתוג התלבטנו האם ללכת על גווני החום כיאה לנגרייה, אבל לאחר בדיקה עמוקה שלנו בתחום הנגרות, גילינו שכך עשו כולם..\n לא מתאים לנו, אז בחרנו עם הלקוח את צבע הזהב כצבע מוביל במותג. ",
@@ -228,7 +228,7 @@
         "fonts": {
             "font1": "ורלה ראונד"
         },
-        "mobileBG": "/media/projects/liamattractionsPhonemockup.png",
+        "mobileBG": "/media/projects/liamattractionsphonemockup.png",
         "mobileQuote": "\" אני אדם שחייב תמיד ליהנות, גם בעבודה.. \"",
         "colors": {
             "colorsDescription": "קיבלנו את הלוגו של החברה ודרכו הוצאנו את הצבעים היותר מושכים שמדרים כיף, קלילות ובעיקר.. אטרקציות.",
@@ -258,7 +258,7 @@
         "fonts": {
             "font1": "Heebo"
         },
-        "mobileBG": "/media/projects/greendiamondsPhonemockup.png",
+        "mobileBG": "/media/projects/GreenDiamondsPhonemockup.png",
         "mobileQuote": "\" כמו שנאמר, יהלומים כאן לעד, אני אומר שגם כך יהלומי המעבדה.. \"",
         "colors": {
             "colorsDescription": "באתר זה, הלקוח אחראי על עיצוב האתר בעבודה מדוייקת על פי בקשותיו.",
@@ -275,7 +275,7 @@
                 }
             }
         },
-        "laptopBG": "/media/projects/greendiamondsDesktopmockup.png",
+        "laptopBG": "/media/projects/GreenDiamondsDesktopmockup.png",
         "laptopDescription": "בבניית האתר לחנות יהלומי המעבדה גרין דיימונדס, השקענו מאמצים רבים בתכנון הפיצ'רים המיוחדים\nלבקשתו של הלקוח כמו שניתן לראות בעיקר בדף המוצר.\nלדוגמא: הצגת וריאציית משקל היהלומים על פי בחירת ברירת המחדל של המוצר בכותרת המוצר ובדף המוצר.\nאנחנו יכולים להעיד שרק בפרוייקט זה, שנמשך כחודש וחצי, למדנו המון ושיפרנו את יכולותינו מעבר למרבית האתרים עליהם עבדנו."
     }
 }
