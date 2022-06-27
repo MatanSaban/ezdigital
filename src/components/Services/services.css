@@ -1,0 +1,7 @@
+.allServices {
+    display: flex;
+    justify-content: center;
+}
+.allServices > div {
+    margin: 0 100px;
+}

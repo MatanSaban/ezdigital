@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "EllaSansThin";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Thin.woff") format("woff");
+}
+@font-face {
+    font-family: "EllaSansRegular";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Regular.woff") format("woff");
+}
+@font-face {
+    font-family: "EllaSansBold";
+    src: local("EllaSans"),
+        url("../public/fonts/EllaSans/EllaSans-Bold.woff") format("woff");
+}
+@font-face {
+    font-family: "DanidinRegular";
+    src: local("Danidin"),
+        url("../public/fonts/Danidin/DanidinCondensed-SemiBold.woff")
+            format("woff");
+}
+/* @font-face {
+    font-family: "DanidinBold";
+    src: local("Danidin"),
+        url("../public/fonts/Danidin/DanidinCondensed-Bold.woff") format("woff");
+} */
