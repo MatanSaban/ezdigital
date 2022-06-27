@@ -4,6 +4,9 @@ import { FaAngleDoubleLeft } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const SinglePagesHero = (props) => {
+
+    console.log(props);
+
     return (
         <section className="singlePageHero">
             <TypeWriterEffect
@@ -14,7 +17,7 @@ const SinglePagesHero = (props) => {
                 typeSpeed={100}
             />
             <div className="breadCrumbs">
-                {props.grandParentPath && 
+                {props.grandParentPath && (
                     <>
                         <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
                         <FaAngleDoubleLeft />{" "}
@@ -24,7 +27,7 @@ const SinglePagesHero = (props) => {
                         </NavLink>
                         <FaAngleDoubleLeft />{" "}
                     </>
-              }
+                )}
                 {props.parentPath !== "/" && !props.grandParentPath ? (
                     <>
                         <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
@@ -35,7 +38,7 @@ const SinglePagesHero = (props) => {
                         </NavLink>
                     </>
                 ) : (
-                    <NavLink to={props.parentPath}>
+                    <NavLink to={`${props.grandParentPath}${props.parentPath}`}>
                         {" "}
                         {props.parentName}{" "}
                     </NavLink>

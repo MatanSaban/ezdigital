@@ -14,12 +14,8 @@ import SingleServicePage from "./SingleServicePage";
 
 const LandingPage = (props) => {
     return (
-        <div id="LandingPagesPage" className="landingPageWrapper  singleService">
-            <SinglePagesHero
-                title={props.pageName}
-                parentName={props.parentName}
-                parentPath={props.parentPath}
-            />
+        <div id="LandingPagesPage" className="landingPageWrapper  singleService"> 
+            <SinglePagesHero title={props.pageName} grandParentName={props.grandParentName} grandParentPath={props.grandParentPath} parentName={props.parentName} parentPath={props.parentPath}/>
             <SingleServicePage
                 title={props.pageName}
                 path={props.path}
