@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
+import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import "./projects.css";
 import ProjectsJson from "./Projects.json";
 
-console.log(ProjectsJson);
 
-const Projects = () => {
+const Projects = (props) => {
     return (
         <div id="projectsPage">
-            <h1>Projects</h1>
+            <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />
             <div className="theProjects">
                 {Object.keys(ProjectsJson).map((project, index) => {
                     return (

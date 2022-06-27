@@ -53,6 +53,27 @@ body {
     scroll-behavior: smooth;
     overflow-y: scroll !important;
 }
+button {
+    cursor: pointer;
+}
+a,
+button,
+pre,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea {
+    font-family: "Danidin";
+    outline: none;
+}
+pre {
+    white-space: break-spaces;
+}
 ul {
     list-style: none;
 }

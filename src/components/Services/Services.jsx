@@ -1,7 +1,9 @@
-const Services = () => {
+import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
+
+const Services = (props) => {
     return ( 
-        <div>
-            <h1>Services</h1>
+        <div id="ServicesPage" className="servicesWrapper">
+            <SinglePagesHero title={props.pageName} parentName={props.parentName}  parentPath={props.parentPath} />
         </div>
      );
 }

@@ -5,9 +5,13 @@
     align-items: center;
     background-color: rgba(255, 255, 255, 0.264);
     margin: 0 auto;
-    padding: 20px;
+    padding: 0px;
     box-shadow: 0 0 10px black;
+    min-height: 10vh;
     z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 .mainHeader > div {
     display: flex;

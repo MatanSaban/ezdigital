@@ -1,7 +1,7 @@
 #singleProject {
 }
 #singleProject .hero {
-    height: 80vh;
+    height: 100vh;
     position: relative;
     background-size: cover !important;
     background-position: center center !important;

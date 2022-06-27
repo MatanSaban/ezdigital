@@ -1,0 +1,20 @@
+section.singlePageHero {
+    text-align: center;
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.singlePageHero h1 {
+    text-align: center;
+}
+.breadCrumbs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* width: calc(100% + 10px); */
+}
+.breadCrumbs > svg {
+    margin: 0 10px;
+}

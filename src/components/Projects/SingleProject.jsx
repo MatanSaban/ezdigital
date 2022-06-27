@@ -17,7 +17,6 @@ const Container = (props) => (
         bgImage={props.path}
         strength={400}
     >
-        Content goes here. Parallax height grows with content height.
     </Parallax>
 );
 

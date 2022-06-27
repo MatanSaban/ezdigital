@@ -1,10 +1,29 @@
 footer {
     background: rgb(212, 212, 212);
     padding: 50px;
+    margin: 100px 0 0 0;
 }
 .footer__content {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+}
+.footer__contact.lineForm {
+    height: 40px;
+    width: fit-content;
+    margin: 0;
+}
+.formWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    align-items: center;
+}
+footer .formWrapper > div,
+footer .formWrapper > h4 {
+    margin: 0 20px;
+}
+.formWrapper > h4 {
+    font-size: 2rem;
 }
 .footer__content .logo {
     width: 150px;
