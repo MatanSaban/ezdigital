@@ -1,7 +1,7 @@
 {
     "muadefet": {
         "name": "מועדפת - אינדקס עבודות מועדפות",
-        "backgroundImage": "../media/projects/MuadefetBG.png",
+        "backgroundImage": "/media/projects/MuadefetBG.png",
         "link": "/muadefet",
         "whatWeDid": "בניית אתר // עיצוב אתר",
         "description": "בשלהי שנות ה2000 קם אדם בשם זאב והחליט לעזור לחיילים המשוחררים ומשתחררים לעתיד, והקים להם אתר אינדקס לחיפוש עבודות מועדפות.\nבמרוצת השנים האתר התחלף מספר פעמים בעיצוביו וכעת הגיע התור של איזי דיגיטל לעצב ולבנות לזאב את האתר החדש שלו.",
@@ -10,7 +10,7 @@
             "font1": "אסיסטנט",
             "font2": ""
         },
-        "mobileBG": "../media/projects/MuadefetPhonemockup.png",
+        "mobileBG": "/media/projects/MuadefetPhonemockup.png",
         "mobileQuote": "\"החיילים שומרים עלינו, תפקידנו לשמור על העתיד שלהם..\"",
         "colors": {
             "colorsDescription": "בעיצוב אתר מועדפת הלכנו על צבע כתום כמו בלוגו והוספנו לו צבע משלים של תכלת שמיים שמופיע בעמודים בודדים באתר על מנת לרענן את העיניים.",
@@ -27,12 +27,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/MuadefetDesktopmockup.png",
+        "laptopBG": "/media/projects/MuadefetDesktopmockup.png",
         "laptopDescription": "בבניית אתר זה תכננו בקפידה את מבנה האתר לפי צרכי הלקוח וניסיונו הרב מול החיילים המשוחררים\nמולם זאב עובד ומדבר במהלך השנים\nבאשר לעניין העיצוב, לקחנו על פי בקשת הלקוח השראה מעטה מאתר\"כל זכות \" ולגבי כל השאר,\n זאב החליט לתת לנו יד חופשית לעיצוב האתר בסגנון מודרני."
     },
     "morclear": {
         "name": "מור קליר - קליניקה לקוסמטיקה טבעית",
-        "backgroundImage": "../media/projects/MorClearBG.jpg",
+        "backgroundImage": "/media/projects/MorClearBG.jpg",
         "link": "/morclear",
         "whatWeDid": "בניית אתר // עיצוב אתר",
         "description": "את האתר של הקוסמטיקאית מור קליר בנינו באווירת הקליניקה האמיתית שלה.\nהגענו לביקור ויצאנו עם רעיונות!\nמור היא כאמור קוסמטיקאית העוסקת בקוסמטיקה טבעית ללא כימיקלים וכו'.",
@@ -41,7 +41,7 @@
             "font1": "Assistant במספר משקלים",
             "font2": ""
         },
-        "mobileBG": "../media/projects/morclearphonemockup.png",
+        "mobileBG": "/media/projects/morclearphonemockup.png",
         "mobileQuote": "\"כמו בחיי הפרטיים, גם בעבודה הכל טבעי..\"",
         "colors": {
             "colorsDescription": "בתהליך בחירת הצבעים בחרנו ביחד עם הלקוחה להשתמש בצבעי הקליניקה שלה וצבעים המאפיינים עדינות ואסתטיקה אבל עם נוכחות.",
@@ -58,12 +58,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/morclearDesktopmockup.png",
+        "laptopBG": "/media/projects/morclearDesktopmockup.png",
         "laptopDescription": "את כל ההשראה לאתר קיבלנו מהקליניקה של מור המאופיינת בגוונים עדינים וצבעי עץ. \nכמובן שבהליך משותף עם הלקוחה בו היא אמרה אני רוצה אתר אינסטגרמי, אבל לא מוגזם.. שיהיה עדין.\n נראה לנו שהצלחנו :)"
     },
     "dmdesign": {
         "name": "DM Design - נגריית די.אם דזיין",
-        "backgroundImage": "../media/projects/DmDesignBG.jpg",
+        "backgroundImage": "/media/projects/DmDesignBG.jpg",
         "link": "/dmdesign",
         "whatWeDid": "בניית אתר // עיצוב אתר // עיצוב לוגו // קידום ממומן",
         "description": "עבודות נגרות כבר פה מאות שנים..\n מקצוע שהתחיל מעבודות עץ פשוטות והפתח למקצוע שפשוט כל אחד צריך, אם זה בבית או במשרד.\n את דניס הכרנו מפנייה פשוטה לבניית אתר קטן והעבודה התפתחה לכדי בניית אתר, מיתוג וקידום ממומן.. והוא? מרוצה מאוד.",
@@ -72,7 +72,7 @@
             "font1": "אסיסטנט במשקל 300, 400 ו500",
             "font2": ""
         },
-        "mobileBG": "../media/projects/dmdesignPhonemockup.png",
+        "mobileBG": "/media/projects/dmdesignPhonemockup.png",
         "mobileQuote": "\"מאז שעליתי לארץ הדבר שהכי חיבר אותי לישראליות זה דווקא המקצוע..\"",
         "colors": {
             "colorsDescription": "בתהליך המיתוג התלבטנו האם ללכת על גווני החום כיאה לנגרייה, אבל לאחר בדיקה עמוקה שלנו בתחום הנגרות, גילינו שכך עשו כולם..\n לא מתאים לנו, אז בחרנו עם הלקוח את צבע הזהב כצבע מוביל במותג. ",
@@ -89,12 +89,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/dmdesignDesktopmockup.png",
+        "laptopBG": "/media/projects/dmdesignDesktopmockup.png",
         "laptopDescription": "במהלך ההיכרות עם דניס גילינו אדם מדהים ועדין במקצוע כל כך מחוספס, שמסביר עם ניצוץ בעיניים\nכמה המקצוע הזה הוא חלק ממנו.\nלאחר מספר שיחות היכרות ואיפיון הבנו שדניס רוצה להעביר הילוך בעסק שלו\nולהתחיל להרים אותו למקומות אחרים ולשדר יוקרה.\nאז כך עשינו ולאחר בניית האתר אנו מנהלים לו את הקמפיינים הממומנים בגוגל."
     },
     "mapilates": {
         "name": "מיכל ארווץ - סטודיו פילאטיס",
-        "backgroundImage": "../media/projects/PilatesBG.jpg",
+        "backgroundImage": "/media/projects/PilatesBG.jpg",
         "link": "/mapilates",
         "whatWeDid": "בניית אתר // עיצוב אתר // ניהול רשתות חברתיות",
         "description": "למכון הפילאטיס של מיכל הוחלט לבנות אתר וואן פייג'ר בשל החוסר בזמן הפנוי שלה לספק לנו תוכן על המקום,\n וזאת בעקבות כך שתחום הפילאטיס צובר תאוצה בארץ ובכלל בעולם. \n לכן בנינו לה אתר עמוד אחד שמספק את כל צרכי העסק שלה. ",
@@ -103,7 +103,7 @@
             "font1": "אסיסטנט",
             "font2": "אופן סאנס"
         },
-        "mobileBG": "../media/projects/michalmobilemockup.png",
+        "mobileBG": "/media/projects/michalmobilemockup.png",
         "mobileQuote": "\"פילאטיס זה לא רק ספורט, זה דרך חיים..\"",
         "colors": {
             "colorsDescription": "לאתר זה פנינו בשתי גישות מבחינת הצבעים. האחת היא על פי לוגו הסטודיו, והשניה הוא ניקיון, בהירות ורוך.",
@@ -120,12 +120,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/michaldevicesmockup.png",
+        "laptopBG": "/media/projects/michaldevicesmockup.png",
         "laptopDescription": "מיכל פנתה אלינו בבקשה לבנות לה אתר לסטודיו הפילאטיס שלה\nובנוסף לנהל לה את עמודי הפייסבוק והאינסטגרם של העסק.\nהתחלת העבודה הייתה על ניהול הסושיאל ולאחר מכן על בניית האתר,\nובבניית האתר יישרנו קו עם הקו העיצובי שבנינו ביחד עם הלקוחה."
     },
     "sabanart": {
         "name": "Saban Art - מסגריית סבן ארט",
-        "backgroundImage": "../media/projects/SabanArtBG.webp",
+        "backgroundImage": "/media/projects/SabanArtBG.webp",
         "link": "/sabanart",
         "whatWeDid": "בניית אתר // עיצוב אתר // עיצוב לוגו // קידום ממומן",
         "description": "אין אדם בעולם שלא נתקל בעבודת מסגרות.\nבין אדם מדובר בסורגים לבית, שער כניסה, גדרות מסביב לבתי ספר ומוסדות או אפילו המעקה במעלה הבניין או לקומה השניה בבית.\nסבן ארט עושים את כל אלה ועוד הרבה יותר, מי שאוהב אמנות מכל סוג, חייב לצפות בעבודות שלהם באתר החדש שבנינו להם.",
@@ -134,7 +134,7 @@
             "font1": "אסיסטנט במשקלים שונים",
             "font2": ""
         },
-        "mobileBG": "../media/projects/sabanartmobilemockup.png",
+        "mobileBG": "/media/projects/sabanartmobilemockup.png",
         "mobileQuote": "\" כבר מעל 30 שנה, לומד בכל יום מחדש.. \"",
         "colors": {
             "colorsDescription": "כחלק מתהליך המיתוג, בחרנו ביחד עם הלקוח את צבעי הלוגו שחור ולבן\nאך בחרנו להוסיף עוד צבע חזק שמכניס עניין לאתר.",
@@ -151,12 +151,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/sabanartdevicesmockup.png",
+        "laptopBG": "/media/projects/sabanartdevicesmockup.png",
         "laptopDescription": "במסגרת בניית האתר גילינו את המקצוע הזה מחדש, במסגריית סבן ארט מבצעים עבודות לא פחות\nממדהימות בתחילה חשבנו שמדובר רק בסורגים ומעקות, ולבסוף הזמנו ספריית מתכת למשרד."
     },
     "pitaleny": {
         "name": "פיתה'לה - בית גריל NY",
-        "backgroundImage": "../media/projects/PitaleBG.webp",
+        "backgroundImage": "/media/projects/PitaleBG.webp",
         "link": "/pitaleny",
         "whatWeDid": "בניית אתר // עיצוב אתר",
         "description": "כחלק מהתליך ההתפתחות של החברה שלנו, חיפשנו בעלי עסקים מרחבי העולם וכך הגענו לנדב.\nנדב איש עסקים בתעשיית האוכל האמריקאית, בעל 2 מסעדות ומאפייה בלב ברוקלין, ניו יורק.\nדווקא באמצע תקופת הקורונה נדב ביקש לבנות אתר, אך לחסוך בעלויות.\nלכן בנינו לו אתר וואן פייג'ר (עמוד אחד) שממנו לקוחותיו מבצעים גם הזמנות.",
@@ -166,7 +166,7 @@
             "font2": "רובוטו",
             "font3": "אסיסטנט"
         },
-        "mobileBG": "../media/projects/pitale-mobilemockup.png",
+        "mobileBG": "/media/projects/pitale-mobilemockup.png",
         "mobileQuote": "\" אוכל זה החיים, ורק בתחום הזה אגדל.. \"",
         "colors": {
             "colorsDescription": "בפרוייקט זה צבעי האתר נבחרו לפי צבעי המותג הקיים ולפי דרישת הלקוח.",
@@ -183,12 +183,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/pitale-devicesmockup.png",
+        "laptopBG": "/media/projects/pitale-devicesmockup.png",
         "laptopDescription": "לפני בניית האתר למסעדה של נדב, אפיון העבודה היה לדף נחיתה בעל מסך אחד.\nלאחר מכן החלטנו להוסיף לדף יותר עומק ופעולות, בצורה נקייה ככל האפשר\nוהפכנו את האתר לאתר וואן פייג'ר."
     },
     "amigoztattoo": {
         "name": "אמיגוז טאטו - סטודיו לקעקועים",
-        "backgroundImage": "../media/projects/AmigozTattooBG.webp",
+        "backgroundImage": "/media/projects/AmigozTattooBG.webp",
         "link": "/amigoztattoo",
         "whatWeDid": "בניית אתר // עיצוב אתר // קידום ממומן",
         "description": "בשנת הקורונה הגיע אלינו אמיר, בעל סטודיו לקעקועים בטבריה, וביקש לבנות לו אתר ולאחר מכן לקדם אותו בגוגל, וכך היה.\nאמיר הסביר שהוא רוצה אתר בצבע שחור ונתן לנו דוגמאות מאתרים מהעולם, ביקש פונט מיוחד והמון תמונות.",
@@ -198,7 +198,7 @@
             "font2": "דינה",
             "font3": "אסיסטנט"
         },
-        "mobileBG": "../media/projects/amigozmobilemockup.png",
+        "mobileBG": "/media/projects/amigozmobilemockup.png",
         "mobileQuote": "\" כשהעבודה נעשית מהלב, אפשר לקרוא לה אמנות \"",
         "colors": {
             "colorsDescription": "בפרוייקט זה צבעי האתר נבחרו לפי צבעי המותג הקיים, אהבנו ולא ראינו מקום לשינויים מיותרים.",
@@ -215,12 +215,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/amigozdevicesmockup.png",
+        "laptopBG": "/media/projects/amigozdevicesmockup.png",
         "laptopDescription": "במסגרת תהליך בניית האתר, בעקבות נגיף הקורונה\nהחלטנו לבוא לקראת הלקוח ולבנות את האתר עם תשתית אורגנית מעולה בביטויי חיפוש מסויימים\nהמתאימים לעסק שלו.\nלאחר כחודש האתר הגיע בביטוי הכי חשוב לו, לדף הראשון ולמקום החמישי."
     },
     "liamattractions": {
         "name": "ליאם אטרקציות - אטרקציות לאירועים",
-        "backgroundImage": "../media/projects/LiamattractionsBG.jpg",
+        "backgroundImage": "/media/projects/LiamattractionsBG.jpg",
         "link": "/liamattractions",
         "whatWeDid": "בניית אתר // עיצוב אתר // קידום ממומן",
         "description": "את האתר של ליאם אטרקציות בנינו עבור הלקוח שלנו רון, בעל מספר עסקים בעיקר בתחומים כייפים כמו אטרקציות.\nבניית אתר לעסק בתחום האטרקציות זו אטרקציה בפני עצמה, וכך באמת היה הפרויקט, כיף מההתחלה ועד הסוף.",
@@ -228,7 +228,7 @@
         "fonts": {
             "font1": "ורלה ראונד"
         },
-        "mobileBG": "../media/projects/liamattractionsPhonemockup.png",
+        "mobileBG": "/media/projects/liamattractionsPhonemockup.png",
         "mobileQuote": "\" אני אדם שחייב תמיד ליהנות, גם בעבודה.. \"",
         "colors": {
             "colorsDescription": "קיבלנו את הלוגו של החברה ודרכו הוצאנו את הצבעים היותר מושכים שמדרים כיף, קלילות ובעיקר.. אטרקציות.",
@@ -245,12 +245,12 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/liamattractionsDesktopemockup.png",
+        "laptopBG": "/media/projects/liamattractionsDesktopemockup.png",
         "laptopDescription": "אחד מאתרי הוואן פייג'ר הכי כיפים שיצא לנו להכין.\nולא רק בגלל אופי האתר או תחום העסק, אלא בעיקר בזכותו של רון, אדם נחמד, נעים ובעיקר זורם!\nמאחלים לעצמנו עוד המון לקוחות כאלה."
     },
     "greendiamonds": {
         "name": "Green Diamonds - גרין דיימונדס יהלומי מעבדה",
-        "backgroundImage": "../media/projects/greendiamondsBG.jpg",
+        "backgroundImage": "/media/projects/greendiamondsBG.jpg",
         "link": "/greendiamonds",
         "whatWeDid": "בניית אתר",
         "description": "על יהלומים כבר נאמרו אלפי משפטים ונכתבו מאות שירים, על יהלומי מעבדה, עוד לא.\nהטרנד החדש בעולם התכשיטנות צובר תאוצה וכך גם האתרים בתחומו.\nגל, בעלים של חנויות יהלומי בבורסה לרמת גן ביקש אתר חדש לחנות יהלומי המעבדה שלו, ידע להגיד בדיוק מה הוא רוצה, וזו התוצאה.",
@@ -258,7 +258,7 @@
         "fonts": {
             "font1": "Heebo"
         },
-        "mobileBG": "../media/projects/greendiamondsPhonemockup.png",
+        "mobileBG": "/media/projects/greendiamondsPhonemockup.png",
         "mobileQuote": "\" כמו שנאמר, יהלומים כאן לעד, אני אומר שגם כך יהלומי המעבדה.. \"",
         "colors": {
             "colorsDescription": "באתר זה, הלקוח אחראי על עיצוב האתר בעבודה מדוייקת על פי בקשותיו.",
@@ -275,7 +275,7 @@
                 }
             }
         },
-        "laptopBG": "../media/projects/greendiamondsDesktopmockup.png",
+        "laptopBG": "/media/projects/greendiamondsDesktopmockup.png",
         "laptopDescription": "בבניית האתר לחנות יהלומי המעבדה גרין דיימונדס, השקענו מאמצים רבים בתכנון הפיצ'רים המיוחדים\nלבקשתו של הלקוח כמו שניתן לראות בעיקר בדף המוצר.\nלדוגמא: הצגת וריאציית משקל היהלומים על פי בחירת ברירת המחדל של המוצר בכותרת המוצר ובדף המוצר.\nאנחנו יכולים להעיד שרק בפרוייקט זה, שנמשך כחודש וחצי, למדנו המון ושיפרנו את יכולותינו מעבר למרבית האתרים עליהם עבדנו."
     }
 }
