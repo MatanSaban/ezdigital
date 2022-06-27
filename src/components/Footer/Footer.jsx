@@ -96,12 +96,15 @@ const Footer = () => {
                     <h3>הבלוג</h3>
                 </div>
             </div>
-            <div className="footer__contact">
-                <h2>קליק קטן לאדם, צעד גדול לעסק.</h2>
-                <input type="text" name="fullname" id="fullname" />
-                <input type="number" name="phonenumber" id="phonenumber" />
-                <input type="email" name="useremail" id="useremail" />
-                <button>שליחה</button>
+            <div className="formWrapper">
+                <h4>קליק קטן לאדם, צעד גדול לעסק.</h4>
+                <div className="footer__contact lineForm">
+                    <input type="text" name="fullname" id="fullname" placeholder="שם מלא" />
+                    <input type="number" name="phonenumber" id="phonenumber" placeholder="מספר טלפון" />
+                    <input type="email" name="useremail" id="useremail" placeholder="אימייל" />
+                    <button>שליחה</button>
+                 </div>
+
             </div>
         </footer>
     );
