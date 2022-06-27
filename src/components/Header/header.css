@@ -40,7 +40,7 @@
 .mainMenu .mainMenu__list .mainMenu__Item a {
     text-decoration: none;
     color: black;
-    font-weight: 600;
+    font-weight: 400;
     position: relative;
     width: 100%;
     z-index: 9;
@@ -52,8 +52,10 @@
     width: 20px;
     position: absolute;
     bottom: -5px;
-    right: 0;
+    top: 50%;
+    right: 50%;
     height: 20px;
+    transform: translate(50%, -50%);
     border-radius: 100px;
     z-index: -1;
     transition: all 0.5s ease;
@@ -65,9 +67,10 @@
     width: 50px;
     position: absolute;
     bottom: -5px;
+    top: 50%;
     right: 50%;
     height: 50px;
-    transform: translate(50%, 0);
+    transform: translate(50%, -50%);
     z-index: -1;
 }
 
