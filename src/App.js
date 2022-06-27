@@ -38,7 +38,7 @@ function App() {
             
             <Route exact path="Services" element={<Services path={'services'} pageName={'כל השירותים'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route>
             
-            <Route exact path="Services/web-development" element={<WebDevelopment path={'web-development'} pageName={'בניית אתרים'} parentName={'כל השירותים'} parentPath={'/Services'}/>} ></Route>
+            <Route exact path="Services/web-development" element={<WebDevelopment path={'web-development'} pageName={'בניית אתרים'} parentName={'כל השירותים'} parentPath={'/Services'}/>} ></Route> 
             <Route exact path="Services/web-development/landing-page" element={<LandingPage path={'landing-page'} pageName={'דף נחיתה'} parentName={'בניית אתרים'} parentPath={'/web-development'} grandParentName={'כל השירותים'} grandParentPath={'/Services'} />}  ></Route>
             <Route exact path="Services/web-development/official-website" element={<OfficialWebsite path={'official-website'} pageName={'אתר תדמית'} parentName={'בניית אתרים'} parentPath={'/web-development'} grandParentName={'כל השירותים'} grandParentPath={'/Services'} />}  ></Route>
             <Route exact path="Services/web-development/online-store" element={<OnlineStore path={'online-store'} pageName={'אתר חנות'} parentName={'בניית אתרים'} parentPath={'/web-development'} grandParentName={'כל השירותים'} grandParentPath={'/Services'} />}  ></Route>
