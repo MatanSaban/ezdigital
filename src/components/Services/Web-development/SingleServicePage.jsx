@@ -9,23 +9,7 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Json from "../ServicesData.json";
-import { Parallax } from "react-parallax";
 
-const Container = (props) => (
-    <Parallax
-        renderLayer={(percentage) => (
-            <div
-                style={{
-                    height: percentage * 1000,
-                }}
-            />
-        )}
-        bgImage={props.path}
-        strength={400}
-    >
-        Content goes here. Parallax height grows with content height.
-    </Parallax>
-);
 
 const SingleServicePage = (props) => {
     return (
