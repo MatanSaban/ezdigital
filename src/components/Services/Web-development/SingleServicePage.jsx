@@ -6,7 +6,7 @@ import { ImList } from "react-icons/im";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { IoRocketOutline } from "react-icons/io5";
 import { IoCodeSlashOutline } from "react-icons/io5";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Json from "../ServicesData.json";
 
@@ -26,6 +26,12 @@ const RenderHTML=(text)=>{
 
 
 const SingleServicePage = (props) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
+
     return (
         <div id="SingleServicePage" className="SingleServicePage">
             <video

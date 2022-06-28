@@ -21,12 +21,15 @@ import GooglePaid from "./components/Services/Google-ads/GooglePaid.jsx";
 import GoogleOrganic from "./components/Services/Google-ads/GoogleOrganic.jsx";
 import FacebookPaid from "./components/Services/Social-ads/FacebookPaid.jsx";
 import FacebookOrganic from "./components/Services/Social-ads/FacebookOrganic.jsx";
+import { useEffect } from "react";
 
 
 
 function App() {
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
     return (
         <div className="App">
           <Header/>

@@ -4,8 +4,13 @@ import Svg from "../Special/Logo/Svg.jsx";
 import { Link, NavLink } from "react-router-dom";
 import menuItems from "./MenuItems.json";
 import { AiFillCaretLeft } from "react-icons/ai";
+import { useState } from "react";
 
 const Header = () => {
+
+
+    const [isShown, setIsShown] = useState(false);
+
     return (
         <header className="mainHeader blurFilter">
             <div className="mainMenu">
@@ -63,16 +68,22 @@ const Header = () => {
             </div>
             <div className="logoAndPhone">
                 <a
+                    onMouseEnter={() => setIsShown(true)}
+                    onMouseLeave={() => setIsShown(false)}
                     href="tel:052-798-4133"
                     style={{
                         textDecoration: "none",
                         color: "black",
                         fontSize: "1.2rem",
+                        position:'relative'
                     }}
                 >
                     דברו איתנו - 052-798-4133
+                    {isShown && <p style={{position:'absolute',top:'100%', textAlign:'center', right:'0', width:'100%', background:'var(--color-primary)', borderRadius:'15px',
+                padding:'10px'
+                }}>קליק והשיחה יוצאת</p>}
                 </a>
-                <Svg />
+                <NavLink to={'/'}><Svg /></NavLink>
             </div>
         </header>
     );

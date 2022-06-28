@@ -125,7 +125,7 @@
 }
 .logoAndPhone svg {
     width: 200px !important;
-    height: 150px;
+    height: 100% !important;
     margin-right: 40px;
     margin-left: 40px;
 }

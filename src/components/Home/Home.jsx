@@ -22,6 +22,7 @@ import "swiper/css/scrollbar";
 import ProjectsJson from "../Projects/Projects.json";
 import { NavLink } from "react-router-dom";
 import Json from '../Header/MenuItems.json'
+import { useEffect } from "react";
 
 // const dataToString = JSON.stringify(ProjectsJson);
 // const data = JSON.parse(dataToString);
@@ -64,6 +65,12 @@ const testimonials = {
 };
 
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
+
     return (
         <main className="pageWrapper">
             <section id="hero">

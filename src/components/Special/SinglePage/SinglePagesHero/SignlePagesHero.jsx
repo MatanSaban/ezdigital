@@ -2,11 +2,13 @@ import TypeWriterEffect from "react-typewriter-effect";
 import "./singlepageshero.css";
 import { FaAngleDoubleLeft } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
 const SinglePagesHero = (props) => {
 
-    console.log(props);
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <section className="singlePageHero">
             <TypeWriterEffect
