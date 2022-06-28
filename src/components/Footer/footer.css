@@ -28,3 +28,16 @@ footer .formWrapper > h4 {
 .footer__content .logo {
     width: 150px;
 }
+.footer__content h3 {
+    text-align: right;
+    margin-right: 30px;
+}
+.footer__content li {
+    margin: 10px 0;
+}
+.footer__content li a {
+    color: black;
+}
+.footer__content li:hover a {
+    color: gray;
+}
