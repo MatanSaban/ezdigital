@@ -198,3 +198,14 @@
 .mainMenu__subMenu:hover > li:last-child {
     border-radius: 0 !important;
 }
+#toTopButton {
+    position: fixed;
+    top: 90vh;
+    right: 0%;
+}
+#toTopButton button {
+    padding: 20px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}

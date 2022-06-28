@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import menuItems from "../Header/MenuItems.json";
 import { useState } from "react";
 import ProjectsJson from "../Projects/Projects.json";
+import Svg from "../Special/Logo/Svg.jsx";
 
 const Footer = () => {
     const [subMenuItems, setSubMenuItems] = useState([]);
@@ -12,13 +13,13 @@ const Footer = () => {
         <footer className="centerText">
             <div className="footer__content">
                 <div className="about">
-                    <NavLink to={'/'}>
-                        <img className="logo" src={LOGO} alt="Easy Digital Logo" />
-                    </NavLink>
-                    <p style={{textAlign:'right'}}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Pariatur nostrum facere corporis illum eligendi
-                        similique veritatis quos quia illo sit.
+                <NavLink to={'/'}><Svg /></NavLink>
+                    <p style={{ textAlign: "right", paddingRight:'100px' }}>
+                        אנו חברת פרסום דיגיטלי העוסקת בבניית אתרים בוורדפרס,
+                        <br />
+                        פרסום אורגני, פרסום ממומן בגוגל,
+                        <br /> פרסום ממומן ברשתות החברתיות,
+                        <br /> ניהול דפי עסק ברשתות החברתיות, עיצוב גרפי ועוד.{" "}
                     </p>
                 </div>
                 <div className="quickLinks">
@@ -77,8 +78,8 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="projects">
-                <h3>פרויקטים</h3>
-                    <ul style={{textAlign:'right'}}>
+                    <h3>פרויקטים</h3>
+                    <ul style={{ textAlign: "right" }}>
                         {Object.keys(ProjectsJson).map((projectName, index) => {
                             return (
                                 <li key={index + projectName}>
@@ -99,12 +100,26 @@ const Footer = () => {
             <div className="formWrapper">
                 <h4>קליק קטן לאדם, צעד גדול לעסק.</h4>
                 <div className="footer__contact lineForm">
-                    <input type="text" name="fullname" id="fullname" placeholder="שם מלא" />
-                    <input type="number" name="phonenumber" id="phonenumber" placeholder="מספר טלפון" />
-                    <input type="email" name="useremail" id="useremail" placeholder="אימייל" />
+                    <input
+                        type="text"
+                        name="fullname"
+                        id="fullname"
+                        placeholder="שם מלא"
+                    />
+                    <input
+                        type="number"
+                        name="phonenumber"
+                        id="phonenumber"
+                        placeholder="מספר טלפון"
+                    />
+                    <input
+                        type="email"
+                        name="useremail"
+                        id="useremail"
+                        placeholder="אימייל"
+                    />
                     <button>שליחה</button>
-                 </div>
-
+                </div>
             </div>
         </footer>
     );

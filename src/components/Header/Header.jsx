@@ -4,12 +4,35 @@ import Svg from "../Special/Logo/Svg.jsx";
 import { Link, NavLink } from "react-router-dom";
 import menuItems from "./MenuItems.json";
 import { AiFillCaretLeft } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
 
     const [isShown, setIsShown] = useState(false);
+
+    const [y, setY] = useState(window.scrollY);
+    const handleNavigation = (e) => {
+        const window = e.currentTarget;
+        if (y > window.scrollY) {
+        } else if (y < window.scrollY) {
+        }
+        setY(window.scrollY);
+      };
+    
+
+useEffect(() => {
+  window.addEventListener("scroll", (e) => handleNavigation(e));
+
+  return () => { // return a cleanup function to unregister our function since its gonna run multiple times
+    window.removeEventListener("scroll", (e) => handleNavigation(e));
+  };
+}, [y]);
+
+
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
 
     return (
         <header className="mainHeader blurFilter">
@@ -85,6 +108,9 @@ const Header = () => {
                 </a>
                 <NavLink to={'/'}><Svg /></NavLink>
             </div>
+            {y > 500 &&<div id="toTopButton">
+                <button style={y > 600 ? {opacity:1, transition:'all 0.3s ease'} : {opacity:0 , transition:'all 0.3s ease'}} onClick={() => scrollToTop()}>To Top</button>
+            </div>}
         </header>
     );
 };
