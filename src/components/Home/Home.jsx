@@ -27,32 +27,39 @@ import Json from '../Header/MenuItems.json'
 // const data = JSON.parse(dataToString);
 // console.log(data.Project1.description);
 // console.log(<pre>{{d}}</pre>);
+const RenderHTML=(text)=>{
+	const htmlPart=text
+    return(
+      <div dangerouslySetInnerHTML={ {__html: htmlPart} } />
+    )
+}
+
 
 const testimonials = {
     testimonial: {
         name: "מיכל ארווץ",
         title: "בעלת סטודיו פילאטיס בשרון",
-        text: "מתן האלוף דאג לכל מה שהייתי צריכה כדי להקפיץ את העסק בכמה רמות בזמן קצר מאוד. ממליצה!",
+        text: "<pre><p>מתן האלוף דאג לכל מה שהייתי צריכה כדי להקפיץ את העסק בכמה רמות בזמן קצר מאוד. ממליצה!</p></pre>",
     },
     testimonial2: {
         name: "אורית אבלס",
         title: "בעלת חנות תכשיטים אינטרנטית",
-        text: "מתן מאיזי דיגיטל בנה לי את האתר החדש שלי אחרי שנים של שירות מפה לאוזן.. \nלא האמנתי לאן זה יכול להגיע, אני מאוד מרוצה.",
+        text: "<pre><p>מתן מאיזי דיגיטל בנה לי את האתר החדש שלי אחרי שנים של שירות מפה לאוזן.. <br/>לא האמנתי לאן זה יכול להגיע, אני מאוד מרוצה.</p></pre>",
     },
     testimonial3: {
         name: "ישראל טבכר",
         title: "בעל חברת רימרקטינג",
-        text: "על איזי דיגיטל שמעתי מספר פעמים לפני שהחלטתי לבנות אצלם את האתר שלי,\nהחלטתי שהמלצה זה מספיק בשבילי ואכן האתר נבנה ונמסר בתוך שבוע בלבד.",
+        text: "<pre><p>על איזי דיגיטל שמעתי מספר פעמים לפני שהחלטתי לבנות אצלם את האתר שלי,<br/>החלטתי שהמלצה זה מספיק בשבילי ואכן האתר נבנה ונמסר בתוך שבוע בלבד.</p></pre>",
     },
     testimonial4: {
         name: "איתי סניור",
         title: "בעל חברת הובלות במרכז",
-        text: "איזי דיגיטל עזרו לי בתקופת הקורונה להחזיק את עסק ההובלות שלי מעל המים,\nברגע שעברנו את הקורונה כל העבודה הקשה התחילה להשתלם עוד יותר.",
+        text: "<pre><p>איזי דיגיטל עזרו לי בתקופת הקורונה להחזיק את עסק ההובלות שלי מעל המים,<br/>ברגע שעברנו את הקורונה כל העבודה הקשה התחילה להשתלם עוד יותר.</p></pre>",
     },
     testimonial5: {
         name: "אמיר סאלח",
         title: "בעל מכון קעקועים בצפון",
-        text: "התחלתי לעבוד עם מתן באמצע תקופת הקורונה רק מתוך התעניינות אם כדאי בכלל כדאי לפרסם בתקופה הזו..\nהיום אחרי חצי שנה אני יכול להגיד שזו ההחלטה העסקית הטובה ביותר שעשיתי בתקופה הזו.",
+        text: "<pre><p>התחלתי לעבוד עם מתן באמצע תקופת הקורונה רק מתוך התעניינות אם כדאי בכלל כדאי לפרסם בתקופה הזו..<br/>היום אחרי חצי שנה אני יכול להגיד שזו ההחלטה העסקית הטובה ביותר שעשיתי בתקופה הזו.</p></pre>",
     },
 };
 
@@ -175,14 +182,7 @@ const Home = () => {
                                         <h3>
                                             {ProjectsJson[projectName].name}
                                         </h3>
-                                        <pre>
-                                            <p>
-                                                {
-                                                    ProjectsJson[projectName]
-                                                        .description
-                                                }
-                                            </p>
-                                        </pre>
+                                        { RenderHTML(ProjectsJson[projectName].description)}
                                         <NavLink
                                             to={`/projects${ProjectsJson[projectName].link}`}
                                         >
@@ -230,9 +230,7 @@ const Home = () => {
                                     >
                                         <h3>{testimonials[keyName].name}</h3>
                                         <h4>{testimonials[keyName].title}</h4>
-                                        <pre>
-                                            <p>{testimonials[keyName].text}</p>
-                                        </pre>
+                                            { RenderHTML(testimonials[keyName].text)}
                                     </div>
                                 </SwiperSlide>
                             );

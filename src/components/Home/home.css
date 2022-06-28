@@ -98,6 +98,12 @@ div.projectHomepageCover > a:hover {
     flex-wrap: nowrap;
     justify-content: center;
 }
+#testimonials .swiper {
+    height: 200px;
+}
+#testimonials .swiper p {
+    font-size: 1.3rem !important;
+}
 #services .service h2 {
     color: var(--color-primary);
 }
