@@ -47,6 +47,14 @@ const SingleProject = (props) => {
 
     const { link } = useParams();
 
+    const RenderHTML=(text)=>{
+        const htmlPart=text
+        return(
+          <div dangerouslySetInnerHTML={ {__html: htmlPart} } />
+        )
+    }
+    
+
     return (
         <div id="singleProject" className="projectWrapper">
             <section
@@ -58,9 +66,7 @@ const SingleProject = (props) => {
                 <div className="heroCover">
                     <h1>{ProjectsJson[link].name}</h1>
                     <h3>{ProjectsJson[link].whatWeDid}</h3>
-                    <pre>
-                        <p>{ProjectsJson[link].description}</p>
-                    </pre>
+                        { RenderHTML(ProjectsJson[link].description)}
                     <a
                         style={{
                             background: `${ProjectsJson[link].colors.mainColor}`,
@@ -152,9 +158,7 @@ const SingleProject = (props) => {
                 style={{ background: `url(${ProjectsJson[link].laptopBG})` }}
             >
                 <div className="projectSummaryCover">
-                    <pre>
-                        <p>{ProjectsJson[link].laptopDescription}</p>
-                    </pre>
+                        { RenderHTML(ProjectsJson[link].laptopDescription)}
                 </div>
             </section>
         </div>

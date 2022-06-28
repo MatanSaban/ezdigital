@@ -1,0 +1,15 @@
+#ContactPage > div {
+    height: 500px;
+    background-position: left bottom;
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+.contactContent {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+.contactContent .form span,
+.contactContent .form p {
+    color: white;
+}

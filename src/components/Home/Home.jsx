@@ -21,6 +21,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ProjectsJson from "../Projects/Projects.json";
 import { NavLink } from "react-router-dom";
+import Json from '../Header/MenuItems.json'
 
 // const dataToString = JSON.stringify(ProjectsJson);
 // const data = JSON.parse(dataToString);
@@ -72,6 +73,9 @@ const Home = () => {
                     שנים.
                 </h2>
             </section>
+            {/* <section style={{display:'flex', width:'50%', justifyContent:'space-evenly', margin:'0 auto'}}>
+          
+            </section> */}
             <section
                 id="services"
                 className="centerText"
@@ -93,151 +97,41 @@ const Home = () => {
                     פרסום ממומן ברשתות החברתיות, בניית אסטרטגיה דיגיטלית לעסקים
                     ובניית אתרי תדמית, חנויות אונליין ואתרי תוכן.
                 </p>
-                <div
-                    style={{ display: "flex", justifyContent: "space-around" }}
-                >
-                    <div>
-                        <Lottie
-                            animationData={one}
-                            loop={true}
-                            style={{ maxWidth: "500px" }}
-                        />
-                        <h3
-                            className="centerText"
-                            style={{ fontSize: "1.8rem", margin: "0" }}
-                        >
-                            בניית אתרים
-                        </h3>
-                        <ul>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">דף נחיתה</a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">אתר תדמית</a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">אתר חנות</a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">אתר תוכן</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <Lottie animationData={two} loop={true} />
-                        <h3
-                            className="centerText"
-                            style={{ fontSize: "1.8rem", margin: "0" }}
-                        >
-                            פרסום בגוגל
-                        </h3>
-                        <ul>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">פרסום ממומן בגוגל</a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">פרסום אורגני בגוגל SEO</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <Lottie animationData={three} loop={true} />
-                        <h3
-                            className="centerText"
-                            style={{ fontSize: "1.8rem", margin: "0" }}
-                        >
-                            פרסום בסושיאל
-                        </h3>
-                        <ul>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">פרסום ממומן בפייסבוק</a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a href="">פרסום אורגני בפייסבוק</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <Lottie animationData={four} loop={true} />
-                        <h3
-                            className="centerText"
-                            style={{ fontSize: "1.8rem", margin: "0" }}
-                        >
-                            מיתוג ועיצוב
-                        </h3>
-                        <ul>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a style={{ textAlign: "right" }} href="">
-                                    מיתוג עסקי
-                                </a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a style={{ textAlign: "right" }} href="">
-                                    עיצוב לוגו
-                                </a>
-                            </li>
-                            <li
-                                style={{
-                                    textAlign: "right",
-                                    marginRight: "50px",
-                                }}
-                            >
-                                <a style={{ textAlign: "right" }} href="">
-                                    עיצובים לפוסטים בסושיאל
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div style={{display:'flex', justifyContent:'space-between'}}>
+                {Object.keys(Json.Services.Submenu).map((keyName, index) => {
+                    return (
+                        <div className="service" style={{display:'flex', flexDirection:'column', alignItems:'center', alignContent:'center'}}>
+                            
+                            {Json.Services.Submenu[keyName].rel === 'one' && <Lottie animationData={one} loop={true} style={{ maxWidth: "500px" }}/>}
+                            {Json.Services.Submenu[keyName].rel === 'two' && <Lottie animationData={two} loop={true} style={{ maxWidth: "500px" }}/>}
+                            {Json.Services.Submenu[keyName].rel === 'three' && <Lottie animationData={three} loop={true} style={{ maxWidth: "500px" }}/>}
+                            {Json.Services.Submenu[keyName].rel === 'four' && <Lottie animationData={four} loop={true} style={{ maxWidth: "500px" }}/>}
+                            
+                            <NavLink to={Json.Services.Submenu[keyName].link}><h2>{Json.Services.Submenu[keyName].text}</h2></NavLink>
+
+                            {Json.Services.Submenu[keyName].subSubmenu && (
+                                <ul style={{margin:'0', display:'flex', flexDirection:'column', alignItems:'flex-start', alignContent:'center', justifyContent:'center', padding:'0 5px 0 0 '}}>
+                                    {Object.keys(
+                                        Json.Services.Submenu[keyName]
+                                            .subSubmenu
+                                    ).map((keyname) => {
+                                        return (
+                                            <NavLink to={`${Json.Services.Submenu[keyName].link}${Json.Services.Submenu[
+                                                keyName
+                                            ].subSubmenu[keyname].link}`}>
+                                                {
+                                                    Json.Services.Submenu[
+                                                        keyName
+                                                    ].subSubmenu[keyname].text
+                                                }
+                                            </NavLink>
+                                        );
+                                    })}
+                                </ul>
+                            )}
+                        </div>
+                    );
+                })}
                 </div>
             </section>
             <section

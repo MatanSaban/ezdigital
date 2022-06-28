@@ -1,15 +1,16 @@
-@font-face {
-    font-family: "EllaSansThin";
+/* @font-face {
+    font-family: "EllaSans";
     src: local("EllaSans"),
         url("../public/fonts/EllaSans/EllaSans-Thin.woff") format("woff");
 }
 @font-face {
-    font-family: "EllaSansRegular";
+    font-family: "EllaSans";
     src: local("EllaSans"),
         url("../public/fonts/EllaSans/EllaSans-Regular.woff") format("woff");
-}
+} */
 @font-face {
-    font-family: "EllaSansBold";
+    font-family: "EllaSans";
+    font-weight: bold;
     src: local("EllaSans"),
         url("../public/fonts/EllaSans/EllaSans-Bold.woff") format("woff");
 }

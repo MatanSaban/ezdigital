@@ -3,10 +3,10 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.264);
+    background-image: linear-gradient(360deg, #ffffff00 0%, #00000096 100%);
     margin: 0 auto;
     padding: 0px;
-    box-shadow: 0 0 10px black;
+    /* box-shadow: 0 0 10px black; */
     min-height: 10vh;
     z-index: 9999;
     position: fixed;
@@ -27,7 +27,7 @@
     display: flex;
     list-style: none;
     justify-content: space-between;
-    padding: 0;
+    padding: 0 100px;
     font-size: 1.2rem;
     width: 100%;
     position: relative;
@@ -39,11 +39,12 @@
 }
 .mainMenu .mainMenu__list .mainMenu__Item a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 400;
     position: relative;
     width: 100%;
     z-index: 9;
+    text-shadow: 5px -5px 15px rgba(0, 0, 0, 0.765);
 }
 .mainMenu .mainMenu__list > .mainMenu__Item > a:after {
     content: ".";
@@ -88,6 +89,10 @@
 }
 .mainMenu > .mainMenu__list > .mainMenu__Item:hover > .mainMenu__subMenu {
     display: block;
+}
+.mainMenu > .mainMenu__list > .mainMenu__Item:hover > .mainMenu__subMenu a {
+    color: black;
+    text-shadow: none;
 }
 
 .mainMenu__Item .mainMenu__subMenu .mainMenu__subMenu__item {

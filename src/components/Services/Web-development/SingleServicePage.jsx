@@ -11,6 +11,20 @@ import { NavLink } from "react-router-dom";
 import Json from "../ServicesData.json";
 
 
+// const htmlDiv=document.querySelector('div');
+// const htmlPart='<p>Welcome to this <strong>page</strong></p>'
+// htmlDiv.innerHTML='json';
+
+
+const RenderHTML=(text)=>{
+	const htmlPart=text
+    return(
+      <div dangerouslySetInnerHTML={ {__html: htmlPart} } />
+    )
+}
+
+
+
 const SingleServicePage = (props) => {
     return (
         <div id="SingleServicePage" className="SingleServicePage">
@@ -90,13 +104,13 @@ const SingleServicePage = (props) => {
                                         }
                                     </h3>
                                         
-                                        <p><pre>
-                                            {
-                                                Json[props.path].content[
+                                        {/* <p><pre> */}
+                                            { RenderHTML(Json[props.path].content[
                                                     keyName
-                                                ].paragraph
+                                                ].paragraph)
+                                                
                                             }
-                                        </pre></p>
+                                        {/* </pre></p> */}
                                     
                                 </div>
                             );

@@ -10,6 +10,7 @@
             "web-development": {
                 "text": "בניית אתרים",
                 "link": "/services/web-development",
+                "rel": "one",
                 "subSubmenu": {
                     "landing-page": {
                         "text": "דף נחיתה",
@@ -32,6 +33,7 @@
             "social-ads": {
                 "text": "פרסום ברשתות החברתיות",
                 "link": "/services/social-ads",
+                "rel": "two",
                 "subSubmenu": {
                     "facebook-organic": {
                         "text": "פרסום אורגני בפייסבוק",
@@ -46,6 +48,7 @@
             "google-ads": {
                 "text": "פרסום בגוגל",
                 "link": "/services/google-ads",
+                "rel": "three",
                 "subSubmenu": {
                     "google-organic": {
                         "text": "פרסום אורגני בגוגל",
@@ -59,7 +62,8 @@
             },
             "branding": {
                 "text": "מיתוג עסקי",
-                "link": "/services/branding"
+                "link": "/services/branding",
+                "rel": "four"
             }
         }
     },
