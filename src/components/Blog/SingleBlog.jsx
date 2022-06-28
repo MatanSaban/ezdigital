@@ -73,7 +73,7 @@ const SingleBlog = (props) => {
                         </div>
             </section>
             <section className="leaveDetails">
-                <h3>בא לך לדבר איתנו על {BlogJson.theBlog.articles[link].title}?</h3>
+                <h3>רוצה לדבר על זה?</h3>
                 <p>פרטים בקטנה וכבר נחזור אליך!</p>
                 <div className="form">
                         <input type="text" placeholder="שם מלא.. צריכים להכיר לא?" />
