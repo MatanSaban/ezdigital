@@ -22,6 +22,7 @@ import GoogleOrganic from "./components/Services/Google-ads/GoogleOrganic.jsx";
 import FacebookPaid from "./components/Services/Social-ads/FacebookPaid.jsx";
 import FacebookOrganic from "./components/Services/Social-ads/FacebookOrganic.jsx";
 import { useEffect } from "react";
+import SingleBlog from "./components/Blog/SingleBlog.jsx";
 
 
 
@@ -59,6 +60,9 @@ function App() {
             <Route exact path="Services/Branding" element={<Branding path={'branding'} pageName={'מיתוג עסקי'} parentName={'כל השירותים'} parentPath={'/Services'}/>} ></Route>
 
             <Route exact path="Blog" element={<Blog path={'blog'} pageName={'הבלוג'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route>
+            <Route exact path="Blog/:link" element={<SingleBlog  parentName={'הבלוג'} parentPath={'/blog'} />} ></Route>
+
+
             <Route exact path="Contact" element={<Contact path={'contact'} pageName={'יצירת קשר'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route> 
 
             <Route path="*" element={<Page404 />} ></Route>

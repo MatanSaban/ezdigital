@@ -11,5 +11,90 @@
 }
 .contactContent .form span,
 .contactContent .form p {
+    color: black;
+}
+.form p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: -5px;
+    margin-top: 0;
+}
+.contactDetails {
     color: white;
+    text-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contactDetails ul {
+    width: 250px;
+}
+.contactDetails ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+.contactDetails ul li:hover,
+.contactDetails ul li:hover a {
+    color: var(--color-primary);
+}
+.contactDetails ul li a {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form .checkbox {
+    font-size: 1rem;
+}
+.form input[type="text"],
+.form input[type="email"] {
+    border: 0;
+    border-bottom: 2px solid rgb(106, 106, 106);
+    /* border-right: 0.5px solid rgb(106, 106, 106); */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.209);
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    margin: 5px 0;
+}
+.form .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    height: 200px;
+}
+.form .inputs > input {
+    font-size: 1.3rem;
+}
+.form button {
+    background-color: var(--color-primary);
+    padding: 10px 40px;
+    width: 100%;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.36);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
+    transition: all 0.3s ease;
+}
+.form button:hover {
+    color: var(--color-primary);
+    background: transparent;
+    text-shadow: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.237);
+}
+.contactContent > div {
+    width: 35%;
+}
+.checkboxes {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0 -30px 0;
 }

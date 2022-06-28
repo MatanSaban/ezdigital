@@ -1,0 +1,81 @@
+#singleBlog {
+    position: relative;
+}
+#singleBlog .hero {
+    position: relative;
+}
+#singleBlog > .hero > .react-parallax {
+    position: relative;
+    max-height: 500px;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden !important;
+    z-index: -1;
+}
+#singleBlog > .hero > .react-parallax img {
+    height: 800px !important;
+    object-fit: cover;
+    filter: blur(3px) !important;
+    opacity: 0.8;
+}
+.singleBlog__hero {
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    filter: opacity(0.5) blur(5px);
+    height: 60vh;
+}
+#singleBlog .singlePageHero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    min-height: 150px !important;
+    width: fit-content;
+    background: #00000075;
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: 0 0 30px black;
+    backdrop-filter: blur(15px);
+}
+#singleBlog .singlePageHero h1,
+#singleBlog .singlePageHero a {
+    color: white;
+}
+#singleBlog .singlePageHero a:hover {
+    text-decoration: underline;
+}
+#singleBlog .singlePageHero .breadCrumbs {
+    color: rgb(206, 206, 206);
+}
+.blogContent .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-primary);
+    height: max-content;
+    padding: 50px;
+    color: white;
+    text-shadow: 0 0 20px black;
+}
+.blogContent .heading h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+.blogContent .heading pre {
+    font-size: 1.7rem;
+    text-align: center;
+}
+.blogContent .sections {
+    width: 70%;
+    margin: 0 auto;
+}
+.blogContent .sections .contentSection {
+    margin: 50px 0;
+}
+.blogContent .sections .contentSection h3 {
+    font-size: 1.7rem;
+    /* text-decoration: underline; */
+}
