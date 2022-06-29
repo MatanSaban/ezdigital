@@ -12,7 +12,7 @@ footer {
     width: fit-content;
     margin: 0;
 }
-.formWrapper {
+footer .formWrapper {
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;

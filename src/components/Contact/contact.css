@@ -13,7 +13,7 @@
 .contactContent .form p {
     color: black;
 }
-.form p {
+#ContactPage .form p {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: -5px;
@@ -46,11 +46,11 @@
     display: flex;
     justify-content: space-between;
 }
-.form .checkbox {
+#ContactPage .form .checkbox {
     font-size: 1rem;
 }
-.form input[type="text"],
-.form input[type="email"] {
+#ContactPage .form input[type="text"],
+#ContactPage .form input[type="email"] {
     border: 0;
     border-bottom: 2px solid rgb(106, 106, 106);
     /* border-right: 0.5px solid rgb(106, 106, 106); */
@@ -60,7 +60,7 @@
     width: 95%;
     margin: 5px 0;
 }
-.form .inputs {
+#ContactPage .form .inputs {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -68,10 +68,10 @@
     margin-bottom: 20px;
     height: 200px;
 }
-.form .inputs > input {
+#ContactPage .form .inputs > input {
     font-size: 1.3rem;
 }
-.form button {
+#ContactPage .form button {
     background-color: var(--color-primary);
     padding: 10px 40px;
     width: 100%;
@@ -84,7 +84,7 @@
     text-shadow: 0 0 10px black;
     transition: all 0.3s ease;
 }
-.form button:hover {
+#ContactPage .form button:hover {
     color: var(--color-primary);
     background: transparent;
     text-shadow: none;

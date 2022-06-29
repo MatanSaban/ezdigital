@@ -1,6 +1,5 @@
 import "./webdevelopment.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
-import { BsCheckCircleFill } from "react-icons/bs";
 import { ImUserTie } from "react-icons/im";
 import { ImList } from "react-icons/im";
 import { IoStorefrontOutline } from "react-icons/io5";
@@ -9,6 +8,7 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Json from "../ServicesData.json";
+import WhyUs from "../WhyUs";
 
 
 // const htmlDiv=document.querySelector('div');
@@ -65,31 +65,7 @@ const SingleServicePage = (props) => {
                     </i>
                 </div>
             </div>
-            <section id="whyUs" className="SingleServicePage__whyUs">
-                <h2>למה כדאי לפנות אלינו לגבי {props.title}?</h2>
-                <div>
-                    <span>
-                        <BsCheckCircleFill />
-                        פונטים מיוחדים ללא תוספת תשלום
-                    </span>
-                    <span>
-                        <BsCheckCircleFill />
-                        אחסון האתר למשך 6 חודשים ללא תשלום
-                    </span>
-                    <span>
-                        <BsCheckCircleFill />
-                        תמונות, סרטונים ואייקונים לבחירה ללא תשלום{" "}
-                    </span>
-                    <span>
-                        <BsCheckCircleFill />
-                        עיצוב בהתאמה אישית
-                    </span>
-                    <span>
-                        <BsCheckCircleFill />
-                        ניסיון ומקצועיות
-                    </span>
-                </div>
-            </section>
+            {props.reasons && <WhyUs title={props.title} reasons={props.reasons}/>}
             <div className="singleServicePageWrapper">
                 <section className="contentWrapper">
                     <h2>עוד מידע על {props.title}</h2>
@@ -124,8 +100,10 @@ const SingleServicePage = (props) => {
                     )}
                 </section>
                 {/* <section className=""> */}
-                <div>
+                <div style={{position:'relative'}}>
                     <div className="formWrapper">
+                        <h4 style={{margin:'0'}}>רוצים לדבר על {props.title} או כל דבר אחר?</h4>
+                        <p style={{padding:'0'}}>השאירו פרטים ונחזור אליכם מיד.</p>
                         <div className="form lineForm">
                             <input type="text" placeholder="שם מלא" />
                             <input type="number" placeholder="טלפון" />

@@ -2,40 +2,54 @@ import SinglePagesHero from "../../Special/SinglePage/SinglePagesHero/SignlePage
 import SingleServicePage from "../Web-development/SingleServicePage";
 
 const FacebookOrganic = (props) => {
-    return ( 
-        <div id="FacebookOrganicPage" className="facebookOrganicWrapper singleService">
-            <SinglePagesHero title={props.pageName} grandParentName={props.grandParentName} grandParentPath={props.grandParentPath} parentName={props.parentName} parentPath={props.parentPath}/>
+    return (
+        <div
+            id="FacebookOrganicPage"
+            className="facebookOrganicWrapper singleService"
+        >
+            <SinglePagesHero
+                title={props.pageName}
+                grandParentName={props.grandParentName}
+                grandParentPath={props.grandParentPath}
+                parentName={props.parentName}
+                parentPath={props.parentPath}
+            />
             <SingleServicePage
                 title={props.pageName}
                 path={props.path}
+                reasons={
+                    [
+                        'שקיפות מלאה',
+                        'הצגת תוצאות חודשיות',
+                        'תמונות, סרטונים ואייקונים לבחירה ללא תשלום',
+                        'מחירים נוחים ביחס לשוק',
+                        'ניסיון ומקצועיות',
+                    ]
+                }
                 pageHeading={
-                    <p>
-                        <b>בניית אתרים בעיצוב מיוחד, מותאם למובייל, עם דגש על
-                        מהירות וחווית משתמש שלא הכרתם!</b>
-                         <br />
-                        כל בעל עסק מבין שללא אתר אינטרנט קשה מאוד לעסק להתקיים
-                        בימינו. <br />
-                        אנחנו בחברת איזי דיגיטל עוסקים בבניית אתרים כבר מעל 5
-                        שנים <br />
-                        ויודעים להתאים לכל לקוח את האתר / חנות אינטרנטית בדיוק
-                        לצרכיו.
-                        <br />
-                        <big>
+                    <>
+                        <h2>מה זה פרסום אורגני בפייסבוק?</h2>
+                        <p>
+                            {/* פייסבוק היא פלטפורמת המדיה החברתית הפופולרית ביותר
+                            בעולם, עם למעלה מ-1.6 מיליארד משתמשים פעילים. <br />
+                            נכון לינואר 2022 מספר המשתמשים בפייסבוק ישראל הוא מעל 6
+                            מליון (!) <br /> */}
+                            פרסום אורגני בפייסבוק הוא דרך מצוינת לקדם את העסק,
+                            המוצר או השירות שלך לאנשים בפייסבוק מבלי לשלם כסף.{" "}
+                            <br />
+                            זוהי אחת הדרכים החסכוניות ביותר לפרסם בפייסבוק
+                            מכיוון שהיא אינה דורשת פרסומות בתשלום או פוסטים
+                            ממומנים. <br />
                             <b>
-                                {" "}
-                                לא משנה אם אתם עסק קטן או רשת חנויות, אנחנו נבנה
-                                לכם אתר ברמה הגבוהה ביותר בכל רמת תקציב.
-                                <br />
-                                כל שעליכם לעשות הוא להשאיר פרטים או לחייג אלינו
-                                ולקבל את השירות המקצועי ביותר!
-                                <br />
+                                רוצים לקדם את העסק שלכם בצורה אורגנית בפייסבוק?
+                                השאירו פרטים ונחזור אליכם מיד.
                             </b>
-                        </big>
-                    </p>
+                        </p>
+                    </>
                 }
             />
         </div>
-     );
-}
- 
+    );
+};
+
 export default FacebookOrganic;

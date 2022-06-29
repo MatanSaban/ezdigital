@@ -42,7 +42,9 @@ const SingleProject = (props) => {
         // observer.observe(scrollArea.current);
         // observer.observe(scrollBoundary.current);
         observer.observe(scrolledElement.current);
+        window.scrollTo(0, 0)
     },[])
+
 
 
     const { link } = useParams();
