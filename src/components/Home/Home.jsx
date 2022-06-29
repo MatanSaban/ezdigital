@@ -21,20 +21,18 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ProjectsJson from "../Projects/Projects.json";
 import { NavLink } from "react-router-dom";
-import Json from '../Header/MenuItems.json'
+import Json from "../Header/MenuItems.json";
 import { useEffect } from "react";
+import blogJson from "../Blog/Blog.json";
 
 // const dataToString = JSON.stringify(ProjectsJson);
 // const data = JSON.parse(dataToString);
 // console.log(data.Project1.description);
 // console.log(<pre>{{d}}</pre>);
-const RenderHTML=(text)=>{
-	const htmlPart=text
-    return(
-      <div dangerouslySetInnerHTML={ {__html: htmlPart} } />
-    )
-}
-
+const RenderHTML = (text) => {
+    const htmlPart = text;
+    return <div dangerouslySetInnerHTML={{ __html: htmlPart }} />;
+};
 
 const testimonials = {
     testimonial: {
@@ -65,11 +63,9 @@ const testimonials = {
 };
 
 const Home = () => {
-
     useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <main className="pageWrapper">
@@ -111,41 +107,103 @@ const Home = () => {
                     פרסום ממומן ברשתות החברתיות, בניית אסטרטגיה דיגיטלית לעסקים
                     ובניית אתרי תדמית, חנויות אונליין ואתרי תוכן.
                 </p>
-                <div style={{display:'flex', justifyContent:'space-between'}}>
-                {Object.keys(Json.Services.Submenu).map((keyName, index) => {
-                    return (
-                        <div className="service" style={{display:'flex', flexDirection:'column', alignItems:'center', alignContent:'center'}}>
-                            
-                            {Json.Services.Submenu[keyName].rel === 'one' && <Lottie animationData={one} loop={true} style={{ maxWidth: "500px" }}/>}
-                            {Json.Services.Submenu[keyName].rel === 'two' && <Lottie animationData={two} loop={true} style={{ maxWidth: "500px" }}/>}
-                            {Json.Services.Submenu[keyName].rel === 'three' && <Lottie animationData={three} loop={true} style={{ maxWidth: "500px" }}/>}
-                            {Json.Services.Submenu[keyName].rel === 'four' && <Lottie animationData={four} loop={true} style={{ maxWidth: "500px" }}/>}
-                            
-                            <NavLink to={Json.Services.Submenu[keyName].link}><h2>{Json.Services.Submenu[keyName].text}</h2></NavLink>
+                <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                    {Object.keys(Json.Services.Submenu).map(
+                        (keyName, index) => {
+                            return (
+                                <div key={index + keyName}
+                                    className="service"
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        alignContent: "center",
+                                    }}
+                                >
+                                    {Json.Services.Submenu[keyName].rel ===
+                                        "one" && (
+                                        <Lottie
+                                            animationData={one}
+                                            loop={true}
+                                            style={{ maxWidth: "500px" }}
+                                        />
+                                    )}
+                                    {Json.Services.Submenu[keyName].rel ===
+                                        "two" && (
+                                        <Lottie
+                                            animationData={two}
+                                            loop={true}
+                                            style={{ maxWidth: "500px" }}
+                                        />
+                                    )}
+                                    {Json.Services.Submenu[keyName].rel ===
+                                        "three" && (
+                                        <Lottie
+                                            animationData={three}
+                                            loop={true}
+                                            style={{ maxWidth: "500px" }}
+                                        />
+                                    )}
+                                    {Json.Services.Submenu[keyName].rel ===
+                                        "four" && (
+                                        <Lottie
+                                            animationData={four}
+                                            loop={true}
+                                            style={{ maxWidth: "500px" }}
+                                        />
+                                    )}
 
-                            {Json.Services.Submenu[keyName].subSubmenu && (
-                                <ul style={{margin:'0', display:'flex', flexDirection:'column', alignItems:'flex-start', alignContent:'center', justifyContent:'center', padding:'0 5px 0 0 '}}>
-                                    {Object.keys(
-                                        Json.Services.Submenu[keyName]
-                                            .subSubmenu
-                                    ).map((keyname) => {
-                                        return (
-                                            <NavLink to={`${Json.Services.Submenu[keyName].link}${Json.Services.Submenu[
-                                                keyName
-                                            ].subSubmenu[keyname].link}`}>
-                                                {
-                                                    Json.Services.Submenu[
-                                                        keyName
-                                                    ].subSubmenu[keyname].text
-                                                }
-                                            </NavLink>
-                                        );
-                                    })}
-                                </ul>
-                            )}
-                        </div>
-                    );
-                })}
+                                    <NavLink
+                                        to={Json.Services.Submenu[keyName].link}
+                                    >
+                                        <h2>
+                                            {
+                                                Json.Services.Submenu[keyName]
+                                                    .text
+                                            }
+                                        </h2>
+                                    </NavLink>
+
+                                    {Json.Services.Submenu[keyName]
+                                        .subSubmenu && (
+                                        <ul
+                                            style={{
+                                                margin: "0",
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                alignItems: "flex-start",
+                                                alignContent: "center",
+                                                justifyContent: "center",
+                                                padding: "0 5px 0 0 ",
+                                            }}
+                                        >
+                                            {Object.keys(
+                                                Json.Services.Submenu[keyName]
+                                                    .subSubmenu
+                                            ).map((keyname, index) => {
+                                                return (
+                                                    <NavLink key={index + keyname + index}
+                                                        to={`${Json.Services.Submenu[keyName].link}${Json.Services.Submenu[keyName].subSubmenu[keyname].link}`}
+                                                    >
+                                                        {
+                                                            Json.Services
+                                                                .Submenu[
+                                                                keyName
+                                                            ].subSubmenu[
+                                                                keyname
+                                                            ].text
+                                                        }
+                                                    </NavLink>
+                                                );
+                                            })}
+                                        </ul>
+                                    )}
+                                </div>
+                            );
+                        }
+                    )}
                 </div>
             </section>
             <section
@@ -178,7 +236,7 @@ const Home = () => {
                 >
                     {Object.keys(ProjectsJson).map((projectName, index) => {
                         return (
-                            <SwiperSlide key={index}>
+                            <SwiperSlide key={projectName + index}>
                                 <div
                                     className="projectHomepage"
                                     style={{
@@ -189,7 +247,10 @@ const Home = () => {
                                         <h3>
                                             {ProjectsJson[projectName].name}
                                         </h3>
-                                        { RenderHTML(ProjectsJson[projectName].description)}
+                                        {RenderHTML(
+                                            ProjectsJson[projectName]
+                                                .description
+                                        )}
                                         <NavLink
                                             to={`/projects${ProjectsJson[projectName].link}`}
                                         >
@@ -231,13 +292,13 @@ const Home = () => {
                     >
                         {Object.keys(testimonials).map((keyName, index) => {
                             return (
-                                <SwiperSlide key={index}>
+                                <SwiperSlide key={keyName + index + keyName}>
                                     <div
                                         className={`testimonial testimonial${index}`}
                                     >
                                         <h3>{testimonials[keyName].name}</h3>
                                         <h4>{testimonials[keyName].title}</h4>
-                                            { RenderHTML(testimonials[keyName].text)}
+                                        {RenderHTML(testimonials[keyName].text)}
                                     </div>
                                 </SwiperSlide>
                             );
@@ -259,6 +320,74 @@ const Home = () => {
                 >
                     ידע שווה זהב
                 </h2>
+                <div className="articles">
+                    <Swiper
+                    // install Swiper modules
+                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={100}
+                    slidesPerView={3}
+                    navigation
+                    loop={true}
+                    pagination={{ clickable: true }}
+                    // scrollbar={{ draggable: true }}
+                    >
+                        {Object.keys(blogJson.theBlog.articles).map(
+                            (articleName, index) => {
+                                return (
+                                    <SwiperSlide key={articleName + index}>
+                                        <div  className="article" style={{background: `url(${blogJson.theBlog.articles[articleName].image})`,}}>
+                                            <NavLink
+                                                to={`${blogJson.theBlog.link}${blogJson.theBlog.articles[articleName].link}`}
+                                            >
+                                                <div className="articleCover">
+                                                    {Object.keys(
+                                                        blogJson.theBlog
+                                                            .articles[
+                                                            articleName
+                                                        ].categories
+                                                    ).map(
+                                                        (categName, index) => {
+                                                            return (
+                                                                <div
+                                                                    className="categoryTag"
+                                                                    key={
+                                                                        categName +
+                                                                        index
+                                                                    }
+                                                                >
+                                                                    <span>
+                                                                        {
+                                                                            blogJson
+                                                                                .categories[
+                                                                                categName
+                                                                            ]
+                                                                        }
+                                                                    </span>
+                                                                </div>
+                                                            );
+                                                        }
+                                                    )}
+                                                    <h3>
+                                                        {
+                                                            blogJson.theBlog
+                                                                .articles[
+                                                                articleName
+                                                            ].title
+                                                        }
+                                                    </h3>
+                                                        <button>
+                                                            מעבר לכתבה
+                                                        </button>
+
+                                                </div>
+                                            </NavLink>
+                                        </div>
+                                    </SwiperSlide>
+                                );
+                            }
+                        )}
+                    </Swiper>
+                </div>
             </section>
         </main>
     );

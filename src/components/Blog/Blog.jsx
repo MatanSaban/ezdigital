@@ -24,7 +24,7 @@ const Blog = (props) => {
                                         })
                                     }
                                     <h3>{blogJson.theBlog.articles[articleName].title}</h3>
-                                    <NavLink to={`${blogJson.theBlog.link}${blogJson.theBlog.articles[articleName].link}`}><button>מעבר לכתבה</button></NavLink>
+                                    <button>מעבר לכתבה</button>
                                 </div>
                                 </NavLink>
                             </div>

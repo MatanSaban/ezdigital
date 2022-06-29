@@ -129,3 +129,93 @@ div.projectHomepageCover > a:hover {
 #services .service a:hover:after {
     background-color: var(--color-primary);
 }
+section#blog {
+    width: 80vw !important;
+}
+section#blog .articles {
+    width: 100%;
+    /* display: grid; */
+    grid-template-columns: 33% 33% 33%;
+    margin: 0 auto;
+    gap: 100px;
+    /* justify-content: center; */
+}
+section#blog .articles .article {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 10px black;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    position: relative;
+}
+section#blog .articles .article h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: underline transparent;
+    transition: var(--transition);
+}
+section#blog .articles .article:hover h3 {
+    text-decoration: underline;
+}
+section#blog .articles .article > a {
+    color: white;
+}
+section#blog .articleCover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* opacity: 0; */
+}
+section#blog .articleCover button {
+    opacity: 0;
+    background-color: var(--color-primary);
+    padding: 10px 40px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    text-shadow: 0 0 10px black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.516);
+    transition: var(--transition);
+}
+section#blog .articleCover:hover button {
+    opacity: 1;
+    transform: scale(1.2);
+}
+section#blog .categoryTag {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 218, 131, 0.423),
+        rgba(255, 179, 2, 0.3)
+    );
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+section#blog .articles .swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 50px;
+    z-index: 1;
+}

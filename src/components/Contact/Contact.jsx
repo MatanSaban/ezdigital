@@ -8,9 +8,6 @@ import {MdAlternateEmail} from 'react-icons/md'
 
 const Contact = (props) => {
 
-    console.log(props.location);
-
-
     return ( 
         <div id="ContactPage" className="contactWrapper">
             <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />

@@ -30,14 +30,14 @@ const SingleProject = (props) => {
 
 
     useEffect(() => {
-        console.log('myRef', scrollArea.current)
-        console.log('myRef', scrollBoundary.current)
-        console.log('myRef', scrolledElement.current)
+        // console.log('myRef', scrollArea.current)
+        // console.log('myRef', scrollBoundary.current)
+        // console.log('myRef', scrolledElement.current)
 
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
             setIsElementVisible(entry.isIntersecting)
-            console.log('isElementVisible', isElementVisible);
+            // console.log('isElementVisible', isElementVisible);
         })
         // observer.observe(scrollArea.current);
         // observer.observe(scrollBoundary.current);

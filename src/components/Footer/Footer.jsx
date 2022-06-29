@@ -5,6 +5,8 @@ import menuItems from "../Header/MenuItems.json";
 import { useState } from "react";
 import ProjectsJson from "../Projects/Projects.json";
 import Svg from "../Special/Logo/Svg.jsx";
+import blogJson from "../Blog/Blog.json";
+import { v4 as uuidv4 } from "uuid";
 
 const Footer = () => {
     const [subMenuItems, setSubMenuItems] = useState([]);
@@ -13,8 +15,10 @@ const Footer = () => {
         <footer className="centerText">
             <div className="footer__content">
                 <div className="about">
-                <NavLink to={'/'}><Svg /></NavLink>
-                    <p style={{ textAlign: "right", paddingRight:'100px' }}>
+                    <NavLink to={"/"}>
+                        <Svg />
+                    </NavLink>
+                    <p style={{ textAlign: "right", paddingRight: "100px" }}>
                         אנו חברת פרסום דיגיטלי העוסקת בבניית אתרים בוורדפרס,
                         <br />
                         פרסום אורגני, פרסום ממומן בגוגל,
@@ -28,9 +32,8 @@ const Footer = () => {
                         {Object.keys(menuItems.Services.Submenu).map(
                             (subMenuItem, index) => {
                                 return (
-                                    <li>
+                                    <li key={uuidv4()}>
                                         <NavLink
-                                            key={index}
                                             to={
                                                 menuItems.Services.Submenu[
                                                     subMenuItem
@@ -50,28 +53,33 @@ const Footer = () => {
                         {Object.keys(menuItems.Services.Submenu).map(
                             (subMenuItem, index) => {
                                 return (
-                                    menuItems.Services.Submenu[subMenuItem]
-                                        .subSubmenu !== undefined &&
-                                    Object.keys(
-                                        menuItems.Services.Submenu[subMenuItem]
-                                            .subSubmenu
-                                    ).map((i) => {
-                                        return (
-                                            <li>
-                                                <NavLink
-                                                    key={index + i}
-                                                    to={`${menuItems.Services.Submenu[subMenuItem].link}${menuItems.Services.Submenu[subMenuItem].subSubmenu[i].link}`}
-                                                >
-                                                    {
-                                                        menuItems.Services
-                                                            .Submenu[
-                                                            subMenuItem
-                                                        ].subSubmenu[i].text
-                                                    }
-                                                </NavLink>
-                                            </li>
-                                        );
-                                    })
+                                    <div key={uuidv4()}>
+                                        {menuItems.Services.Submenu[subMenuItem]
+                                            .subSubmenu !== undefined &&
+                                            Object.keys(
+                                                menuItems.Services.Submenu[
+                                                    subMenuItem
+                                                ].subSubmenu
+                                            ).map((i) => {
+                                                return (
+                                                    <li key={uuidv4()}>
+                                                        <NavLink
+                                                            
+                                                            to={`${menuItems.Services.Submenu[subMenuItem].link}${menuItems.Services.Submenu[subMenuItem].subSubmenu[i].link}`}
+                                                        >
+                                                            {
+                                                                menuItems
+                                                                    .Services
+                                                                    .Submenu[
+                                                                    subMenuItem
+                                                                ].subSubmenu[i]
+                                                                    .text
+                                                            }
+                                                        </NavLink>
+                                                    </li>
+                                                );
+                                            })}
+                                    </div>
                                 );
                             }
                         )}
@@ -82,7 +90,7 @@ const Footer = () => {
                     <ul style={{ textAlign: "right" }}>
                         {Object.keys(ProjectsJson).map((projectName, index) => {
                             return (
-                                <li key={index + projectName}>
+                                <li key={uuidv4()}>
                                     <NavLink
                                         to={`/projects${ProjectsJson[projectName].link}`}
                                     >
@@ -95,6 +103,25 @@ const Footer = () => {
                 </div>
                 <div className="blog">
                     <h3>הבלוג</h3>
+                    <ul style={{ textAlign: "right" }}>
+                        {Object.keys(blogJson.theBlog.articles).map(
+                            (articleName, index) => {
+                                return (
+                                    <li key={uuidv4()}>
+                                        <NavLink
+                                            to={`${blogJson.theBlog.link}${blogJson.theBlog.articles[articleName].link}`}
+                                        >
+                                            {
+                                                blogJson.theBlog.articles[
+                                                    articleName
+                                                ].title
+                                            }
+                                        </NavLink>
+                                    </li>
+                                );
+                            }
+                        )}
+                    </ul>
                 </div>
             </div>
             <div className="formWrapper">

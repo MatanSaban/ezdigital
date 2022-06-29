@@ -204,8 +204,24 @@
     right: 0%;
 }
 #toTopButton button {
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 50%;
-    height: 80px;
-    width: 80px;
+    /* height: 80px;
+    width: 80px; */
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: var(--color-primary);
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(15px) !important;
+}
+#toTopButton path {
+    filter: drop-shadow(0px 0px 1px #00000070);
+    transition: all 0.3s ease;
+}
+#toTopButton:hover path {
+    filter: drop-shadow(0px 2px 1px #00000070);
+}
+#toTopButton:hover svg {
+    margin-top: -10px;
 }
