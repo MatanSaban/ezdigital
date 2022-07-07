@@ -38,7 +38,7 @@ const SingleProject = (props) => {
     };
 
     useEffect(() => {
-        // getMultipleRandom(projectsArray,2)
+
         Object.keys(ProjectsJson).map((projectName, index) => {
             if (ProjectsJson[projectName] !== ProjectsJson[link]) {
                 setProjectsArray((projectsArray) => [

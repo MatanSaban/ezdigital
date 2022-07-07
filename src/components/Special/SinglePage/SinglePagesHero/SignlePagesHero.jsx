@@ -8,16 +8,10 @@ const SinglePagesHero = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+      },[] )
     return (
         <section className="singlePageHero">
-            <TypeWriterEffect
-                textStyle={{ fontFamily: "Danidin" }}
-                startDelay={100}
-                cursorColor="transparent"
-                text={props.title}
-                typeSpeed={100}
-            />
+            <h1>{props.title}</h1>
             <div className="breadCrumbs">
                 {props.grandParentPath && (
                     <>
@@ -28,9 +22,14 @@ const SinglePagesHero = (props) => {
                             {props.grandParentName}{" "}
                         </NavLink>
                         <FaAngleDoubleLeft />{" "}
+                        <NavLink to={`${props.grandParentPath}${props.parentPath}`}>
+                        {props.parentName}
+                        </NavLink>{" "}
+                        <FaAngleDoubleLeft />{" "}
+                        {props.title}
                     </>
                 )}
-                {props.parentPath !== "/" && !props.grandParentPath ? (
+                {props.parentPath !== "/" && !props.grandParentPath && (
                     <>
                         <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
                         <FaAngleDoubleLeft />{" "}
@@ -38,14 +37,25 @@ const SinglePagesHero = (props) => {
                             {" "}
                             {props.parentName}{" "}
                         </NavLink>
+                        {" "}<FaAngleDoubleLeft />{" "}
+                        {props.title}
                     </>
-                ) : (
-                    <NavLink to={`${props.grandParentPath}${props.parentPath}`}>
+                )}
+                {props.parentPath == '/' && !props.grandParentPath && (
+                    <>
+                    
+                        <NavLink to={`${props.parentPath}`}>
+                            {" "}
+                            {props.parentName}{" "}
+                        </NavLink>
                         {" "}
-                        {props.parentName}{" "}
-                    </NavLink>
-                )}{" "}
-                <FaAngleDoubleLeft /> {props.title}
+                        <FaAngleDoubleLeft />{" "}
+                            {" "}
+                            {props.title}{" "}
+                    </>
+                )
+                    
+                }
             </div>
         </section>
     );

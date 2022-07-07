@@ -145,3 +145,79 @@ section.blogContent {
     text-shadow: none;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.237);
 }
+#singleBlog .nextandprevblogpostsWrapper {
+    min-height: 0px;
+}
+#singleBlog .nextandprevblogposts {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    z-index: 0;
+}
+
+#singleBlog .nextandprevblogposts a.nextBlog {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    color: white;
+    transform: translateY(-50%);
+}
+#singleBlog .nextandprevblogposts a.prevBlog {
+    position: fixed;
+    left: right;
+    top: 50%;
+    color: white;
+    transform: translateY(-50%);
+}
+#singleBlog .nextandprevblogposts a.nextBlog > div {
+    border-radius: 0 20px 20px 0;
+}
+#singleBlog .nextandprevblogposts a.prevBlog > div {
+    border-radius: 20px 0 0 20px;
+}
+#singleBlog .nextandprevblogposts a.nextBlog .blogItemCover {
+    border-radius: 0 20px 20px 0;
+    transition: all 0.5s ease;
+}
+#singleBlog .nextandprevblogposts a.prevBlog .blogItemCover {
+    border-radius: 20px 0 0 20px;
+    transition: all 0.5s ease;
+}
+#singleBlog .nextandprevblogposts a.nextBlog:hover .blogItemCover {
+    background-color: #00000070;
+    opacity: 1;
+}
+#singleBlog .nextandprevblogposts a.prevBlog:hover .blogItemCover {
+    background-color: #00000070;
+    opacity: 1;
+}
+#singleBlog .nextandprevblogposts a > div {
+    height: 100px;
+    width: 100px;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px -10px black;
+    transition: all 0.3s ease;
+}
+#singleBlog .nextandprevblogposts > a > div > .blogItemCover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+#singleBlog .nextandprevblogposts > a:hover > div {
+    height: 200px;
+    width: 300px;
+}
+section.blogContent {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
