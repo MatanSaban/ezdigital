@@ -24,6 +24,8 @@ import { NavLink } from "react-router-dom";
 import Json from "../Header/MenuItems.json";
 import { useEffect } from "react";
 import blogJson from "../Blog/Blog.json";
+import { useMediaQuery } from 'react-responsive'; 
+
 
 // const dataToString = JSON.stringify(ProjectsJson);
 // const data = JSON.parse(dataToString);
@@ -33,6 +35,8 @@ const RenderHTML = (text) => {
     const htmlPart = text;
     return <div dangerouslySetInnerHTML={{ __html: htmlPart }} />;
 };
+
+
 
 const testimonials = {
     testimonial: {
@@ -63,6 +67,9 @@ const testimonials = {
 };
 
 const Home = () => {
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
+    
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -325,7 +332,7 @@ const Home = () => {
                     // install Swiper modules
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={100}
-                    slidesPerView={3}
+                    slidesPerView={!isMobile ? 3: 1}
                     navigation
                     loop={true}
                     pagination={{ clickable: true }}
