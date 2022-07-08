@@ -173,3 +173,27 @@ section.websiteDevelop__services a:hover {
         bottom: -30%;
     }
 }
+
+@media only screen and (max-width: 760px) {
+    .singleService .breadCrumbs {
+        position: absolute;
+        right: 10px;
+        top: 200px;
+    }
+    #SingleServicePage .SingleServicePage__hero {
+        padding: 25px;
+    }
+    .singleServicePageWrapper {
+        width: 330px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+    .websiteDevelop__services__item svg {
+        width: 30px;
+    }
+    .websiteDevelop__services__item > span {
+        font-size: 1rem;
+        height: 0px;
+    }
+}
