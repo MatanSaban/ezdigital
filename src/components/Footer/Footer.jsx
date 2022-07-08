@@ -8,13 +8,17 @@ import Svg from "../Special/Logo/Svg.jsx";
 import blogJson from "../Blog/Blog.json";
 import { v4 as uuidv4 } from "uuid";
 import Form from "../Special/Form/Form";
+import { useMediaQuery } from 'react-responsive';
+
 
 const Footer = () => {
     const [subMenuItems, setSubMenuItems] = useState([]);
 
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
+
     return (
         <footer className="centerText">
-            <div className="footer__content">
+            <div className="footer__content" style={!isMobile ? {display:'grid', gridTemplateColumns:'25% 25% 25% 25% '} : {display:'flex', flexDirection:'column'}}>
                 <div className="about">
                     <NavLink to={"/"}>
                         <Svg />

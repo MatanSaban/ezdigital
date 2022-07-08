@@ -219,3 +219,95 @@ section#blog .articles .swiper {
     padding: 50px;
     z-index: 1;
 }
+
+@media only screen and (max-width: 770px) {
+    #hero > #Layer_2 {
+        width: 400px;
+        height: 150px;
+    }
+    #hero #Layer_2 .cls-1,
+    #hero #Layer_2 .cls-3,
+    #hero #Layer_2 .cls-8,
+    #hero #Layer_2 .cls-9 {
+        animation-name: lightBulb;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+    }
+    #hero #Layer_2 .cls-2,
+    #hero #Layer_2 .cls-4,
+    #hero #Layer_2 .cls-6,
+    #hero #Layer_2 .cls-7,
+    #hero #Layer_2 .cls-10 {
+        animation-name: logoText;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+    }
+
+    section#services {
+        max-width: 100vw;
+    }
+    section#services > div {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+    }
+    section#services .service {
+        margin: 20px;
+    }
+    section#services .service > div {
+        max-width: 200px !important;
+    }
+    section#services .service ul a {
+        font-size: 2rem;
+        margin: 10px 0;
+    }
+
+    section#projects .projectHomepageCover p {
+        font-size: 1.2rem;
+        line-height: 40px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    section#testimonials {
+        max-width: 100vw;
+    }
+    section#testimonials .testimonial > div p {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    section#testimonials .swiper {
+        height: 300px;
+    }
+    section#testimonials .swiper .swiper-pagination {
+        bottom: 0 !important;
+    }
+
+    section#blog {
+        width: 100vw !important;
+    }
+}
+
+@keyframes lightBulb {
+    0% {
+        fill: #fbb141;
+    }
+    100% {
+        fill: #fae163;
+        filter: drop-shadow(0px 0px 10px #f5e594);
+        transform: scale(1.05) translateX(-20px);
+        z-index: 9;
+    }
+}
+@keyframes logoText {
+    0% {
+        filter: drop-shadow(0px 0px 0px #00000000);
+    }
+    100% {
+        filter: drop-shadow(30px 0px 10px #00000056);
+    }
+}

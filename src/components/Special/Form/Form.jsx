@@ -1,9 +1,12 @@
 import './Form.css'
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+
 
 
 const Form = (props) => {
+    const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
 
     const form = useRef();
 
