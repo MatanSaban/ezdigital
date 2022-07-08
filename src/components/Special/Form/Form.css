@@ -63,8 +63,8 @@
 }
 
 .fullWidthForm.lineForm {
-    width: 100%;
-    height: 180px !important;
+    width: fit-content;
+    height: fit-content;
     padding: 20px;
 }
 .lineForm {
@@ -75,14 +75,26 @@
     align-items: center;
     justify-content: space-between;
 }
+footer .formWrapper .heading {
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+footer .lineForm {
+    background: transparent;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+footer .fullWidthForm.lineForm {
+    padding: 0;
+}
 .lineForm .inputs {
     display: flex;
     justify-content: center;
 }
 .lineForm .inputs input {
-    width: 20%;
+    width: 33%;
     padding: 10px;
-    margin: 30px 5px 10px 0;
+    margin: 30px 15px 10px 15px;
     border-radius: 20px;
     outline: none;
     font-size: 1.2rem;
@@ -117,7 +129,7 @@
     text-shadow: 0 0 10px black;
     transition: var(--transition);
     font-weight: bold;
-    width: 86%;
+    width: 96%;
     border: none;
     border-radius: 100px;
     padding: 10px 0;
@@ -153,19 +165,41 @@
 
 @media only screen and (max-width: 760px) {
     .formWrapper {
-        width: 95% !important;
-        margin-top: 60px !important;
+        width: 100% !important;
+        margin: 60px auto 0 auto !important;
+    }
+    .formWrapper h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+    .lineForm {
+        background: transparent;
+    }
+    .lineForm button {
+        background: var(--color-primary);
+        color: white;
+        text-shadow: 0 0 10px black;
+        transition: var(--transition);
+        font-weight: bold;
+        width: 100%;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 0;
+        font-size: 1.5rem;
     }
     .lineForm .inputs {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 32% 32% 32%;
     }
     .lineForm .inputs input {
         width: 80%;
+        margin: 0 auto;
     }
     .lineForm .whatWeAreGoingToTalkAbout {
         flex-direction: column;
         margin: 20px 0;
+        display: none;
     }
     .fullWidthForm.lineForm {
         width: 100%;

@@ -246,17 +246,26 @@ section#blog .articles .swiper {
         animation-iteration-count: infinite;
         animation-direction: alternate-reverse;
     }
+    #hero h1 {
+        font-size: 2rem;
+    }
+    #hero h2 {
+        font-size: 1.5rem;
+    }
 
     section#services {
         max-width: 100vw;
     }
     section#services > div {
-        display: flex;
-        flex-direction: column;
+        display: grid !important;
+        grid-template-columns: 50% 50%;
         width: 100vw;
     }
     section#services .service {
         margin: 20px;
+    }
+    section#services .service > a h2 {
+        font-size: 1.12rem;
     }
     section#services .service > div {
         max-width: 200px !important;
@@ -264,6 +273,7 @@ section#blog .articles .swiper {
     section#services .service ul a {
         font-size: 2rem;
         margin: 10px 0;
+        font-size: 1.05rem;
     }
 
     section#projects .projectHomepageCover p {

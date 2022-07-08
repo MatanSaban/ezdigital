@@ -229,7 +229,12 @@
     color: white;
     text-shadow: 0 0 20px black;
 }
-
+.mobileMenuWrapper {
+    display: none;
+}
+.mobileMenuPopup {
+    display: none;
+}
 @media only screen and (max-width: 770px) {
     .mainMenu .mainMenu__list,
     .logoAndPhone .phoneButton {
@@ -328,6 +333,7 @@
         /* color: red; */
         z-index: 999;
         transition: all 0.3s ease;
+        display: block;
     }
     .mobileMenuPopup-open {
         left: 0%;
@@ -349,5 +355,8 @@
         font-size: 3.5rem;
         font-weight: bold;
         text-shadow: 0 0 50px rgba(255, 255, 255, 0.554);
+    }
+    #toTopButton {
+        display: none;
     }
 }

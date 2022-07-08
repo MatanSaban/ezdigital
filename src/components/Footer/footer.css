@@ -33,3 +33,35 @@ footer svg#Layer_2 {
     margin: 20px 0 0 0;
     padding: 10px;
 }
+.formHolder {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0),
+        rgba(0, 0, 0, 0.379)
+    );
+    backdrop-filter: blur(5px);
+}
+footer .formWrapper .heading {
+    color: white;
+    text-shadow: 0 0 10px black;
+    width: 50%;
+}
+@media only screen and (max-width: 760px) {
+    .about p {
+        text-align: right !important;
+        padding-right: 40px !important;
+    }
+    footer .formWrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0px auto 0 auto !important;
+    }
+    footer .formWrapper .heading {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

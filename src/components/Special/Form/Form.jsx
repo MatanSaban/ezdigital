@@ -31,7 +31,7 @@ const Form = (props) => {
 
 
     return (
-        <div className="formWrapper" style={props.wrapperStyle}>
+        <div className="formWrapper" style={{display:'flex', alignItems:'center'}}>
             {emailPopup && <div className='popup'>
                 <h1>ההודעה נשלחה בהצלחה, ניצור איתך קשר בקרוב מאוד!</h1>
             </div>}
@@ -42,16 +42,9 @@ const Form = (props) => {
                 <div className="inputs">
                     <input
                         type="text"
-                        placeholder="שם פרטי"
-                        id="userFirstName"
-                        name="userFirstName"
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="שם משפחה"
-                        id="userLastName"
-                        name="userLastName"
+                        placeholder="שם מלא"
+                        id="userFullName"
+                        name="userFullName"
                         required
                     />
                     <input
@@ -69,33 +62,35 @@ const Form = (props) => {
                         required
                     />
                 </div>
-                {
+                {props.parent == 'footer' && props.isElementVisible ?
                     props.whatAreWeGoingToTalkAbout && 
                     <div className='whatWeAreGoingToTalkAbout'>
-                    <p>על מה נדבר?</p>
-                    <div className="checkboxes">
-                        <span className="checkbox">
-                            <input type="checkbox" name="website" id="website" />
-                            בניית אתר
-                        </span>
-                        <span className="checkbox">
-                            <input type="checkbox" name="google" id="google" />
-                            פרסום בגוגל
-                        </span>
-                        <span className="checkbox">
-                            <input type="checkbox" name="social" id="social" />
-                            פרסום ברשתות החברתיות
-                        </span>
-                        <span className="checkbox">
-                            <input type="checkbox" name="branding" id="branding" />
-                            מיתוג עסקי
-                        </span>
-                        <span className="checkbox">
-                            <input type="checkbox" name="else" id="else" />
-                            משהו אחר
-                        </span>
+                        <p>על מה נדבר?</p>
+                        <div className="checkboxes">
+                            <span className="checkbox">
+                                <input type="checkbox" name="website" id="website" />
+                                בניית אתר
+                            </span>
+                            <span className="checkbox">
+                                <input type="checkbox" name="google" id="google" />
+                                פרסום בגוגל
+                            </span>
+                            <span className="checkbox">
+                                <input type="checkbox" name="social" id="social" />
+                                פרסום ברשתות החברתיות
+                            </span>
+                            <span className="checkbox">
+                                <input type="checkbox" name="branding" id="branding" />
+                                מיתוג עסקי
+                            </span>
+                            <span className="checkbox">
+                                <input type="checkbox" name="else" id="else" />
+                                משהו אחר
+                            </span>
+                        </div>
                     </div>
-                </div>
+                    : 
+                    ""
                 }
                 <button style={!props.whatAreWeGoingToTalkAbout ? {marginBottom:'20px', width:'91%'}: {marginBottom:'0'}}>שליחה</button>
             </form>
