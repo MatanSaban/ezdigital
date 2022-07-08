@@ -24,48 +24,7 @@
 #SingleServicePage .SingleServicePage__hero p {
     font-size: 1.5rem;
 }
-.lineForm {
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    background: var(--color-primary);
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 50px;
-    box-shadow: 0 0 30px rgba(120, 120, 120, 0.285);
-    width: 100%;
-}
-.formWrapper {
-    width: 100%;
-    margin-top: 40px;
-}
-.SingleServicePage__hero .lineForm {
-    margin: 0 -5px 0 0;
-}
-.lineForm input,
-.lineForm button {
-    padding: 10px 25px;
-    border-radius: 50px;
-    border: 0;
-    font-size: 1.2rem;
-    margin: 0 5px;
-    font-weight: bold;
-    width: 33.3%;
-}
-.lineForm input {
-    background: rgb(224, 224, 224);
-}
-.lineForm button {
-    background: var(--color-primary);
-    color: white;
-    text-shadow: 0 0 10px black;
-    transition: var(--transition);
-    font-weight: bold;
-}
-.lineForm button:hover {
-    color: var(--color-primary);
-    background: black;
-}
+
 .SingleServicePage__hero .scrollDown {
     position: absolute;
     bottom: 10%;

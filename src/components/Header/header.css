@@ -225,3 +225,7 @@
 #toTopButton:hover svg {
     margin-top: -10px;
 }
+.phoneButton {
+    color: white;
+    text-shadow: 0 0 20px black;
+}

@@ -154,10 +154,10 @@ const Header = () => {
                 <a
                     onMouseEnter={() => setIsShown(true)}
                     onMouseLeave={() => setIsShown(false)}
+                    className="phoneButton"
                     href="tel:052-798-4133"
                     style={{
                         textDecoration: "none",
-                        color: "black",
                         fontSize: "1.2rem",
                         position: "relative",
                     }}

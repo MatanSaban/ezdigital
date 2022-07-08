@@ -1,0 +1,152 @@
+.formWrapper {
+    text-align: center;
+}
+.formWrapper h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+.formWrapper h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.formWrapper .longForm .checkbox {
+    font-size: 1rem;
+}
+.formWrapper .longForm input[type="text"],
+.formWrapper .longForm input[type="email"] {
+    border: 0;
+    border-bottom: 2px solid rgb(106, 106, 106);
+    /* border-right: 0.5px solid rgb(106, 106, 106); */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.209);
+    padding: 10px;
+    border-radius: 10px;
+    width: 95%;
+    margin: 5px 0;
+}
+.formWrapper .longForm .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    height: 200px;
+}
+.formWrapper .longForm .inputs > input {
+    font-size: 1.3rem;
+}
+.formWrapper .longForm button {
+    background-color: var(--color-primary);
+    padding: 10px 40px;
+    width: 100%;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.36);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
+    transition: all 0.3s ease;
+}
+.formWrapper .longForm button:hover {
+    color: var(--color-primary);
+    background: transparent;
+    text-shadow: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.237);
+}
+
+.longForm {
+    width: 500px;
+    margin: 0 auto;
+}
+.longForm button {
+    width: 99% !important;
+}
+
+.fullWidthForm.lineForm {
+    width: 100%;
+    height: 180px !important;
+    padding: 20px;
+}
+.lineForm {
+    background: var(--color-primary);
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.lineForm .inputs {
+    display: flex;
+    justify-content: center;
+}
+.lineForm .inputs input {
+    width: 20%;
+    padding: 10px;
+    margin: 30px 5px 10px 0;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1.2rem;
+    border: none;
+    font-weight: bold;
+    background: rgb(224, 224, 224);
+}
+.lineForm p {
+    /* margin: 30px 0 -20px 0; */
+}
+.lineForm .checkboxes {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.lineForm .checkboxes .checkbox {
+    margin: 0 5px;
+}
+.lineForm .whatWeAreGoingToTalkAbout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.lineForm .whatWeAreGoingToTalkAbout p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.lineForm button {
+    background: var(--color-primary);
+    color: white;
+    text-shadow: 0 0 10px black;
+    transition: var(--transition);
+    font-weight: bold;
+    width: 86%;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+.lineForm button:hover {
+    color: var(--color-primary);
+    background: black;
+}
+.checkboxes {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+.popup {
+    position: fixed;
+    height: 30vh;
+    width: 30vw;
+    background-color: white;
+    color: black;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100px;
+    box-shadow: 0 0 10px black;
+    padding: 5vh 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

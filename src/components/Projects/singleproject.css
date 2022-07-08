@@ -19,6 +19,13 @@
     justify-content: center;
     align-items: center;
 }
+.heroCover .button {
+    transition: all 0.3s ease;
+}
+.heroCover .button:hover {
+    background-color: white !important;
+    color: black;
+}
 #singleProject .hero h1,
 #singleProject .hero h3,
 #singleProject .hero pre,

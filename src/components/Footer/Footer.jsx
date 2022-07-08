@@ -7,6 +7,7 @@ import ProjectsJson from "../Projects/Projects.json";
 import Svg from "../Special/Logo/Svg.jsx";
 import blogJson from "../Blog/Blog.json";
 import { v4 as uuidv4 } from "uuid";
+import Form from "../Special/Form/Form";
 
 const Footer = () => {
     const [subMenuItems, setSubMenuItems] = useState([]);
@@ -123,31 +124,10 @@ const Footer = () => {
                         )}
                     </ul>
                 </div>
+                
             </div>
-            <div className="formWrapper">
-                <h4>קליק קטן לאדם, צעד גדול לעסק.</h4>
-                <div className="footer__contact lineForm">
-                    <input
-                        type="text"
-                        name="fullname"
-                        id="fullname"
-                        placeholder="שם מלא"
-                    />
-                    <input
-                        type="number"
-                        name="phonenumber"
-                        id="phonenumber"
-                        placeholder="מספר טלפון"
-                    />
-                    <input
-                        type="email"
-                        name="useremail"
-                        id="useremail"
-                        placeholder="אימייל"
-                    />
-                    <button>שליחה</button>
-                </div>
-            </div>
+                <Form whatAreWeGoingToTalkAbout={true} wrapperStyle={{width:'50%', margin:'0 auto'}} formStyle={'fullWidthForm lineForm'} title={<><h3>קליק קטן לאדם, צעד גדול לעסק.</h3></>}/>
+        <div className="copyrights">כל הזכויות שמורות לEasy Digital</div>
         </footer>
     );
 };

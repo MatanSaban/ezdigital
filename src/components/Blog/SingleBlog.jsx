@@ -4,6 +4,7 @@ import "./singleblog.css";
 import { Parallax } from "react-parallax";
 import { useEffect, useRef, useState } from "react";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
+import Form from '../Special/Form/Form'
 
 const Container = (props) => (
     <Parallax
@@ -139,15 +140,8 @@ const SingleBlog = (props) => {
                             }
                         </div>
             </section>
-            <section className="leaveDetails">
-                <h3>רוצה לדבר על זה?</h3>
-                <p>פרטים בקטנה וכבר נחזור אליך!</p>
-                <div className="form">
-                        <input type="text" placeholder="שם מלא.. צריכים להכיר לא?" />
-                        <input type="text" placeholder="מספר נייד, כדי שתוכל לטייל עם הכלב בזמן השיחה :)" />
-                        <input type="email" placeholder="אימייל למקרה שהמספר פלאפון לא נכון" />
-                        <button>יאללה, תחזרו אלי</button>
-                </div>
+            <section style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', minHeight:'fit-content', marginTop:'100px'}}>
+                <Form formStyle={'longForm'} title={<><h3>רוצה לדבר על זה?</h3><p>פרטים בקטנה וכבר נחזור אליך!</p></>}/>
             </section>
             <section className="nextandprevblogpostsWrapper">
                 <div className="nextandprevblogposts">

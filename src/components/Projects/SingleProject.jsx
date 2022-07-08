@@ -3,6 +3,7 @@ import ProjectsJson from "../Projects/Projects.json";
 import "./singleproject.css";
 import { Parallax } from "react-parallax";
 import { useEffect, useRef, useState } from "react";
+import Form from "../Special/Form/Form";
 
 const Container = (props) => (
     <Parallax
@@ -83,10 +84,12 @@ const SingleProject = (props) => {
                     <h3>{ProjectsJson[link].whatWeDid}</h3>
                     {RenderHTML(ProjectsJson[link].description)}
                     <a
+                        className="button"
                         style={{
                             background: `${ProjectsJson[link].colors.mainColor}`,
                         }}
                         href={ProjectsJson[link].websiteLink}
+                        target="_blank" rel="noreferrer"
                     >
                         מעבר לאתר
                     </a>
@@ -191,33 +194,7 @@ const SingleProject = (props) => {
                         <h4>אהבת את האתר של {ProjectsJson[link].name}?</h4>
                         <p>גם העסק שלך יכול לקבל אתר כזה!</p>
                     </div>
-                    <div className="lineForm">
-                        <input
-                            type="text"
-                            name="fullname"
-                            id="fullname"
-                            placeholder="שם מלא"
-                        />
-                        <input
-                            type="number"
-                            name="phonenumber"
-                            id="phonenumber"
-                            placeholder="מספר טלפון"
-                        />
-                        <input
-                            type="email"
-                            name="useremail"
-                            id="useremail"
-                            placeholder="אימייל"
-                        />
-                        <input
-                            type="hidden"
-                            name="hidden_site_name"
-                            id="hidden_site_name"
-                            value={ProjectsJson[link].name}
-                        />
-                        <button>שליחה</button>
-                    </div>
+                        <Form formStyle={'lineForm'}/>
                 </div>
             </section>
             <section className="nextandprevprojectsWrapper">

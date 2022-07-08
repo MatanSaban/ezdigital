@@ -9,6 +9,7 @@ import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Json from "../ServicesData.json";
 import WhyUs from "../WhyUs";
+import Form from "../../Special/Form/Form";
 
 
 // const htmlDiv=document.querySelector('div');
@@ -53,11 +54,7 @@ const SingleServicePage = (props) => {
             <div className="SingleServicePage__hero">
                 {props.pageHeading}
                 <div>
-                    <div className="form lineForm">
-                        <input type="text" placeholder="שם מלא" />
-                        <input type="number" placeholder="טלפון" />
-                        <button>שליחה</button>
-                    </div>
+                <Form wrapperStyle={{ margin:'0 auto'}} formStyle={'lineForm'}/>
                 </div>
                 <div className="scrollDown">
                     <i className="iconupDown">
@@ -101,15 +98,7 @@ const SingleServicePage = (props) => {
                 </section>
                 {/* <section className=""> */}
                 <div style={{position:'relative'}}>
-                    <div className="formWrapper">
-                        <h4 style={{margin:'0'}}>רוצים לדבר על {props.title} או כל דבר אחר?</h4>
-                        <p style={{padding:'0'}}>השאירו פרטים ונחזור אליכם מיד.</p>
-                        <div className="form lineForm">
-                            <input type="text" placeholder="שם מלא" />
-                            <input type="number" placeholder="טלפון" />
-                            <button>שליחה</button>
-                        </div>
-                    </div>
+                <Form formStyle={'lineForm'}/>
                 </div>
                 {/* </section> */}
             </div>
