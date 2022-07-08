@@ -10,7 +10,7 @@ import { IoRocketOutline } from "react-icons/io5";
 import { IoCodeSlashOutline } from "react-icons/io5";
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import SingleServicePage from "./SingleServicePage";
+import SingleServicePage from "../SingleServicePage";
 
 const LandingPage = (props) => {
     return (

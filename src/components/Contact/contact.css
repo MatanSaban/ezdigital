@@ -49,3 +49,25 @@
 .contactContent > div {
     width: 35%;
 }
+
+@media only screen and (max-width: 760px) {
+    .contactContent > div {
+        width: 100%;
+        margin-top: 0;
+    }
+    #ContactPage > div {
+        height: 100vh;
+        background-position: left center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 300px;
+        margin-top: -50px;
+        z-index: 2;
+    }
+    .contactContent {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        font-size: 2rem;
+    }
+}

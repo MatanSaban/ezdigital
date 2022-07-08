@@ -1,4 +1,4 @@
-import "./webdevelopment.css";
+import "./Web-development/webdevelopment.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
 import { ImUserTie } from "react-icons/im";
 import { ImList } from "react-icons/im";
@@ -7,9 +7,9 @@ import { IoRocketOutline } from "react-icons/io5";
 import { IoCodeSlashOutline } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import Json from "../ServicesData.json";
-import WhyUs from "../WhyUs";
-import Form from "../../Special/Form/Form";
+import Json from "./ServicesData.json";
+import WhyUs from "./WhyUs";
+import Form from "../Special/Form/Form";
 
 
 // const htmlDiv=document.querySelector('div');

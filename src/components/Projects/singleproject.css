@@ -272,3 +272,58 @@ section.projectContactForm {
     font-size: 3rem;
     color: var(--color-primary);
 }
+
+@media only screen and (max-width: 760px) {
+    #singleProject .colorsPallete > div {
+        padding: 0;
+        font-size: 1rem;
+    }
+    .projectSummaryCover pre {
+        font-size: 1.5rem;
+    }
+    section.projectSummary {
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+    section.projectContactForm {
+        padding: 10px;
+    }
+    .lineForm .inputs {
+        margin-bottom: 20px;
+    }
+    section.nextandprevprojectsWrapper
+        .nextandprevprojects
+        .nextProjectItem
+        > div {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    section.nextandprevprojectsWrapper
+        .nextandprevprojects
+        .nextProjectItem
+        .nextProjectItemCover {
+        opacity: 1;
+    }
+    section.nextandprevprojectsWrapper
+        .nextandprevprojects
+        .nextProjectItem
+        .nextProjectItemCover
+        h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    section.nextandprevprojectsWrapper
+        .nextandprevprojects
+        .nextProjectItem
+        .nextProjectItemCover
+        button {
+        font-size: 1.7rem;
+        padding: 5px 10px;
+    }
+    #singleProject > section.hero > .heroCover h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

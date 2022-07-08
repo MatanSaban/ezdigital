@@ -76,3 +76,46 @@
     border-radius: 20px;
     backdrop-filter: blur(5px);
 }
+@media only screen and (max-width: 760px) {
+    #blogPage .articles {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 40% 40%;
+        margin: 0px auto;
+        gap: 30px;
+        justify-content: center;
+    }
+    #singleBlog .nextandprevblogposts a > div {
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .blogContent .sections {
+        width: 82% !important;
+        margin: 50px auto;
+        -webkit-backdrop-filter: blur(30px);
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.755);
+        padding: 150px 20px !important;
+        border-radius: 250px;
+    }
+    .blogContent .sections .contentSection h3 {
+        font-size: 1.19rem !important;
+    }
+    .blogContent .sections .contentSection pre {
+        font-size: 1.1rem !important;
+    }
+    #singleBlog .hero .heading h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    #singleBlog section > .formWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    #singleBlog section > .formWrapper .longForm {
+        width: 90%;
+    }
+    #singleBlog section > .formWrapper .longForm button {
+        width: 100% !important;
+    }
+}

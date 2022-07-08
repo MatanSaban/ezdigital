@@ -352,7 +352,7 @@
 
     .mobileMenuPopup .mainMenu__list li a {
         color: var(--color-primary);
-        font-size: 3.5rem;
+        font-size: 3.2rem;
         font-weight: bold;
         text-shadow: 0 0 50px rgba(255, 255, 255, 0.554);
     }

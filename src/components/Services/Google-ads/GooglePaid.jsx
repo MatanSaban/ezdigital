@@ -1,5 +1,5 @@
 import SinglePagesHero from "../../Special/SinglePage/SinglePagesHero/SignlePagesHero";
-import SingleServicePage from "../Web-development/SingleServicePage";
+import SingleServicePage from "../SingleServicePage";
 
 const GooglePaid = (props) => {
     return ( 

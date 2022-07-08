@@ -5,3 +5,17 @@
 .allServices > div {
     margin: 0 100px;
 }
+
+@media only screen and (max-width: 760px) {
+    #ServicesPage .allServices {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #ServicesPage .allServices > div {
+        margin: 0;
+        padding: 0 10px;
+    }
+    #ServicesPage .allServices > div > a h2 {
+        font-size: 1.2rem;
+    }
+}

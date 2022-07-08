@@ -10,7 +10,7 @@ const Container = (props) => (
         renderLayer={(percentage) => (
             <div
                 style={{
-                    height: percentage * 1000,
+                    height: percentage * 1000, 
                 }}
             />
         )}

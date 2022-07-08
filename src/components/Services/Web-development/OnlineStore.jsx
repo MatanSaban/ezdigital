@@ -1,5 +1,5 @@
 import SinglePagesHero from "../../Special/SinglePage/SinglePagesHero/SignlePagesHero";
-import SingleServicePage from "./SingleServicePage";
+import SingleServicePage from "../SingleServicePage";
 
 const OnlineStore = (props) => {
     console.log(props.path);
