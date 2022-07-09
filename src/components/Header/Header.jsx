@@ -5,18 +5,39 @@ import menuItems from "./MenuItems.json";
 import { AiFillCaretLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { GoArrowUp } from "react-icons/go";
+import { BiArrowToRight } from "react-icons/bi";
 import { v4 as uuidv4 } from "uuid";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [menuOpenReady, setMenuOpenReady] = useState(false);
 
+    const [subMenuOpen, setSubMenuOpen] = useState(false);
+    const [subMenuOpenReady, setSubMenuOpenReady] = useState(false);
+
     const menuToggle = () => {
-        setMenuOpen(!menuOpen);
         setTimeout(() => {
             setMenuOpenReady(!menuOpenReady);
+            setSubMenuOpen(!subMenuOpen);
+            setSubMenuOpenReady(false);
         }, 500);
+        if (menuOpen === true) {
+            setTimeout(() => {
+                setMenuOpen(!menuOpen);
+            }, 1000);
+        } else {
+            setMenuOpen(!menuOpen);
+        }
     };
+
+    const subMenuToggle = () => {
+        setSubMenuOpen(!subMenuOpen);
+        setSubMenuOpenReady(!subMenuOpenReady);
+        // setTimeout(() => {
+        // }, 50);
+    };
+
+    const closeAllMenus = () => {};
 
     const [isShown, setIsShown] = useState(false);
 
@@ -236,56 +257,47 @@ const Header = () => {
                     </div>
                 )}
             </header>
-            <div className={`mobileMenuPopup ${menuOpen && 'mobileMenuPopup-open'}`}>
-                    <ul className="mainMenu__list">
-                        {Object.keys(menuItems).map((keyName, i) => (
-                            <li className="mainMenu__Item" key={uuidv4()}>
-                                <NavLink to={menuItems[keyName].link} onClick={menuToggle}>
+            <div
+                className={`mobileMenuPopup ${
+                    menuOpen && "mobileMenuPopup-open"
+                }`}
+            >
+                <ul className="mainMenu__list">
+                    {Object.keys(menuItems).map((keyName, i) => (
+                        <li className="mainMenu__Item" key={uuidv4()}>
+                            {menuItems[keyName].text !== "השירותים שלנו" ? (
+                                <NavLink
+                                    to={menuItems[keyName].link}
+                                    onClick={menuToggle}
+                                >
                                     {menuItems[keyName].text}
                                 </NavLink>
-                                {menuItems[keyName].Submenu && (
-                                    <ul className="mainMenu__subMenu">
-                                        {menuItems[keyName].Submenu &&
-                                            Object.keys(
-                                                menuItems[keyName].Submenu
-                                            ).map((item, index) => {
-                                                return (
-                                                    <li
-                                                        key={uuidv4()}
-                                                        className={
-                                                            menuItems[keyName]
-                                                                .Submenu[item]
-                                                                .subSubmenu
-                                                                ? "mainMenu__subMenu__item has_submenu"
-                                                                : "mainMenu__subMenu__item"
-                                                        }
-                                                    >
-                                                        {menuItems[keyName]
+                            ) : (
+                                <NavLink to="#" onClick={subMenuToggle}>
+                                    {menuItems[keyName].text}
+                                </NavLink>
+                            )}
+                            {menuItems[keyName].Submenu && (
+                                <ul className="mainMenu__subMenu">
+                                    {menuItems[keyName].Submenu &&
+                                        Object.keys(
+                                            menuItems[keyName].Submenu
+                                        ).map((item, index) => {
+                                            return (
+                                                <li
+                                                    key={uuidv4()}
+                                                    className={
+                                                        menuItems[keyName]
                                                             .Submenu[item]
-                                                            .subSubmenu ? (
-                                                            <>
-                                                                <NavLink
-                                                                    to={
-                                                                        menuItems[
-                                                                            keyName
-                                                                        ]
-                                                                            .Submenu[
-                                                                            item
-                                                                        ].link
-                                                                    }
-                                                                >
-                                                                    {
-                                                                        menuItems[
-                                                                            keyName
-                                                                        ]
-                                                                            .Submenu[
-                                                                            item
-                                                                        ].text
-                                                                    }
-                                                                </NavLink>
-                                                                <AiFillCaretLeft />
-                                                            </>
-                                                        ) : (
+                                                            .subSubmenu
+                                                            ? "mainMenu__subMenu__item has_submenu"
+                                                            : "mainMenu__subMenu__item"
+                                                    }
+                                                >
+                                                    {menuItems[keyName].Submenu[
+                                                        item
+                                                    ].subSubmenu ? (
+                                                        <>
                                                             <NavLink
                                                                 to={
                                                                     menuItems[
@@ -303,59 +315,148 @@ const Header = () => {
                                                                     ].text
                                                                 }
                                                             </NavLink>
-                                                        )}
-                                                        {menuItems[keyName]
-                                                            .Submenu[item]
-                                                            .subSubmenu && (
-                                                            <ul className="sub-subMenu">
-                                                                {Object.keys(
-                                                                    menuItems[
-                                                                        keyName
-                                                                    ].Submenu[
-                                                                        item
-                                                                    ].subSubmenu
-                                                                ).map(
-                                                                    (
-                                                                        subSubmenuItem,
-                                                                        index
-                                                                    ) => {
-                                                                        return (
-                                                                            <li
-                                                                                className="sub-subMenu__item"
-                                                                                key={uuidv4()}
+                                                            <AiFillCaretLeft />
+                                                        </>
+                                                    ) : (
+                                                        <NavLink
+                                                            to={
+                                                                menuItems[
+                                                                    keyName
+                                                                ].Submenu[item]
+                                                                    .link
+                                                            }
+                                                        >
+                                                            {
+                                                                menuItems[
+                                                                    keyName
+                                                                ].Submenu[item]
+                                                                    .text
+                                                            }
+                                                        </NavLink>
+                                                    )}
+                                                    {menuItems[keyName].Submenu[
+                                                        item
+                                                    ].subSubmenu && (
+                                                        <ul className="sub-subMenu">
+                                                            {Object.keys(
+                                                                menuItems[
+                                                                    keyName
+                                                                ].Submenu[item]
+                                                                    .subSubmenu
+                                                            ).map(
+                                                                (
+                                                                    subSubmenuItem,
+                                                                    index
+                                                                ) => {
+                                                                    return (
+                                                                        <li
+                                                                            className="sub-subMenu__item"
+                                                                            key={uuidv4()}
+                                                                        >
+                                                                            <NavLink
+                                                                                to={`${menuItems[keyName].Submenu[item].link}${menuItems[keyName].Submenu[item].subSubmenu[subSubmenuItem].link}`}
                                                                             >
-                                                                                <NavLink
-                                                                                    to={`${menuItems[keyName].Submenu[item].link}${menuItems[keyName].Submenu[item].subSubmenu[subSubmenuItem].link}`}
-                                                                                >
-                                                                                    {
-                                                                                        menuItems[
-                                                                                            keyName
-                                                                                        ]
-                                                                                            .Submenu[
-                                                                                            item
-                                                                                        ]
-                                                                                            .subSubmenu[
-                                                                                            subSubmenuItem
-                                                                                        ]
-                                                                                            .text
-                                                                                    }
-                                                                                </NavLink>
-                                                                            </li>
-                                                                        );
+                                                                                {
+                                                                                    menuItems[
+                                                                                        keyName
+                                                                                    ]
+                                                                                        .Submenu[
+                                                                                        item
+                                                                                    ]
+                                                                                        .subSubmenu[
+                                                                                        subSubmenuItem
+                                                                                    ]
+                                                                                        .text
+                                                                                }
+                                                                            </NavLink>
+                                                                        </li>
+                                                                    );
+                                                                }
+                                                            )}{" "}
+                                                        </ul>
+                                                    )}
+                                                </li>
+                                            );
+                                        })}
+                                </ul>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div
+                style={subMenuOpen ? { display: "flex" } : { display: "flex" }}
+                className={`servicesSubMenuPopup ${
+                    subMenuOpenReady && "subMenuOpenReady"
+                }`}
+            >
+                <i onClick={subMenuToggle}>
+                    חזרה לתפריט הראשי
+                    <BiArrowToRight />
+                </i>
+                <ul>
+                    {Object.keys(menuItems.Services.Submenu).map(
+                        (serviceParent) => {
+                            return (
+                                <li key={uuidv4()}>
+                                    <>
+                                        <NavLink
+                                            to={
+                                                menuItems.Services.Submenu[
+                                                    serviceParent
+                                                ].link
+                                            }
+                                            onClick={menuToggle}
+                                        >
+                                            {
+                                                menuItems.Services.Submenu[
+                                                    serviceParent
+                                                ].text
+                                            }
+                                        </NavLink>
+                                        <br />
+                                        {menuItems.Services.Submenu[
+                                            serviceParent
+                                        ].subSubmenu && (
+                                            <ul className="serviceSubmenu">
+                                                {Object.keys(
+                                                    menuItems.Services.Submenu[
+                                                        serviceParent
+                                                    ].subSubmenu
+                                                ).map((subServiceItem) => {
+                                                    return (
+                                                        <li key={uuidv4()}>
+                                                            {
+                                                                <NavLink
+                                                                    to={`${menuItems.Services.Submenu[serviceParent].link}${menuItems.Services.Submenu[serviceParent].subSubmenu[subServiceItem].link}`}
+                                                                    onClick={
+                                                                        menuToggle
                                                                     }
-                                                                )}{" "}
-                                                            </ul>
-                                                        )}
-                                                    </li>
-                                                );
-                                            })}
-                                    </ul>
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
+                                                                >
+                                                                    {
+                                                                        menuItems
+                                                                            .Services
+                                                                            .Submenu[
+                                                                            serviceParent
+                                                                        ]
+                                                                            .subSubmenu[
+                                                                            subServiceItem
+                                                                        ].text
+                                                                    }
+                                                                </NavLink>
+                                                            }
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        )}
+                                    </>
+                                </li>
+                            );
+                        }
+                    )}
+                </ul>
+            </div>
         </>
     );
 };
