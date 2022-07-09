@@ -415,4 +415,9 @@
         color: white;
         font-size: 1.5rem;
     }
+    .mobileMenuPopup .hasSubMenu {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }

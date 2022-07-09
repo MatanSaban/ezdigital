@@ -6,6 +6,7 @@ import { AiFillCaretLeft } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { GoArrowUp } from "react-icons/go";
 import { BiArrowToRight } from "react-icons/bi";
+import { AiOutlinePlus } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
 const Header = () => {
@@ -273,9 +274,12 @@ const Header = () => {
                                     {menuItems[keyName].text}
                                 </NavLink>
                             ) : (
-                                <NavLink to="#" onClick={subMenuToggle}>
-                                    {menuItems[keyName].text}
-                                </NavLink>
+                                <>
+                                    <NavLink to="#" onClick={subMenuToggle}>
+                                        {menuItems[keyName].text}
+                                    <AiOutlinePlus className="hasSubMenu"/>
+                                    </NavLink>
+                                </>
                             )}
                             {menuItems[keyName].Submenu && (
                                 <ul className="mainMenu__subMenu">
