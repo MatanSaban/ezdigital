@@ -76,6 +76,11 @@
     border-radius: 20px;
     backdrop-filter: blur(5px);
 }
+#singleBlog > section > .formWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 760px) {
     #blogPage .articles {
         width: 100vw;
