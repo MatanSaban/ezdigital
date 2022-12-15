@@ -175,7 +175,7 @@
     background: white;
     /* transform: translate(0%, -38%); */
     /* padding: 5px 0; */
-    height: fit-content;
+    height: max-content;
     margin-top: -1px;
 }
 .mainMenu__subMenu .has_submenu > ul.sub-subMenu > li:hover {
