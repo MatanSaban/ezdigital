@@ -169,7 +169,7 @@
 }
 .mainMenu__subMenu > .has_submenu:hover > ul.sub-subMenu {
     display: block;
-    width: fit-content;
+    width: max-content;
     top: 0%;
     right: 100%;
     background: white;
