@@ -19,6 +19,10 @@
     justify-content: center;
     align-items: center;
 }
+#singleProject .heroCover h3,
+#singleProject .fontsContainer {
+    text-align: center;
+}
 .heroCover .button {
     transition: all 0.3s ease;
 }
@@ -28,7 +32,7 @@
 }
 #singleProject .hero h1,
 #singleProject .hero h3,
-#singleProject .hero pre,
+#singleProject .hero p,
 #singleProject .hero a {
     font-size: 3.5rem;
     color: white;
@@ -39,10 +43,13 @@
     font-size: 2.5rem;
     font-weight: 300;
 }
-#singleProject .hero pre {
+#singleProject .hero p,
+#singleProject p {
     font-size: 1.5rem;
     font-family: "Danidin";
     text-align: center;
+    padding: 10px 15px;
+    color: #fff;
 }
 #singleProject .hero a {
     font-size: 1.1rem;
@@ -66,7 +73,7 @@
 }
 #singleProject section.passage .fontsContainer {
     display: flex;
-    width: 25%;
+    width: 100%;
     justify-content: space-around;
 }
 
@@ -272,6 +279,18 @@ section.projectContactForm {
     font-size: 3rem;
     color: var(--color-primary);
 }
+.loadingText {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 9999;
+    color: #000;
+    position: fixed;
+    font-size: 5rem;
+}
 
 @media only screen and (max-width: 760px) {
     #singleProject .colorsPallete > div {
@@ -313,6 +332,7 @@ section.projectContactForm {
         h3 {
         font-size: 1.2rem;
         text-align: center;
+        min-height: 47px;
     }
     section.nextandprevprojectsWrapper
         .nextandprevprojects
@@ -325,5 +345,32 @@ section.projectContactForm {
     #singleProject > section.hero > .heroCover h1 {
         text-align: center;
         margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+    #singleProject > section.hero > .heroCover h3 {
+        font-size: 1.8rem;
+    }
+    #singleProject > section.hero > .heroCover p {
+        font-size: 1.2rem;
+    }
+    .mobileBgSection h5 {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+    }
+    .mobileBgSection {
+        min-height: 25vh;
+        max-height: 35vh;
+    }
+    #singleProject .colorsPallete > div {
+        flex-direction: column;
+    }
+    #singleProject .react-parallax img.react-parallax-bgimage {
+        top: 0px !important;
+        height: 600px !important;
+        left: 85% !important;
+    }
+    #singleProject .nextandprevprojectsWrapper {
+        min-height: fit-content;
     }
 }

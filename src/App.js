@@ -21,23 +21,32 @@ import GooglePaid from "./components/Services/Google-ads/GooglePaid.jsx";
 import GoogleOrganic from "./components/Services/Google-ads/GoogleOrganic.jsx";
 import FacebookPaid from "./components/Services/Social-ads/FacebookPaid.jsx";
 import FacebookOrganic from "./components/Services/Social-ads/FacebookOrganic.jsx";
-import { useEffect } from "react";
+import { useState , useEffect } from "react";
 import SingleBlog from "./components/Blog/SingleBlog.jsx";
-
+import axios from "axios";
 
 
 function App() {
+  const [projects, setProjects] = useState(null);
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    axios.get('https://ezd-psg.ussl.co.il/wp-json/wp/v2/showcase/') 
+    .then(function (response) {
+      setProjects(response.data);
+    })
+  .catch(function (error) {
+    console.log(error);
+  });
   }, [])
     return (
         <div className="App">
           <Header/>
           <Routes>
-            <Route exact path="/" element={<Home path={'Projects'} pageName={'עמוד הבית'}/>} ></Route>
+            <Route exact path="/" element={<Home pageName={'עמוד הבית'} />} ></Route>
             
-            <Route exact path="Projects" element={<Projects path={'Projects/:link'} pageName={'פרויקטים'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route>
+            <Route exact path="Projects" element={<Projects projects={projects} path={'Projects/:link'} pageName={'פרויקטים'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route>
             <Route exact path="Projects/:link" element={<SingleProject />} ></Route>
             
             <Route exact path="Services" element={<Services path={'services'} pageName={'כל השירותים'} parentName={'עמוד הבית'} parentPath={'/'}/>} ></Route>

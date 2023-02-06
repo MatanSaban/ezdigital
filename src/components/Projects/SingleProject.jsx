@@ -4,13 +4,14 @@ import "./singleproject.css";
 import { Parallax } from "react-parallax";
 import { useEffect, useRef, useState } from "react";
 import Form from "../Special/Form/Form";
+import axios from "axios";
 
 const Container = (props) => (
     <Parallax
         renderLayer={(percentage) => (
             <div
                 style={{
-                    height: percentage * 1000, 
+                    height: percentage * 1000,
                 }}
             />
         )}
@@ -19,9 +20,13 @@ const Container = (props) => (
     ></Parallax>
 );
 
+const loading = <div className="loadingText">...Loading</div>; 
+
 const SingleProject = (props) => {
+    const [projects, setProjects] = useState();
     const [projectsArray, setProjectsArray] = useState([]);
     const [twoProjects, setTwoprojects] = useState();
+    const [project, setProject] = useState(null);
 
     const scrollArea = useRef();
     const scrollBoundary = useRef();
@@ -29,25 +34,17 @@ const SingleProject = (props) => {
 
     const [isElementVisible, setIsElementVisible] = useState(false);
 
-    const pageLoad = () => {
-        setTimeout(() => {
-            setTwoprojects(
-                projectsArray.sort(() => 0.5 - Math.random()).slice(0, 2)
-            );
-            window.scrollTo(0, 0);
-        }, 500);
-    };
+    
 
     useEffect(() => {
-
-        Object.keys(ProjectsJson).map((projectName, index) => {
-            if (ProjectsJson[projectName] !== ProjectsJson[link]) {
-                setProjectsArray((projectsArray) => [
-                    ...projectsArray,
-                    ProjectsJson[projectName],
-                ]);
-            }
-        });
+        axios
+            .get("https://ezd-psg.ussl.co.il/wp-json/wp/v2/showcase/")
+            .then(function (response) {
+                setProjects(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
@@ -58,38 +55,99 @@ const SingleProject = (props) => {
         // getMultipleRandom(projectsArray, 2);
     }, []);
 
+    const { link } = useParams();
+
+    useEffect(() => {
+        projects && projects.map((project, index) => {
+            if (project.acf.link_title !== link) {
+                setProjectsArray((projectsArray) => [
+                    ...projectsArray,
+                    project,
+                ]);
+            }
+        });
+    }, [projects, link]);
+
     useEffect(() => {
         setTwoprojects(
             projectsArray.sort(() => 0.5 - Math.random()).slice(0, 2)
         );
     }, [projectsArray]);
 
-    const { link } = useParams();
+    useEffect(() => {
+        projects &&
+            projects.find(
+                (project) =>
+                    project.acf &&
+                    project.acf.link_title === link &&
+                    setProject(project)
+            );
+    }, [link, projects]);
+
+    const pageLoad = () => {
+        setTimeout(() => {
+            setTwoprojects(
+                projectsArray.sort(() => 0.5 - Math.random()).slice(0, 2)
+            );
+            window.scrollTo(0, 0);
+        }, 500);
+    };
+
+    // const getIdFromLinkTitle = (linkTitle) => {
+    //     let id = '';
+    //     props.projects.forEach((project) => {
+    //         if (project.acf && project.acf.link_title === linkTitle) {
+    //             id = project.id
+    //         }
+    //     })
+    //     return id;
+    // }
 
     const RenderHTML = (text) => {
         const htmlPart = text;
         return <div dangerouslySetInnerHTML={{ __html: htmlPart }} />;
     };
 
+    function stripTags(html, allowedTags) {
+        if (typeof allowedTags === "string") {
+            allowedTags = [allowedTags];
+        }
+
+        const tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
+        return html.replace(tags, function (match, tag) {
+            if (allowedTags.includes(tag.toLowerCase())) {
+                return match;
+            }
+            return "";
+        });
+    }
+
     return (
         <div id="singleProject" className="projectWrapper">
+            {project ? <></> : loading}
             <section
                 className="hero"
                 style={{
-                    background: `url(${ProjectsJson[link].backgroundImage})`,
+                    background: `url(${project && project.acf.in_post_main_image.url})`,
                 }}
             >
                 <div className="heroCover">
-                    <h1>{ProjectsJson[link].name}</h1>
-                    <h3>{ProjectsJson[link].whatWeDid}</h3>
-                    {RenderHTML(ProjectsJson[link].description)}
+                    <h1>{project && project.title.rendered}</h1>
+                    <h3>{project && project.acf.which_work}</h3>
+                    {RenderHTML(
+                        project && project.acf.short_description_about_client
+                    )}
                     <a
                         className="button"
                         style={{
-                            background: `${ProjectsJson[link].colors.mainColor}`,
+                            background: `${
+                                project &&
+                                project.acf.fonts_props[0].color_1.color_number
+                            }`,
                         }}
-                        href={ProjectsJson[link].websiteLink}
-                        target="_blank" rel="noreferrer"
+                        href={project && project.acf.website_url}
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         מעבר לאתר
                     </a>
@@ -98,40 +156,32 @@ const SingleProject = (props) => {
             <section
                 className="fontsPassage passage"
                 style={{
-                    background: `${ProjectsJson[link].colors["mainColor"]}`,
+                    background: `${
+                        project &&
+                        project.acf.fonts_props[0].color_1.color_number
+                    }`,
                 }}
             >
                 <h2>פונטים באתר</h2>
-                <div className="fontsContainer">
-                    {Object.keys(ProjectsJson[link].fonts).map(
-                        (fontName, index) => {
-                            return (
-                                ProjectsJson[link].fonts[fontName] !== "" && (
-                                    <div key={index}>
-                                        <p>
-                                            {ProjectsJson[link].fonts[fontName]}
-                                        </p>
-                                    </div>
-                                )
-                            );
-                        }
-                    )}
-                </div>
+                <div className="fontsContainer">{project && project.acf.font_types}</div>
             </section>
             <section className="mobileBgSection">
                 <Container
                     className="mobileBgSection"
-                    path={ProjectsJson[link].mobileBG}
+                    path={project && project.acf.first_background.url}
                 ></Container>
                 <div>
-                    <h5>{ProjectsJson[link].mobileQuote}</h5>
+                    <h5>{project && project.acf.client_quote}</h5>
                 </div>
             </section>
             <section
                 className="colorsPassage passage"
                 ref={scrollArea}
                 style={{
-                    background: `${ProjectsJson[link].colors["mainColor"]}`,
+                    background: `${
+                        project &&
+                        project.acf.fonts_props[0].color_1.color_number
+                    }`,
                 }}
             >
                 <div
@@ -143,58 +193,74 @@ const SingleProject = (props) => {
                     }
                     className="colorsPallete"
                 >
-                    {Object.keys(ProjectsJson[link].colors.colorsatts).map(
-                        (colorName, index) => {
-                            return (
-                                <div
-                                    key={index}
-                                    style={{
-                                        width: `calc(100% / ${
-                                            Object.keys(
-                                                ProjectsJson[link].colors
-                                                    .colorsatts
-                                            ).length
-                                        })`,
-                                        background: `${ProjectsJson[link].colors.colorsatts[colorName].colornumber}`,
-                                    }}
-                                >
-                                    <p>{colorName}</p>
-                                    <p>
-                                        {
-                                            ProjectsJson[link].colors
-                                                .colorsatts[colorName]
-                                                .colornumber
-                                        }
-                                    </p>
-                                </div>
-                            );
-                            // })
-                        }
-                    )}
+                    {project &&
+                        Object.keys(project && project.acf.fonts_props[0]).map(
+                            (colorObj, index) => {
+                                return (
+                                    <div
+                                        key={index}
+                                        style={{
+                                            width: `calc(100% / ${
+                                                Object.keys(
+                                                    project &&
+                                                        project.acf
+                                                            .fonts_props[0]
+                                                ).length
+                                            })`,
+                                            background: `${
+                                                project &&
+                                                project.acf.fonts_props[0][
+                                                    colorObj
+                                                ].color_number
+                                            }`,
+                                        }}
+                                    >
+                                        <p>
+                                            {project &&
+                                                project.acf.fonts_props[0][
+                                                    colorObj
+                                                ].color_name}
+                                        </p>
+                                        <p style={{direction:'ltr'}}>
+                                            {project && project.acf.fonts_props[0][colorObj].color_number.toUpperCase() }
+                                        </p>
+                                    </div>
+                                );
+                                // })
+                            }
+                        )}
                 </div>
                 <div className="colorsDescription">
                     <h3>צבעים</h3>
                     <pre>
-                        <p>{ProjectsJson[link].colors.colorsDescription}</p>
+                        <p>
+                            {project && project.acf.branding_colors_explanation}
+                        </p>
                     </pre>
                     <div className="endScroll" ref={scrollBoundary}></div>
                 </div>
             </section>
             <section
                 className="projectSummary"
-                style={{ background: `url(${ProjectsJson[link].laptopBG})` }}
+                style={{
+                    background: `url(${
+                        project && project.acf.second_background.url
+                    })`,
+                }}
             >
                 <div className="projectSummaryCover">
-                    {RenderHTML(ProjectsJson[link].laptopDescription)}
+                    {RenderHTML(project && project.acf.website_story)}
                 </div>
             </section>
             <section className="projectContactForm">
                 <div className="formWrapper">
                     <div>
-                        <h4>אהבת את האתר של {ProjectsJson[link].name}?</h4>
-                        <p>גם העסק שלך יכול לקבל אתר כזה!</p>
+                        <h4>
+                            אהבת את האתר של {project && project.title.rendered}?
+                        </h4>
+                        <p style={{color:"black"}}>גם העסק שלך יכול לקבל אתר כזה!</p>
                     </div>
-                        <Form formStyle={'lineForm'}/>
+                    <Form formStyle={"lineForm"} />
                 </div>
             </section>
             <section className="nextandprevprojectsWrapper">
@@ -207,15 +273,15 @@ const SingleProject = (props) => {
                                     onClick={() => pageLoad()}
                                     className="nextProjectItem"
                                     key={index}
-                                    to={`/projects${i.link}`}
+                                    to={`/projects/${i.acf.link_title}`}
                                 >
                                     <div
                                         style={{
-                                            background: `url(${i.backgroundImage})`,
+                                            background: `url(${i.acf.featured_image.url})`,
                                         }}
                                     >
                                         <div className="nextProjectItemCover">
-                                            <h3>{i.name}</h3>
+                                            <h3>{i.title.rendered}</h3>
                                             <button>למעבר לפרויקט</button>
                                         </div>
                                     </div>
