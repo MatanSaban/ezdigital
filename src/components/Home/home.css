@@ -224,6 +224,7 @@ section#blog .articles .swiper {
     #hero > #Layer_2 {
         width: 400px;
         height: 150px;
+        max-width: 85vw;
     }
     #hero #Layer_2 .cls-1,
     #hero #Layer_2 .cls-3,

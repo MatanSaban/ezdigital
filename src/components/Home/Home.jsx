@@ -66,6 +66,11 @@ const testimonials = {
     },
 };
 
+fetch('https://ezd-psg.ussl.co.il/wp-json/')
+  .then(response => response.json())
+  .then(siteInfo => console.log(siteInfo.name))
+  .catch(error => console.error(error));
+
 const Home = () => {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
     
