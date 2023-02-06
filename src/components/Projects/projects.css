@@ -59,6 +59,9 @@
     width: 100%;
     transition: all 0.5s ease;
 }
+#projectsPage .projectContainer .projectContainerContent h3 {
+    text-align: center;
+}
 #projectsPage .projectContainer:hover .projectContainerContent {
     z-index: 9;
     opacity: 1;
