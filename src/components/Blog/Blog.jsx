@@ -1,7 +1,6 @@
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import './blog.css'
 import { NavLink } from "react-router-dom";
-import Loader from "../Special/Loader/Loader.jsx";
 
 const Blog = (props) => {
     const posts = props.posts;
@@ -12,7 +11,8 @@ const Blog = (props) => {
             <div className="articles">
                 {
                     posts && posts.map((post,index) => {
-                        return (
+                        let toReturn = null;
+                        toReturn = (
                             <div key={index} className='article' style={{background:`url(${post.acf.featured_image})`}}>
                                 <NavLink to={`/blog/${post.acf.slug}`}>
                                 <div className="articleCover">
@@ -33,6 +33,7 @@ const Blog = (props) => {
                                 </NavLink>
                             </div>
                         )
+                        return toReturn;
                     })
                 }
             </div>

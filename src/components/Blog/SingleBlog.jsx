@@ -1,30 +1,29 @@
 import { NavLink, useParams } from "react-router-dom";
 import "./singleblog.css";
 import { Parallax } from "react-parallax";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import Form from "../Special/Form/Form";
-import Loader from "../Special/Loader/Loader.jsx";
 
-const Container = (props) => (
-    <Parallax
-        renderLayer={(percentage) => (
-            <div
-                style={{
-                    height: percentage * 500,
-                    zIndex: -1,
-                    position: "absolute",
-                    left: "0",
-                    top: "0",
-                    width: "fit-content",
-                    backgroundSize: "contain",
-                }}
-            />
-        )}
-        bgImage={props.path}
-        strength={500}
-    ></Parallax>
-);
+// const Container = (props) => (
+//     <Parallax
+//         renderLayer={(percentage) => (
+//             <div
+//                 style={{
+//                     height: percentage * 500,
+//                     zIndex: -1,
+//                     position: "absolute",
+//                     left: "0",
+//                     top: "0",
+//                     width: "fit-content",
+//                     backgroundSize: "contain",
+//                 }}
+//             />
+//         )}
+//         bgImage={props.path}
+//         strength={500}
+//     ></Parallax>
+// );
 
 const SingleBlog = (props) => {
     const { link } = useParams();
@@ -50,7 +49,7 @@ const SingleBlog = (props) => {
 
             let indexes = [];
             posts && posts.map((post, index) => {
-                if (post.acf.slug == link) {
+                if (post.acf.slug === link) {
                     setCurrentArticleNumber(index);
 
                     if (index === 0) {
