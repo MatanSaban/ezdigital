@@ -4,18 +4,18 @@ import Footer from "./components/Footer/Footer.jsx";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects.jsx";
 import Services from "./components/Services/Services.jsx";
-// import Socialads from "./components/services/social-ads/Socialads";
-// import Facebookpaid from "./components/services/social-ads/Facebookpaid";
-// import Facebookorganic from "./components/services/social-ads/Facebookorganic";
-// import Branding from "./components/services/branding/Branding";
-// import Googleads from "./components/services/google-ads/Googleads";
-// import Googlepaid from "./components/services/google-ads/Googlepaid";
-// import Googleorganic from "./components/services/google-ads/Googleorganic";
-// import Webdevelopment from "./components/services/web-development/Webdevelopment";
-// import Digitalasset from "./components/services/web-development/Digitalasset";
-// import Landingpage from "./components/services/web-development/Landingpage";
-// import Onlinestore from "./components/services/web-development/Onlinestore";
-// import Officialwebsite from "./components/services/web-development/Officialwebsite";
+import Socialads from "./components/Services/social-ads/Socialads";
+import Facebookpaid from "./components/Services/social-ads/Facebookpaid";
+import Facebookorganic from "./components/Services/social-ads/Facebookorganic";
+import Branding from "./components/Services/branding/Branding";
+import Googleads from "./components/Services/google-ads/Googleads";
+import Googlepaid from "./components/Services/google-ads/Googlepaid";
+import Googleorganic from "./components/Services/google-ads/Googleorganic";
+import Webdevelopment from "./components/Services/web-development/Webdevelopment";
+import Digitalasset from "./components/Services/web-development/Digitalasset";
+import Landingpage from "./components/Services/web-development/Landingpage";
+import Onlinestore from "./components/Services/web-development/Onlinestore";
+import Officialwebsite from "./components/Services/web-development/Officialwebsite";
 import Contact from "./components/Contact/Contact.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import SingleProject from "./components/Projects/SingleProject.jsx";
@@ -25,20 +25,20 @@ import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
 import Loader from "./components/Special/Loader/Loader.jsx";
 
-// const Components = {
-//     Facebookorganic,
-//     Socialads,
-//     Facebookpaid,
-//     Branding,
-//     Googleads,
-//     Googlepaid,
-//     Googleorganic,
-//     Webdevelopment,
-//     Digitalasset,
-//     Landingpage,
-//     Onlinestore,
-//     Officialwebsite,
-// };
+const Components = {
+    Facebookorganic,
+    Socialads,
+    Facebookpaid,
+    Branding,
+    Googleads,
+    Googlepaid,
+    Googleorganic,
+    Webdevelopment,
+    Digitalasset,
+    Landingpage,
+    Onlinestore,
+    Officialwebsite,
+};
 
 function App() {
     const [projects, setProjects] = useState(null);
@@ -99,7 +99,7 @@ function App() {
                 <Route exact path="Projects/:link" element={<SingleProject projects={projects} />}></Route>
                 <Route exact path="services" element={<Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
 
-                {/* {pages &&
+                {pages &&
                     pages.map((page) => {
                         let toReturn = null;
                         if (
@@ -122,7 +122,7 @@ function App() {
                             }
                         }
                         return toReturn;
-                    })} */}
+                    })}
 
                 <Route exact path="Blog" element={<Blog posts={posts} path={"blog"} pageName={"הבלוג"} parentName={"עמוד הבית"} parentPath={"/"} /> } ></Route>
                 <Route exact path="Blog/:link" element={<SingleBlog posts={posts} parentName={"הבלוג"} parentPath={"blog"} /> } ></Route>
