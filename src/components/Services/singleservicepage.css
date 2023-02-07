@@ -7,3 +7,202 @@
     z-index: -1;
     object-fit: cover;
 }
+.singleService {
+    position: relative;
+    /* padding: 100px 0; */
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.792) 33%,
+        rgb(255, 255, 255) 55%
+    );
+}
+.singleService .breadCrumbs {
+    position: absolute;
+    right: 10px;
+}
+
+#SingleServicePage .SingleServicePage__hero {
+    padding: 0 200px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 54.2vh;
+    position: relative;
+}
+#SingleServicePage .SingleServicePage__hero p {
+    font-size: 1.5rem;
+}
+
+.SingleServicePage__hero .scrollDown {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.3rem;
+    height: calc(30% + 20px);
+}
+.SingleServicePage__hero .scrollDown svg {
+    font-size: 2rem;
+}
+.scrollDown i.iconupDown {
+    animation-name: iconUpDownAnim;
+    animation-duration: 0.5s;
+    animation-fill-mode: both ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    bottom: -10%;
+    transition: all 0.3s ease;
+}
+
+section.SingleServicePage__whyUs {
+    padding: 50px;
+    text-align: center;
+    min-height: fit-content;
+    background: rgb(255, 237, 198);
+}
+.SingleServicePage__whyUs div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1600px;
+    margin: 0 auto;
+}
+.SingleServicePage__whyUs div span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 10px;
+}
+.SingleServicePage__whyUs div span svg {
+    margin: 0 5px;
+    padding: 0px;
+    border-radius: 100px;
+    color: green;
+}
+
+section.websiteDevelop__Explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.websiteDevelop__Explanation > div {
+    position: relative;
+}
+.singleServicePageWrapper {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.contentWrapper {
+    font-size: 1.2rem;
+    /* width: fit-content; */
+}
+.contentWrapper h3 {
+    font-size: 1.6rem;
+    position: relative;
+    width: fit-content;
+    z-index: 1;
+}
+.contentWrapper h3:after {
+    content: ".";
+    color: transparent;
+    background-color: rgba(255, 194, 124, 0.73);
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+section.websiteDevelop__services {
+    min-height: fit-content;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+}
+section.websiteDevelop__services h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+section.websiteDevelop__services > div {
+    display: flex;
+    justify-content: space-evenly;
+}
+section.websiteDevelop__services a {
+    width: 20%;
+    border: 1px solid transparent;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+section.websiteDevelop__services a:hover {
+    background: black;
+    color: white;
+}
+.websiteDevelop__services__item {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+.websiteDevelop__services__item svg {
+    color: rgb(76, 76, 76);
+    text-shadow: 0 0 10px black;
+    font-size: 5rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.websiteDevelop__services__item:hover svg {
+    color: var(--color-primary);
+}
+
+@keyframes iconUpDownAnim {
+    100% {
+        bottom: -30%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .singleService .breadCrumbs {
+        position: absolute;
+        right: 10px;
+        top: 200px;
+    }
+    #SingleServicePage .SingleServicePage__hero {
+        padding: 25px;
+    }
+    .singleServicePageWrapper {
+        width: 330px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+    }
+    .websiteDevelop__services__item svg {
+        width: 30px;
+    }
+    .websiteDevelop__services__item > span {
+        font-size: 1rem;
+        height: 0px;
+    }
+}
