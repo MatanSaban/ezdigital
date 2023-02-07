@@ -3,7 +3,7 @@ import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects";
-// import Services from "../src/components/services/Services";
+import Services from "../src/components/services/Services";
 import Socialads from "./components/services/social-ads/Socialads";
 import Facebookpaid from "./components/services/social-ads/Facebookpaid";
 import Facebookorganic from "./components/services/social-ads/Facebookorganic";
@@ -89,19 +89,17 @@ function App() {
     return (
         <div className="App"> 
         {homepage && posts && projects && pages ? null : <Loader ready={homepage && posts && projects && pages}/>}
-            { 
-            <>
             <Header />
             <Routes>
                 <Route exact path="/" element={ <Home pageName={"עמוד הבית"} homepage={homepage} posts={posts} projects={projects} pages={pages} />}></Route>
 
                 <Route exact path="Projects" element={<Projects projects={projects} path={"Projects/:link"} pageName={"פרויקטים"} parentName={"עמוד הבית"} parentPath={"/"} />}></Route>
                 <Route exact path="Projects/:link" element={<SingleProject projects={projects} />}></Route>
-                {/* <Route
+                <Route
                     exact
                     path="services"
                     element={
-                        <Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route> */}
+                        <Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
 
                 {pages &&
                     pages.map((page) => {
@@ -169,7 +167,7 @@ function App() {
                 <Route path="*" element={<Page404 />}></Route>
             </Routes>
             <Footer />
-            </>}
+            
         </div>
     );
 }
