@@ -124,43 +124,10 @@ function App() {
                         return toReturn;
                     })} */}
 
-                <Route
-                    exact
-                    path="Blog"
-                    element={
-                        <Blog
-                            posts={posts}
-                            path={"blog"}
-                            pageName={"הבלוג"}
-                            parentName={"עמוד הבית"}
-                            parentPath={"/"}
-                        />
-                    }
-                ></Route>
-                <Route
-                    exact
-                    path="Blog/:link"
-                    element={
-                        <SingleBlog
-                            posts={posts}
-                            parentName={"הבלוג"}
-                            parentPath={"blog"}
-                        />
-                    }
-                ></Route>
+                <Route exact path="Blog" element={ <Blog posts={posts} path={"blog"} pageName={"הבלוג"} parentName={"עמוד הבית"} parentPath={"/"} /> } ></Route>
+                <Route exact path="Blog/:link" element={ <SingleBlog posts={posts} parentName={"הבלוג"} parentPath={"blog"} /> } ></Route>
 
-                <Route
-                    exact
-                    path="Contact"
-                    element={
-                        <Contact
-                            path={"contact"}
-                            pageName={"יצירת קשר"}
-                            parentName={"עמוד הבית"}
-                            parentPath={"/"}
-                        />
-                    }
-                ></Route>
+                <Route exact path="Contact" element={ <Contact path={"contact"} pageName={"יצירת קשר"} parentName={"עמוד הבית"} parentPath={"/"} /> } ></Route>
 
                 <Route path="*" element={<Page404 />}></Route>
             </Routes>
