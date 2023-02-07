@@ -144,7 +144,7 @@ function App() {
                         <SingleBlog
                             posts={posts}
                             parentName={"הבלוג"}
-                            parentPath={"/blog"}
+                            parentPath={"blog"}
                         />
                     }
                 ></Route>
