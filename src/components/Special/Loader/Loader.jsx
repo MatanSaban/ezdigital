@@ -1,9 +1,15 @@
 import './loader.css';
+import Logo from "../Logo/Svg.jsx";
 
-const Loader = () => {
+console.log(Logo);
+
+const Loader = (props) => {
+
+
+
     return (
-        <div className="loadingText">
-            ...Loading
+        <div className={`loaderLogo ${props && props.ready ? 'sizeAndRoll' : 'loaderLogoNotReady'}`}>
+            <Logo/>
         </div>
     );
 }

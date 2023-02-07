@@ -1,4 +1,4 @@
-.loadingText {
+.loaderLogo {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -8,5 +8,39 @@
     z-index: 9999;
     color: #000;
     position: fixed;
-    font-size: 5rem;
+    font-size: 3rem;
+    transition: all 1s ease;
+}
+.loaderLogo svg {
+    width: 400px !important;
+    transition: all 1s ease;
+}
+.loaderLogo.sizeAndRoll svg {
+    transform: rotate(720deg) scale(10);
+}
+.loaderLogo.loaderLogoNotReady svg {
+    animation-name: rotateAndScale;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes rotateAndScale {
+    0% {
+        transform: scale(1) rotate(-20deg);
+    }
+    25% {
+        transform: scale(0.9) rotate(20deg);
+    }
+    50% {
+        transform: scale(1) rotate(-40deg);
+    }
+    75% {
+        transform: scale(1.8) rotate(40deg);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
 }

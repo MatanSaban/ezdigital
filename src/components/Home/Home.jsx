@@ -78,7 +78,7 @@ const Home = (props) => {
 
     return (
         <main className="pageWrapper">
-            {settings ? null : <Loader/>}
+            {settings ? null : <Loader ready={settings}/>}
             {settings && <><section id="hero">
                 {/* <img src={LOGO} alt="Easy Digital Logo" width={1000}/> */}
                 <Svg />

@@ -23,6 +23,7 @@ import Page404 from "./components/Special/404/Page404.jsx";
 import { useState, useEffect } from "react";
 import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
+import Loader from "./components/Special/Loader/Loader.jsx";
 
 const Components = {
     Facebookorganic,
@@ -86,7 +87,10 @@ function App() {
             });
     }, []);
     return (
-        <div className="App">
+        <div className="App"> 
+        {homepage && posts && projects && pages ? null : <Loader ready={homepage && posts && projects && pages}/>}
+            { 
+            <>
             <Header />
             <Routes>
                 <Route exact path="/" element={ <Home pageName={"עמוד הבית"} homepage={homepage} posts={posts} projects={projects} pages={pages} />}></Route>
@@ -165,6 +169,7 @@ function App() {
                 <Route path="*" element={<Page404 />}></Route>
             </Routes>
             <Footer />
+            </>}
         </div>
     );
 }

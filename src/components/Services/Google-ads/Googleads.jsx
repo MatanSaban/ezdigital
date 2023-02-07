@@ -1,3 +1,4 @@
+import Loader from "../../Special/Loader/Loader";
 import SinglePagesHero from "../../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import SingleServicePage from "../SingleServicePage";
 
@@ -7,6 +8,7 @@ import SingleServicePage from "../SingleServicePage";
 const GoogleAds = (props) => {
     return ( 
         <div id="GoogleAdsPage" className="googleAdsWrapper singleService">
+        {props.parentPath ? null : <Loader ready={props.parentPath}/>}
         <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />
         <SingleServicePage
                 title={props.pageName}

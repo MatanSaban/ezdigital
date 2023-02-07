@@ -8,7 +8,7 @@ const Blog = (props) => {
 
     return ( 
         <div id="blogPage" className="blogWrapper">
-            {posts ? null : <Loader/>}
+            {posts ? null : <Loader ready={posts}/>}
             <SinglePagesHero title={props.pageName} parentName={props.parentName}  parentPath={props.parentPath}/>
             <div className="articles">
                 {
