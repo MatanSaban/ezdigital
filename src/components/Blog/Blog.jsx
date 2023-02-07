@@ -1,29 +1,34 @@
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
-import blogJson from './Blog.json'
 import './blog.css'
 import { NavLink } from "react-router-dom";
+import Loader from "../Special/Loader/Loader.jsx";
 
 const Blog = (props) => {
+    const posts = props.posts;
+
     return ( 
         <div id="blogPage" className="blogWrapper">
+            {posts ? null : <Loader/>}
             <SinglePagesHero title={props.pageName} parentName={props.parentName}  parentPath={props.parentPath}/>
             <div className="articles">
                 {
-                    Object.keys(blogJson.theBlog.articles).map((articleName,index) => {
+                    posts && posts.map((post,index) => {
                         return (
-                            <div key={index} className='article' style={{background:`url(${blogJson.theBlog.articles[articleName].image})`}}>
-                                <NavLink to={`${blogJson.theBlog.link}${blogJson.theBlog.articles[articleName].link}`}>
+                            <div key={index} className='article' style={{background:`url(${post.acf.featured_image})`}}>
+                                <NavLink to={`/blog/${post.acf.slug}`}>
                                 <div className="articleCover">
                                     {
-                                        Object.keys(blogJson.theBlog.articles[articleName].categories).map((categName, index) => {
-                                            return (
-                                                <div className="categoryTag" key={categName + index}>
-                                                     <span>{blogJson.categories[categName]}</span>
-                                                </div>
-                                            )
+                                        post.acf.post_category.map((category, index) => {
+                                            if (category.name !== 'הבלוג') {
+                                                return (
+                                                    <div className="categoryTag" key={category.term_id}>
+                                                         <span>{category.name}</span>
+                                                    </div>
+                                                )
+                                            }
                                         })
                                     }
-                                    <h3>{blogJson.theBlog.articles[articleName].title}</h3>
+                                    <h3>{post.acf.post_title}</h3> 
                                     <button>מעבר לכתבה</button>
                                 </div>
                                 </NavLink>

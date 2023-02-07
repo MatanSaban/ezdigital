@@ -5,6 +5,7 @@ import { Parallax } from "react-parallax";
 import { useEffect, useRef, useState } from "react";
 import Form from "../Special/Form/Form";
 import axios from "axios";
+import Loader from "../Special/Loader/Loader.jsx";
 
 const Container = (props) => (
     <Parallax
@@ -20,13 +21,11 @@ const Container = (props) => (
     ></Parallax>
 );
 
-const loading = <div className="loadingText">...Loading</div>; 
-
 const SingleProject = (props) => {
-    const [projects, setProjects] = useState();
     const [projectsArray, setProjectsArray] = useState([]);
     const [twoProjects, setTwoprojects] = useState();
     const [project, setProject] = useState(null);
+    const projects = props.projects;
 
     const scrollArea = useRef();
     const scrollBoundary = useRef();
@@ -34,17 +33,7 @@ const SingleProject = (props) => {
 
     const [isElementVisible, setIsElementVisible] = useState(false);
 
-    
-
     useEffect(() => {
-        axios
-            .get("https://ezd-psg.ussl.co.il/wp-json/wp/v2/showcase/")
-            .then(function (response) {
-                setProjects(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
 
         const observer = new IntersectionObserver((entries) => {
             const entry = entries[0];
@@ -52,20 +41,20 @@ const SingleProject = (props) => {
         });
         observer.observe(scrolledElement.current);
         window.scrollTo(0, 0);
-        // getMultipleRandom(projectsArray, 2);
     }, []);
 
     const { link } = useParams();
 
     useEffect(() => {
-        projects && projects.map((project, index) => {
-            if (project.acf.link_title !== link) {
-                setProjectsArray((projectsArray) => [
-                    ...projectsArray,
-                    project,
-                ]);
-            }
-        });
+        projects &&
+            projects.map((project, index) => {
+                if (project.acf.link_title !== link) {
+                    setProjectsArray((projectsArray) => [
+                        ...projectsArray,
+                        project,
+                    ]);
+                }
+            });
     }, [projects, link]);
 
     useEffect(() => {
@@ -93,16 +82,6 @@ const SingleProject = (props) => {
         }, 500);
     };
 
-    // const getIdFromLinkTitle = (linkTitle) => {
-    //     let id = '';
-    //     props.projects.forEach((project) => {
-    //         if (project.acf && project.acf.link_title === linkTitle) {
-    //             id = project.id
-    //         }
-    //     })
-    //     return id;
-    // }
-
     const RenderHTML = (text) => {
         const htmlPart = text;
         return <div dangerouslySetInnerHTML={{ __html: htmlPart }} />;
@@ -124,11 +103,13 @@ const SingleProject = (props) => {
 
     return (
         <div id="singleProject" className="projectWrapper">
-            {project ? <></> : loading}
+            {project ? null : <Loader />}
             <section
                 className="hero"
                 style={{
-                    background: `url(${project && project.acf.in_post_main_image.url})`,
+                    background: `url(${
+                        project && project.acf.in_post_main_image.url
+                    })`,
                 }}
             >
                 <div className="heroCover">
@@ -163,7 +144,9 @@ const SingleProject = (props) => {
                 }}
             >
                 <h2>פונטים באתר</h2>
-                <div className="fontsContainer">{project && project.acf.font_types}</div>
+                <div className="fontsContainer">
+                    {project && project.acf.font_types}
+                </div>
             </section>
             <section className="mobileBgSection">
                 <Container
@@ -221,8 +204,11 @@ const SingleProject = (props) => {
                                                     colorObj
                                                 ].color_name}
                                         </p>
-                                        <p style={{direction:'ltr'}}>
-                                            {project && project.acf.fonts_props[0][colorObj].color_number.toUpperCase() }
+                                        <p style={{ direction: "ltr" }}>
+                                            {project &&
+                                                project.acf.fonts_props[0][
+                                                    colorObj
+                                                ].color_number.toUpperCase()}
                                         </p>
                                     </div>
                                 );
@@ -258,7 +244,9 @@ const SingleProject = (props) => {
                         <h4>
                             אהבת את האתר של {project && project.title.rendered}?
                         </h4>
-                        <p style={{color:"black"}}>גם העסק שלך יכול לקבל אתר כזה!</p>
+                        <p style={{ color: "black" }}>
+                            גם העסק שלך יכול לקבל אתר כזה!
+                        </p>
                     </div>
                     <Form formStyle={"lineForm"} />
                 </div>

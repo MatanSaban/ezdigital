@@ -38,6 +38,8 @@ section.hero .heading {
     align-items: center;
     height: max-content;
     padding: 50px;
+    max-width: 65%;
+    margin: 0 auto;
 }
 section.hero .heading h2 {
     font-size: 3rem;
@@ -47,6 +49,10 @@ section.hero .heading h2 {
 section.hero .heading pre {
     font-size: 1.7rem;
     text-align: center;
+    line-height: 35px;
+}
+#singleBlog .heading p {
+    font-size: 1.7rem;
 }
 section.blogContent {
     display: flex;

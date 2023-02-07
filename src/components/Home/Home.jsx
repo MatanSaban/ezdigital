@@ -25,6 +25,7 @@ import Json from "../Header/MenuItems.json";
 import { useEffect } from "react";
 import blogJson from "../Blog/Blog.json";
 import { useMediaQuery } from 'react-responsive'; 
+import Loader from "../Special/Loader/Loader";
 
 
 // const dataToString = JSON.stringify(ProjectsJson);
@@ -69,7 +70,7 @@ const testimonials = {
 
 const Home = (props) => {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
-    
+    const settings = props.homepage;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -77,18 +78,16 @@ const Home = (props) => {
 
     return (
         <main className="pageWrapper">
-            <section id="hero">
+            {settings ? null : <Loader/>}
+            {settings && <><section id="hero">
                 {/* <img src={LOGO} alt="Easy Digital Logo" width={1000}/> */}
                 <Svg />
 
                 <h1 className="centerText primaryColor">
-                    חברה לבניית אתרים, פרסום ומיתוג.
+                    {settings.acf.h1_title}
                 </h1>
                 <h2 className="centerText">
-                    אנחנו מאמינים בשירות, מקצועיות ושקיפות
-                    <br />
-                    ומבטיחים לספק לך אתר, פרסום ומיתוג שישרתו אותך לעוד המון
-                    שנים.
+                    {RenderHTML(settings.acf.sub_title)}
                 </h2>
             </section>
             {/* <section style={{display:'flex', width:'50%', justifyContent:'space-evenly', margin:'0 auto'}}>
@@ -106,14 +105,10 @@ const Home = (props) => {
                         fontSize: "2.5rem",
                     }}
                 >
-                    דיגיטל? אנחנו נעשה את זה קל!
+                    {settings.acf.services_title}
                 </h2>
                 <p style={{ fontSize: "1.1rem" }}>
-                    חברת Easy Digital הינה משרד פרסום דיגיטלי המעניק היקף רחב של
-                    פתרונות דיגיטל שהעסק שלך חייב. תחומי ההתמחות של החברה הינם:
-                    עיצוב גרפי ומיתוג לעסקים, קידום אורגני SEO, קידום ממומן PPC,
-                    פרסום ממומן ברשתות החברתיות, בניית אסטרטגיה דיגיטלית לעסקים
-                    ובניית אתרי תדמית, חנויות אונליין ואתרי תוכן.
+                    {settings.acf.services_text}   
                 </p>
                 <div
                     style={{ display: "flex", justifyContent: "space-between" }}
@@ -226,7 +221,7 @@ const Home = (props) => {
                         fontSize: "2.5rem",
                     }}
                 >
-                    הפרויקטים האחרונים שלנו
+                    {settings.acf.projects_title} 
                 </h2>
                 <Swiper
                     // install Swiper modules
@@ -242,25 +237,24 @@ const Home = (props) => {
                     pagination={{ clickable: true }}
                     style={{ height: "100%" }}
                 >
-                    {Object.keys(ProjectsJson).map((projectName, index) => {
+                    {props.projects && props.projects.map((projectItem,index) => {
                         return (
-                            <SwiperSlide key={projectName + index}>
+                            <SwiperSlide key={projectItem.id}>
                                 <div
                                     className="projectHomepage"
                                     style={{
-                                        background: `url(${ProjectsJson[projectName].backgroundImage})`,
+                                        background: `url(${projectItem.acf.featured_image.url})`,
                                     }}
                                 >
                                     <div className="projectHomepageCover">
                                         <h3>
-                                            {ProjectsJson[projectName].name}
+                                            {projectItem.title.rendered}
                                         </h3>
                                         {RenderHTML(
-                                            ProjectsJson[projectName]
-                                                .description
+                                            projectItem.acf.short_description_about_client
                                         )}
                                         <NavLink
-                                            to={`/projects${ProjectsJson[projectName].link}`}
+                                            to={`/projects/${projectItem.acf.link_title}`}
                                         >
                                             מעבר לפרויקט
                                         </NavLink>
@@ -283,7 +277,7 @@ const Home = (props) => {
                         fontSize: "2.5rem",
                     }}
                 >
-                    מילה טובה, מניסיון!
+                    {settings.acf.recommandations_title} 
                 </h2>
 
                 <div className="testimonialsContainer">
@@ -298,15 +292,15 @@ const Home = (props) => {
                         delay={300}
                         pagination={{ clickable: true }}
                     >
-                        {Object.keys(testimonials).map((keyName, index) => {
+                        {settings.acf.recommandations.map((recommandation, index) => {
                             return (
-                                <SwiperSlide key={keyName + index + keyName}>
+                                <SwiperSlide key={index}>
                                     <div
-                                        className={`testimonial testimonial${index}`}
+                                        className={`testimonial testimonial_${index}`}
                                     >
-                                        <h3>{testimonials[keyName].name}</h3>
-                                        <h4>{testimonials[keyName].title}</h4>
-                                        {RenderHTML(testimonials[keyName].text)}
+                                        <h3>{recommandation.name}</h3>
+                                        <h4>{recommandation.role}</h4>
+                                        {RenderHTML(recommandation.text)}
                                     </div>
                                 </SwiperSlide>
                             );
@@ -326,7 +320,7 @@ const Home = (props) => {
                         fontSize: "2.5rem",
                     }}
                 >
-                    ידע שווה זהב
+                    {settings.acf.blog_title} 
                 </h2>
                 <div className="articles">
                     <Swiper
@@ -339,36 +333,25 @@ const Home = (props) => {
                     pagination={{ clickable: true }}
                     // scrollbar={{ draggable: true }}
                     >
-                        {Object.keys(blogJson.theBlog.articles).map(
-                            (articleName, index) => {
+                        {props.posts && props.posts.map(
+                            (postItem, index) => {
                                 return (
-                                    <SwiperSlide key={articleName + index}>
-                                        <div  className="article" style={{background: `url(${blogJson.theBlog.articles[articleName].image})`,}}>
+                                    <SwiperSlide key={index}>
+                                        <div  className="article" style={{background: `url(${postItem.acf.featured_image})`,}}>
                                             <NavLink
-                                                to={`${blogJson.theBlog.link}${blogJson.theBlog.articles[articleName].link}`}
+                                                to={`/blog/${postItem.acf.slug}`}
                                             >
                                                 <div className="articleCover">
-                                                    {Object.keys(
-                                                        blogJson.theBlog
-                                                            .articles[
-                                                            articleName
-                                                        ].categories
-                                                    ).map(
-                                                        (categName, index) => {
+                                                    {postItem.acf.post_category.map(
+                                                        (category, index) => {
                                                             return (
                                                                 <div
                                                                     className="categoryTag"
-                                                                    key={
-                                                                        categName +
-                                                                        index
-                                                                    }
+                                                                    key={category.term_id}
                                                                 >
                                                                     <span>
                                                                         {
-                                                                            blogJson
-                                                                                .categories[
-                                                                                categName
-                                                                            ]
+                                                                            category.name
                                                                         }
                                                                     </span>
                                                                 </div>
@@ -377,10 +360,7 @@ const Home = (props) => {
                                                     )}
                                                     <h3>
                                                         {
-                                                            blogJson.theBlog
-                                                                .articles[
-                                                                articleName
-                                                            ].title
+                                                            postItem.acf.post_title
                                                         }
                                                     </h3>
                                                         <button>
@@ -396,7 +376,7 @@ const Home = (props) => {
                         )}
                     </Swiper>
                 </div>
-            </section>
+            </section></>}
         </main>
     );
 };

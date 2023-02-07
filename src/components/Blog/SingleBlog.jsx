@@ -1,10 +1,10 @@
 import { NavLink, useParams } from "react-router-dom";
-import BlogJson from "./Blog.json";
 import "./singleblog.css";
 import { Parallax } from "react-parallax";
 import { useEffect, useRef, useState } from "react";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
-import Form from '../Special/Form/Form'
+import Form from "../Special/Form/Form";
+import Loader from "../Special/Loader/Loader.jsx";
 
 const Container = (props) => (
     <Parallax
@@ -27,150 +27,162 @@ const Container = (props) => (
 );
 
 const SingleBlog = (props) => {
-
     const { link } = useParams();
-    
-    
-    const [articlesArray, setArticlesArray] = useState([]);
+
     const [twoArticles, setTwoArticles] = useState([]);
     const [currentArticleNumber, setCurrentArticleNumber] = useState([]);
-    
-    
+    const [post, setPost] = useState(null);
+    const posts = props.posts;
+
     const pageLoad = () => {
         setTimeout(() => {
-            setTwoArticles(
-                articlesArray
-                );
-                window.scrollTo(0, 0);
-            }, 500);
-        };
-        
-        
-        useEffect(() => {
-            
-            Object.keys(BlogJson.theBlog.articles).map((articleName, index) => {
-                // if (articleName !== link) {
-                    setArticlesArray((articlesArray) => [
-                        ...articlesArray,
-                    BlogJson.theBlog.articles[articleName],
-                ]);
-                // }
-            });
+            setTwoArticles(posts);
+            window.scrollTo(0, 0);
+        }, 500);
+    };
 
-   
+    
+    useEffect(() => {
+        const checkCurrentBlogPos = () => {
+            window.scrollTo(0, 0);
+            const currentPost = posts && posts.find(post => post.acf.slug === link);
+            currentPost && setPost(currentPost.acf);
 
-    },[]
-    );
-    
-    
-    
-    
-        
+            let indexes = [];
+            posts && posts.map((post, index) => {
+                if (post.acf.slug == link) {
+                    setCurrentArticleNumber(index);
 
-        useEffect(() => {
-            const checkCurrentBlogPos = () => {
-                window.scrollTo(0, 0);
-
-                let currentArticle = null
-                let indexes = []
-                articlesArray.map((article, index) => {
-                    if (article.link == `/${link}`) {
-                        currentArticle = index
-                        setCurrentArticleNumber(currentArticle)
-                        if (index === 0) {
-                            indexes = [currentArticle + 1, currentArticle + 2]
-                        } else if ((index + 1) !== undefined) {
-                            indexes = [currentArticle - 1 , currentArticle +1]
-                        } else if (index + 1 == (null || undefined || "undefined")){
-                            indexes = [currentArticle - 1 , currentArticle - 2]
-                        }
-                        setTwoArticles(indexes)
+                    if (index === 0) {
+                        indexes = [null, index + 1];
+                        console.log(1);
+                        console.log(indexes);
+                    } else if (index + 1 <= posts.length - 1) {
+                        indexes = [index - 1, index + 1];
+                        console.log(2);
+                        console.log(indexes);
+                    } else if (index + 1 > posts.length - 1) {
+                        indexes = [index - 1, null];
+                        console.log(3);
+                        console.log(indexes);
                     }
-                    
-                })
-            }
-    
-            checkCurrentBlogPos();
-        }, [articlesArray, link]);
-    
-        
-        
-        
 
+                    setTwoArticles(indexes);
+                }
+            });
+        };
+
+        checkCurrentBlogPos();
+    }, [posts, link]);
 
     const RenderHTML = (text) => {
         const htmlPart = text;
         return <div dangerouslySetInnerHTML={{ __html: htmlPart }} />;
     };
 
-    console.log('link', BlogJson.theBlog.articles[link].title);
     return (
         <div id="singleBlog" className="singleBlogWrapper">
-            <section className="hero">
-                {/* <Container path={BlogJson.theBlog.articles[link].image}>
-                    <div
-                        className="singleBlog__hero"
-                        style={{
-                            background: `url(${BlogJson.theBlog.articles[link].image})`,
-                        }}
-                    ></div>
-                </Container> */}
+            {post ? null : <Loader />}
+            {post && <><section className="hero">
                 <SinglePagesHero
-                    title={BlogJson.theBlog.articles[link].title}
+                    title={post && post.post_title}
                     parentName={props.parentName}
                     parentPath={props.parentPath}
                 />
-                        <div className="heading">
-                            <h2>{BlogJson.theBlog.articles[link].headingTitle}</h2>
-                            {RenderHTML(BlogJson.theBlog.articles[link].headingParagraph)}
-                        </div>
+                <div className="heading">
+                    <h2>{post && post.pre_post_title}</h2>
+                    {RenderHTML(
+                        // BlogJson.theBlog.articles[link].headingParagraph
+                        post && post.pre_post_content
+                    )}
+                </div>
             </section>
-            <section className="blogContent" style={{background:`url(${BlogJson.theBlog.articles[link].image})`}}>
-                        <div className="sections contentWrapper">
-                            {
-                                Object.keys(BlogJson.theBlog.articles[link].sections).map((sectioName, index) => {
-                                    return (
-                                        <div className="contentSection" key={index}>
-                                        <h3>{BlogJson.theBlog.articles[link].sections[sectioName].title}</h3>
-                                        {RenderHTML(BlogJson.theBlog.articles[link].sections[sectioName].content)}
-                                    </div>
-
-                                    )
-                                    })
-                            }
-                        </div>
+            <section
+                className="blogContent"
+                style={{
+                    background: `url(${post && post.featured_image})`,
+                }}
+            >
+                <div className="sections contentWrapper">
+                    {post.post_content.map(
+                        (section, index) => {
+                            return (
+                                <div className="contentSection" key={index}>
+                                    <h3>
+                                        {
+                                            section.content_1.title
+                                        }
+                                    </h3>
+                                    {RenderHTML(
+                                        section.content_1.text
+                                    )}
+                                </div>
+                            );
+                        }
+                    )}
+                </div>
             </section>
-            <section style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', minHeight:'fit-content', marginTop:'100px'}}>
-                <Form formStyle={'longForm'} title={<><h3>רוצה לדבר על זה?</h3><p>פרטים בקטנה וכבר נחזור אליך!</p></>}/>
+            <section
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    minHeight: "fit-content",
+                    marginTop: "100px",
+                }}
+            >
+                <Form
+                    formStyle={"longForm"}
+                    title={
+                        <>
+                            <h3>רוצה לדבר על זה?</h3>
+                            <p>פרטים בקטנה וכבר נחזור אליך!</p>
+                        </>
+                    }
+                />
             </section>
             <section className="nextandprevblogpostsWrapper">
                 <div className="nextandprevblogposts">
                     {twoArticles &&
                         twoArticles.map((i, index) => {
-                              
                             return (
-                                articlesArray[i] !== undefined &&
-                                <NavLink
-                                    onClick={() => pageLoad}
-                                    className={i > currentArticleNumber ? 'prevBlog' : 'nextBlog'}
-                                    key={index}
-                                    to={`/blog${articlesArray[i] && articlesArray[i].link}`}
-                                >
-                                    <div
-                                        style={{
-                                            background: `url(${articlesArray[i] && articlesArray[i].image})`,
-                                        }}
+                                posts[i] !== undefined && (
+                                    <NavLink
+                                        onClick={() => pageLoad}
+                                        className={
+                                            i > currentArticleNumber
+                                                ? "prevBlog"
+                                                : "nextBlog"
+                                        }
+                                        key={index}
+                                        to={`/blog/${
+                                            posts[i] &&
+                                            posts[i].acf.slug
+                                        }`}
                                     >
-                                        <div className="blogItemCover">
-                                            <h3>{articlesArray[i] && articlesArray[i].title}</h3>
-                                            <button>מעבר לכתבה</button>
+                                        <div
+                                            style={{
+                                                background: `url(${
+                                                    posts[i] &&
+                                                    posts[i].acf.featured_image
+                                                })`,
+                                            }}
+                                        >
+                                            <div className="blogItemCover">
+                                                <h3>
+                                                    {posts[i] &&
+                                                        posts[i].acf.post_title}
+                                                </h3>
+                                                <button>מעבר לכתבה</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </NavLink>
+                                    </NavLink>
+                                )
                             );
                         })}
                 </div>
-            </section>
+            </section></>}
         </div>
     );
 };

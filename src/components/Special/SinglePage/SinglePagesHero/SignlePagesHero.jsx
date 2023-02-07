@@ -15,6 +15,8 @@ const SinglePagesHero = (props) => {
             <div className="breadCrumbs">
                 {props.grandParentPath && (
                     <>
+                    {console.log('here 1')}
+
                         <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
                         <FaAngleDoubleLeft />{" "}
                         <NavLink to={props.grandParentPath}>
@@ -31,19 +33,21 @@ const SinglePagesHero = (props) => {
                 )}
                 {props.parentPath !== "/" && !props.grandParentPath && (
                     <>
-                        <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
-                        <FaAngleDoubleLeft />{" "}
-                        <NavLink to={props.parentPath}>
-                            {" "}
-                            {props.parentName}{" "}
-                        </NavLink>
-                        {" "}<FaAngleDoubleLeft />{" "}
+                    {console.log("props.parentPath")}
+                    {console.log(props.parentPath)}
+                    {console.log('here 2')}
+
+                        <NavLink to={"/"}>{"עמוד הבית"}</NavLink> 
+                        <FaAngleDoubleLeft /> 
+                        <NavLink to={`/${props.parentPath}`}> {props.parentName} </NavLink>
+                        <FaAngleDoubleLeft /> 
                         {props.title}
                     </>
                 )}
                 {props.parentPath == '/' && !props.grandParentPath && (
                     <>
-                    
+                        {console.log('here 3')}
+
                         <NavLink to={`${props.parentPath}`}>
                             {" "}
                             {props.parentName}{" "}

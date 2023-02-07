@@ -1,4 +1,4 @@
-import "./Web-development/webdevelopment.css";
+import "./web-development/webdevelopment.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
 import { ImUserTie } from "react-icons/im";
 import { ImList } from "react-icons/im";
