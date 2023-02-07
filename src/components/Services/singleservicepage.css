@@ -187,7 +187,20 @@ section.websiteDevelop__services a:hover {
     .singleService .breadCrumbs {
         position: absolute;
         right: 10px;
-        top: 200px;
+        top: 110px;
+    }
+    .SingleServicePage__hero .scrollDown {
+        bottom: 5%;
+    }
+    .SingleServicePage__whyUs div {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+    #whyUs {
+        padding: 15px;
+        margin-top: 50px;
     }
     #SingleServicePage .SingleServicePage__hero {
         padding: 25px;
