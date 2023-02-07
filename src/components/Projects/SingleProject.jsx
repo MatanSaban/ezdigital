@@ -103,7 +103,6 @@ const SingleProject = (props) => {
 
     return (
         <div id="singleProject" className="projectWrapper">
-            {project ? null : <Loader ready={project}/>}
             <section
                 className="hero"
                 style={{

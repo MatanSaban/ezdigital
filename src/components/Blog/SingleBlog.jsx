@@ -82,7 +82,6 @@ const SingleBlog = (props) => {
 
     return (
         <div id="singleBlog" className="singleBlogWrapper">
-            {post ? null : <Loader ready={post}/>}
             {post && <><section className="hero">
                 <SinglePagesHero
                     title={post && post.post_title}

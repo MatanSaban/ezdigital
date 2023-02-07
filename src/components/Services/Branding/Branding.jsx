@@ -8,7 +8,6 @@ import SingleServicePage from "../SingleServicePage";
 const Branding = (props) => {
     return ( 
         <div id="BrandingPage" className="brandingWrapper singleService">
-            {props.parentPath ? null : <Loader ready={props.parentPath}/>}
             <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />
             <SingleServicePage
                 title={props.pageName}

@@ -10,6 +10,9 @@ const Loader = (props) => {
     return (
         <div className={`loaderLogo ${props && props.ready ? 'sizeAndRoll' : 'loaderLogoNotReady'}`}>
             <Logo/>
+            <div>
+                טוען את האתר...
+            </div>
         </div>
     );
 }

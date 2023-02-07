@@ -7,7 +7,6 @@ import Loader from "../Special/Loader/Loader.jsx";
 const Projects = (props) => {
     return (
         <div id="projectsPage">
-            {props.projects ? null : <Loader ready={props.projects}/>}
             <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />
             <div className="theProjects">
                 {props.projects && props.projects.map((project) => { 
