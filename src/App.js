@@ -97,7 +97,7 @@ function App() {
 
                 <Route exact path="Projects" element={<Projects projects={projects} path={"Projects/:link"} pageName={"פרויקטים"} parentName={"עמוד הבית"} parentPath={"/"} />}></Route>
                 <Route exact path="Projects/:link" element={<SingleProject projects={projects} />}></Route>
-                <Route exact path="services" element={ <Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
+                <Route exact path="services" element={<Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
 
                 {/* {pages &&
                     pages.map((page) => {
