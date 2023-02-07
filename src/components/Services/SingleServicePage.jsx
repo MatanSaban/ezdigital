@@ -1,4 +1,3 @@
-import "./web-development/webdevelopment.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
 import { useEffect } from "react";
 import WhyUs from "./WhyUs";
