@@ -14,7 +14,7 @@ const Services = (props) => {
             <div className="allServices">
                 {Object.keys(Json.Services.Submenu).map((keyName, index) => {
                     return (
-                        <div className="service" style={{display:'flex', flexDirection:'column', alignItems:'flex-start', alignContent:'center'}}>
+                        <div key={index} className="service" style={{display:'flex', flexDirection:'column', alignItems:'flex-start', alignContent:'center'}}>
                             <NavLink to={Json.Services.Submenu[keyName].link}><h2>{Json.Services.Submenu[keyName].text}</h2></NavLink>
 
                             {Json.Services.Submenu[keyName].subSubmenu && (
@@ -22,9 +22,9 @@ const Services = (props) => {
                                     {Object.keys(
                                         Json.Services.Submenu[keyName]
                                             .subSubmenu
-                                    ).map((keyname) => {
+                                    ).map((keyname,idx) => {
                                         return (
-                                            <NavLink to={`${Json.Services.Submenu[keyName].link}${Json.Services.Submenu[
+                                            <NavLink key={idx} to={`${Json.Services.Submenu[keyName].link}${Json.Services.Submenu[
                                                 keyName
                                             ].subSubmenu[keyname].link}`}>
                                                 {
