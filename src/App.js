@@ -3,19 +3,19 @@ import Home from "./components/Home/Home.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects.jsx";
-import Services from "./components/services/Services.jsx";
-import Socialads from "./components/services/social-ads/Socialads";
-import Facebookpaid from "./components/services/social-ads/Facebookpaid";
-import Facebookorganic from "./components/services/social-ads/Facebookorganic";
-import Branding from "./components/services/branding/Branding";
-import Googleads from "./components/services/google-ads/Googleads";
-import Googlepaid from "./components/services/google-ads/Googlepaid";
-import Googleorganic from "./components/services/google-ads/Googleorganic";
-import Webdevelopment from "./components/services/web-development/Webdevelopment";
-import Digitalasset from "./components/services/web-development/Digitalasset";
-import Landingpage from "./components/services/web-development/Landingpage";
-import Onlinestore from "./components/services/web-development/Onlinestore";
-import Officialwebsite from "./components/services/web-development/Officialwebsite";
+import Services from "./components/Services/Services.jsx";
+// import Socialads from "./components/services/social-ads/Socialads";
+// import Facebookpaid from "./components/services/social-ads/Facebookpaid";
+// import Facebookorganic from "./components/services/social-ads/Facebookorganic";
+// import Branding from "./components/services/branding/Branding";
+// import Googleads from "./components/services/google-ads/Googleads";
+// import Googlepaid from "./components/services/google-ads/Googlepaid";
+// import Googleorganic from "./components/services/google-ads/Googleorganic";
+// import Webdevelopment from "./components/services/web-development/Webdevelopment";
+// import Digitalasset from "./components/services/web-development/Digitalasset";
+// import Landingpage from "./components/services/web-development/Landingpage";
+// import Onlinestore from "./components/services/web-development/Onlinestore";
+// import Officialwebsite from "./components/services/web-development/Officialwebsite";
 import Contact from "./components/Contact/Contact.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import SingleProject from "./components/Projects/SingleProject.jsx";
@@ -25,20 +25,20 @@ import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
 import Loader from "./components/Special/Loader/Loader.jsx";
 
-const Components = {
-    Facebookorganic,
-    Socialads,
-    Facebookpaid,
-    Branding,
-    Googleads,
-    Googlepaid,
-    Googleorganic,
-    Webdevelopment,
-    Digitalasset,
-    Landingpage,
-    Onlinestore,
-    Officialwebsite,
-};
+// const Components = {
+//     Facebookorganic,
+//     Socialads,
+//     Facebookpaid,
+//     Branding,
+//     Googleads,
+//     Googlepaid,
+//     Googleorganic,
+//     Webdevelopment,
+//     Digitalasset,
+//     Landingpage,
+//     Onlinestore,
+//     Officialwebsite,
+// };
 
 function App() {
     const [projects, setProjects] = useState(null);
