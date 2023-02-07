@@ -12,7 +12,7 @@ const Services = (props) => {
                 parentPath={props.parentPath}
             />
             <div className="allServices">
-                {Object.keys(Json.Services.Submenu).map((keyName, index) => {
+                {/* {Object.keys(Json.Services.Submenu).map((keyName, index) => {
                     return (
                         <div key={index} className="service" style={{display:'flex', flexDirection:'column', alignItems:'flex-start', alignContent:'center'}}>
                             <NavLink to={Json.Services.Submenu[keyName].link}><h2>{Json.Services.Submenu[keyName].text}</h2></NavLink>
@@ -39,7 +39,7 @@ const Services = (props) => {
                             )}
                         </div>
                     );
-                })}
+                })} */}
             </div>
         </div>
     );
