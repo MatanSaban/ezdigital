@@ -1,9 +1,9 @@
-import Header from "./components/Header/Header.jsx";
-import Home from "./components/Home/Home.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Footer from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
-import Projects from "./components/Projects/Projects.jsx";
-import Services from "./components/services/Services.jsx";
+import Projects from "./components/Projects/Projects";
+import Services from "./components/services/Services";
 import Socialads from "./components/services/social-ads/Socialads";
 import Facebookpaid from "./components/services/social-ads/Facebookpaid";
 import Facebookorganic from "./components/services/social-ads/Facebookorganic";
@@ -16,14 +16,14 @@ import Digitalasset from "./components/services/web-development/Digitalasset";
 import Landingpage from "./components/services/web-development/Landingpage";
 import Onlinestore from "./components/services/web-development/Onlinestore";
 import Officialwebsite from "./components/services/web-development/Officialwebsite";
-import Contact from "./components/Contact/Contact.jsx";
-import Blog from "./components/Blog/Blog.jsx";
-import SingleProject from "./components/Projects/SingleProject.jsx";
-import Page404 from "./components/Special/404/Page404.jsx";
+import Contact from "./components/Contact/Contact";
+import Blog from "./components/Blog/Blog";
+import SingleProject from "./components/Projects/SingleProject";
+import Page404 from "./components/Special/404/Page404";
 import { useState, useEffect } from "react";
-import SingleBlog from "./components/Blog/SingleBlog.jsx";
+import SingleBlog from "./components/Blog/SingleBlog";
 import axios from "axios";
-import Loader from "./components/Special/Loader/Loader.jsx";
+import Loader from "./components/Special/Loader/Loader";
 
 const Components = {
     Facebookorganic,
