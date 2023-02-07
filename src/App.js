@@ -1,9 +1,9 @@
-import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header.jsx";
+import Home from "./components/Home/Home.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import { Route, Routes } from "react-router-dom";
-import Projects from "./components/Projects/Projects";
-import Services from "./components/services/Services";
+import Projects from "./components/Projects/Projects.jsx";
+import Services from "./components/services/Services.jsx";
 import Socialads from "./components/services/social-ads/Socialads";
 import Facebookpaid from "./components/services/social-ads/Facebookpaid";
 import Facebookorganic from "./components/services/social-ads/Facebookorganic";
@@ -16,14 +16,14 @@ import Digitalasset from "./components/services/web-development/Digitalasset";
 import Landingpage from "./components/services/web-development/Landingpage";
 import Onlinestore from "./components/services/web-development/Onlinestore";
 import Officialwebsite from "./components/services/web-development/Officialwebsite";
-import Contact from "./components/Contact/Contact";
-import Blog from "./components/Blog/Blog";
-import SingleProject from "./components/Projects/SingleProject";
-import Page404 from "./components/Special/404/Page404";
+import Contact from "./components/Contact/Contact.jsx";
+import Blog from "./components/Blog/Blog.jsx";
+import SingleProject from "./components/Projects/SingleProject.jsx";
+import Page404 from "./components/Special/404/Page404.jsx";
 import { useState, useEffect } from "react";
-import SingleBlog from "./components/Blog/SingleBlog";
+import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
-import Loader from "./components/Special/Loader/Loader";
+import Loader from "./components/Special/Loader/Loader.jsx";
 
 const Components = {
     Facebookorganic,
@@ -89,6 +89,8 @@ function App() {
     return (
         <div className="App"> 
         {homepage && posts && projects && pages ? null : <Loader ready={homepage && posts && projects && pages}/>}
+            { 
+            <>
             <Header />
             <Routes>
                 <Route exact path="/" element={ <Home pageName={"עמוד הבית"} homepage={homepage} posts={posts} projects={projects} pages={pages} />}></Route>
@@ -101,7 +103,30 @@ function App() {
                     element={
                         <Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
 
-                
+                {pages &&
+                    pages.map((page) => {
+                        let toReturn = null;
+                        if (
+                            page.id !== 19153 &&
+                            page.id !== 19607 &&
+                            page.id !== 19525
+                        ) {
+                            const Component =
+                                Components[page.acf.component_name];
+                            if (page.parent && page.acf.grandParentName) {
+                                toReturn = (
+                                    <Route key={page.id} exact path={`${page.acf.grandParentPath}/${page.acf.parentPath}/${page.slug}`} element={
+                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={`/${page.acf.parentPath}`} grandParentName={ page.acf.grandParentName } grandParentPath={`/${page.acf.grandParentPath}`} />} />
+                                );
+                            } else if (page.parent && !page.acf.grandParentName) {
+                                toReturn = (
+                                    <Route key={page.id} exact path={`${page.acf.parentPath}/${page.slug}`} element={
+                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} /> } />
+                                );
+                            }
+                        }
+                        return toReturn;
+                    })}
 
                 <Route
                     exact
@@ -142,34 +167,9 @@ function App() {
                 ></Route>
 
                 <Route path="*" element={<Page404 />}></Route>
-                {pages &&
-                    pages.map((page) => {
-                        let toReturn = null;
-                        if (
-                            page.id !== 19153 &&
-                            page.id !== 19607 &&
-                            page.id !== 19525
-                        ) {
-                            const Component =
-                                Components[page.acf.component_name && page.acf.component_name];
-                            if (page.parent && page.acf.grandParentName) {
-                                toReturn = (
-                                    <Route key={page.id} exact path={`${page.acf.grandParentPath}/${page.acf.parentPath}/${page.slug}`} element={
-                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={`/${page.acf.parentPath}`} grandParentName={ page.acf.grandParentName } grandParentPath={`/${page.acf.grandParentPath}`} />} />
-                                );
-                            } else if (page.parent && !page.acf.grandParentName) {
-                                toReturn = (
-                                    <Route key={page.id} exact path={`${page.acf.parentPath}/${page.slug}`} element={
-                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} /> } />
-                                );
-                                console.log(<Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} />);
-                            }
-                        }
-                        return toReturn;
-                    })}
             </Routes>
             <Footer />
-            
+            </>}
         </div>
     );
 }
