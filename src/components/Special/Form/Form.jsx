@@ -31,7 +31,7 @@ const Form = (props) => {
 
 
     return (
-        <div className="formWrapper" style={{display:'flex', alignItems:'center'}}>
+        <div className="formWrapper" style={{display:'flex', alignItems:'center', justifyContent:"center"}}>
             {emailPopup && <div className='popup'>
                 <h1>ההודעה נשלחה בהצלחה, ניצור איתך קשר בקרוב מאוד!</h1>
             </div>}

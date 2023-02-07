@@ -8,6 +8,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import Form from "../Special/Form/Form";
 
 const Contact = (props) => {
+
     return (
         <div id="ContactPage" className="contactWrapper">
             <SinglePagesHero

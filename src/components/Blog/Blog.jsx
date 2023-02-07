@@ -1,12 +1,30 @@
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import './blog.css'
 import { NavLink } from "react-router-dom";
+import Loader from "../Special/Loader/Loader";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Blog = (props) => {
     const posts = props.posts;
 
+    const [forceLoader, setForceLoader] = useState(true);
+      
+    useEffect(() => {
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },800)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1000)
+    },[])
+
+    
+
     return ( 
         <div id="blogPage" className="blogWrapper">
+            {forceLoader ? <Loader/> : null}
             <SinglePagesHero title={props.pageName} parentName={props.parentName}  parentPath={props.parentPath}/>
             <div className="articles">
                 {

@@ -2,11 +2,27 @@ import { NavLink } from "react-router-dom";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import "./projects.css";
 import Loader from "../Special/Loader/Loader.jsx";
+import { useEffect } from "react";
+import { useState } from "react";
 
 
 const Projects = (props) => {
+    const [forceLoader, setForceLoader] = useState(true);
+      
+    useEffect(() => {
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },800)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1000)
+    },[])
+
     return (
         <div id="projectsPage">
+            {forceLoader ? <Loader/> : null}
+            {props.pageName ? null : <Loader/>}
             <SinglePagesHero title={props.pageName} parentName={props.parentName} parentPath={props.parentPath} />
             <div className="theProjects">
                 {props.projects && props.projects.map((project) => { 

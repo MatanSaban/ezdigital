@@ -22,7 +22,7 @@ import "swiper/css/scrollbar";
 import ProjectsJson from "../Projects/Projects.json";
 import { NavLink } from "react-router-dom";
 import Json from "../Header/MenuItems.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import blogJson from "../Blog/Blog.json";
 import { useMediaQuery } from 'react-responsive'; 
 import Loader from "../Special/Loader/Loader";
@@ -71,13 +71,27 @@ const testimonials = {
 const Home = (props) => {
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
     const settings = props.homepage;
-
+    const [forceLoader, setForceLoader] = useState(true);
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    
+    
+      
+    useEffect(() => {
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },1000)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1500)
+    },[])
 
     return (
         <main className="pageWrapper">
+            {forceLoader ? <Loader/> : null}
             {settings ? null : <Loader ready={settings}/>}
             {settings && <><section id="hero">
                 {/* <img src={LOGO} alt="Easy Digital Logo" width={1000}/> */}

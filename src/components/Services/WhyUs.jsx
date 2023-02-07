@@ -9,7 +9,7 @@ const WhyUs = (props) => {
                     return (
                         <span key={index}>
                             <BsCheckCircleFill />
-                            {reason}
+                            {reason.title}
                         </span>
                     );
                 })}

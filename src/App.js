@@ -4,18 +4,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects.jsx";
 import Services from "./components/Services/Services.jsx";
-import Socialads from "./components/Services/Social-ads/Socialads";
-import Facebookpaid from "./components/Services/Social-ads/FacebookPaid";
-import Facebookorganic from "./components/Services/Social-ads/Facebookorganic";
-import Branding from "./components/Services/branding/Branding";
-import Googleads from "./components/Services/google-ads/Googleads";
-import Googlepaid from "./components/Services/google-ads/Googlepaid";
-import Googleorganic from "./components/Services/google-ads/Googleorganic";
-import Webdevelopment from "./components/Services/web-development/Webdevelopment";
-import Digitalasset from "./components/Services/web-development/Digitalasset";
-import Landingpage from "./components/Services/web-development/Landingpage";
-import Onlinestore from "./components/Services/web-development/Onlinestore";
-import Officialwebsite from "./components/Services/web-development/Officialwebsite";
+import SingleServicePage from './components/Services/SingleServicePage';
 import Contact from "./components/Contact/Contact.jsx";
 import Blog from "./components/Blog/Blog.jsx";
 import SingleProject from "./components/Projects/SingleProject.jsx";
@@ -25,20 +14,6 @@ import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
 import Loader from "./components/Special/Loader/Loader.jsx";
 
-const Components = {
-    Facebookorganic,
-    Socialads,
-    Facebookpaid,
-    Branding,
-    Googleads,
-    Googlepaid,
-    Googleorganic,
-    Webdevelopment,
-    Digitalasset,
-    Landingpage,
-    Onlinestore,
-    Officialwebsite,
-};
 
 function App() {
     const [projects, setProjects] = useState(null);
@@ -86,6 +61,9 @@ function App() {
                 console.log(error);
             });
     }, []);
+
+    
+
     return (
         <div className="App"> 
         {homepage && posts && projects && pages ? null : <Loader ready={homepage && posts && projects && pages}/>}
@@ -107,17 +85,15 @@ function App() {
                             page.id !== 19607 &&
                             page.id !== 19525
                         ) {
-                            const Component =
-                                Components[page.acf.component_name];
                             if (page.parent && page.acf.grandParentName) {
                                 toReturn = (
                                     <Route key={page.id} exact path={`${page.acf.grandParentPath}/${page.acf.parentPath}/${page.slug}`} element={
-                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={`/${page.acf.parentPath}`} grandParentName={ page.acf.grandParentName } grandParentPath={`/${page.acf.grandParentPath}`} />} />
+                                            <SingleServicePage page={page} />} />
                                 );
                             } else if (page.parent && !page.acf.grandParentName) {
                                 toReturn = (
                                     <Route key={page.id} exact path={`${page.acf.parentPath}/${page.slug}`} element={
-                                            <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} /> } />
+                                            <SingleServicePage page={page} /> } />
                                 );
                             }
                         }

@@ -33,6 +33,18 @@ const SingleProject = (props) => {
 
     const [isElementVisible, setIsElementVisible] = useState(false);
 
+    const [forceLoader, setForceLoader] = useState(true);
+      
+    useEffect(() => {
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },800)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1000)
+    },[project])
+
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
@@ -103,6 +115,7 @@ const SingleProject = (props) => {
 
     return (
         <div id="singleProject" className="projectWrapper">
+            {forceLoader ? <Loader/> : null}
             <section
                 className="hero"
                 style={{

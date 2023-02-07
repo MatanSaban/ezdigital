@@ -13,7 +13,7 @@
 }
 
 #SingleServicePage .SingleServicePage__hero {
-    padding: 50px 200px 50px 50px;
+    padding: 0 200px 50px 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

@@ -1,7 +1,6 @@
 import './loader.css';
 import Logo from "../Logo/Svg.jsx";
 
-console.log(Logo);
 
 const Loader = (props) => {
 
@@ -11,7 +10,7 @@ const Loader = (props) => {
         <div className={`loaderLogo ${props && props.ready ? 'sizeAndRoll' : 'loaderLogoNotReady'}`}>
             <Logo/>
             <div>
-                טוען את האתר...
+                טוען לך את התוכן...
             </div>
         </div>
     );

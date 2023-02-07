@@ -2,6 +2,7 @@ import SinglePagesHero from "../../Special/SinglePage/SinglePagesHero/SignlePage
 import SingleServicePage from "../SingleServicePage";
 
 const SocialAds = (props) => {
+    console.log(props);
     return (
         <div id="SocialAdsPage" className="socialAdsWrapper singleService">
             <SinglePagesHero

@@ -1,15 +1,12 @@
 import "./web-development/webdevelopment.css";
 import { FaAngleDoubleDown } from "react-icons/fa";
-import { ImUserTie } from "react-icons/im";
-import { ImList } from "react-icons/im";
-import { IoStorefrontOutline } from "react-icons/io5";
-import { IoRocketOutline } from "react-icons/io5";
-import { IoCodeSlashOutline } from "react-icons/io5";
-import { useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import Json from "./ServicesData.json";
+import { useEffect } from "react";
 import WhyUs from "./WhyUs";
 import Form from "../Special/Form/Form";
+import './singleservicepage.css';
+import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
+import { useState } from "react";
+import Loader from "../../components/Special/Loader/Loader";
 
 
 // const htmlDiv=document.querySelector('div');
@@ -24,35 +21,41 @@ const RenderHTML=(text)=>{
     )
 }
 
-
-
 const SingleServicePage = (props) => {
+    // console.log(props);
 
+    const [forceLoader, setForceLoader] = useState(true);
+
+    // useEffect(() => {
+    //     window.scrollTo(0, 0)
+    //   },)
+      
     useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },800)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1000)
+    },[props.page])
 
 
     return (
-        <div id="SingleServicePage" className="SingleServicePage">
-            <video
-                autoPlay
-                muted
-                loop
-                style={{
-                    height: "95vh",
-                    width: "75vw",
-                    position: "absolute",
-                    left: "0",
-                    top: "5vh",
-                    zIndex: "-1",
-                    objectFit: "cover",
-                }}
-            >
-                <source src={Json[props.path].video} />
+        <div id="SingleServicePage" className="SingleServicePage singleService">
+            {forceLoader ? <Loader/> : null}
+            <SinglePagesHero
+                title={props.page.title.rendered}
+                parentName={props.page.acf.parentName}
+                parentPath={props.page.acf.parentPath}
+                grandParentName={props.page.acf.grandParentName}
+                grandParentPath={props.page.acf.grandParentPath}
+            />
+            <video autoPlay muted loop>
+                <source src={props && props.page.acf.background_video} />
             </video>
             <div className="SingleServicePage__hero">
-                {props.pageHeading}
+            {RenderHTML(props.page.acf.pre_content)}
                 <div>
                 <Form wrapperStyle={{ margin:'0 auto'}} formStyle={'lineForm'}/>
                 </div>
@@ -62,45 +65,26 @@ const SingleServicePage = (props) => {
                     </i>
                 </div>
             </div>
-            {props.reasons && <WhyUs title={props.title} reasons={props.reasons}/>}
+            {props.page.acf.reasons && <WhyUs title={props.page.title.rendered} reasons={props.page.acf.reasons}/>}
             <div className="singleServicePageWrapper">
                 <section className="contentWrapper">
-                    <h2>עוד מידע על {props.title}</h2>
+                    <h2>עוד מידע על {props.page.title.rendered}</h2>
 
-                    {Object.keys(Json[props.path].content).map(
-                        (keyName, index) => {
+                    {props.page.acf.page_content.map(
+                        (section, index) => {
                             return (
-                                <div
-                                    key={index}
-                                    className='contentSection'
-
-                                    // style={{ background: "red", margin: "10px" }}
-                                >
-                                    <h3>
-                                        {
-                                            Json[props.path].content[keyName]
-                                                .title
-                                        }
-                                    </h3>
-                                        
-                                        {/* <p><pre> */}
-                                            { RenderHTML(Json[props.path].content[
-                                                    keyName
-                                                ].paragraph)
-                                                
-                                            }
-                                        {/* </pre></p> */}
+                                <div key={index} className='contentSection' >
+                                    <h3>{section.title}</h3>
+                                    {RenderHTML(section.content)}
                                     
                                 </div>
                             );
                         }
                     )}
                 </section>
-                {/* <section className=""> */}
                 <div style={{position:'relative'}}>
                 <Form formStyle={'lineForm'}/>
                 </div>
-                {/* </section> */}
             </div>
         </div>
     );

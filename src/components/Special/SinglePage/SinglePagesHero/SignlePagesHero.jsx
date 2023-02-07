@@ -16,15 +16,17 @@ const SinglePagesHero = (props) => {
                 {props.grandParentPath && (
                     <>
                     {console.log('here 1')}
+                    {console.log(props.grandParentName)}
+                    {console.log(props.grandParentPath)}
 
                         <NavLink to={"/"}>{"עמוד הבית"}</NavLink>{" "}
                         <FaAngleDoubleLeft />{" "}
-                        <NavLink to={props.grandParentPath}>
+                        <NavLink to={`/${props.grandParentPath}`}>
                             {" "}
                             {props.grandParentName}{" "}
                         </NavLink>
                         <FaAngleDoubleLeft />{" "}
-                        <NavLink to={`${props.grandParentPath}${props.parentPath}`}>
+                        <NavLink to={`/${props.grandParentPath}/${props.parentPath}`}>
                         {props.parentName}
                         </NavLink>{" "}
                         <FaAngleDoubleLeft />{" "}

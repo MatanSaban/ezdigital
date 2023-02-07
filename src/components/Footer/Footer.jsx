@@ -26,7 +26,7 @@ const Footer = () => {
         observer.observe(ref.current);
     })
 
-    console.log('isElementVisible', isElementVisible);
+    // console.log('isElementVisible', isElementVisible);
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` }); 
 
     return (

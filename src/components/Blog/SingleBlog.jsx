@@ -4,6 +4,7 @@ import "./singleblog.css";
 import { useEffect, useState } from "react";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import Form from "../Special/Form/Form";
+import Loader from "../Special/Loader/Loader";
 
 // const Container = (props) => (
 //     <Parallax
@@ -31,6 +32,7 @@ const SingleBlog = (props) => {
     const [twoArticles, setTwoArticles] = useState([]);
     const [currentArticleNumber, setCurrentArticleNumber] = useState([]);
     const [post, setPost] = useState(null);
+    const [forceLoader, setForceLoader] = useState(true);
     const posts = props.posts;
 
     const pageLoad = () => {
@@ -39,6 +41,19 @@ const SingleBlog = (props) => {
             window.scrollTo(0, 0);
         }, 500);
     };
+
+      
+    useEffect(() => {
+        setForceLoader(true);
+        setTimeout(() => {
+            window.scrollTo(0, 0)
+        },800)
+        setTimeout(() => {
+            setForceLoader(false);
+        },1000)
+    },[post])
+
+    
 
     
     useEffect(() => {
@@ -82,6 +97,7 @@ const SingleBlog = (props) => {
 
     return (
         <div id="singleBlog" className="singleBlogWrapper">
+            {forceLoader ? <Loader/> : null}
             {post && <><section className="hero">
                 <SinglePagesHero
                     title={post && post.post_title}
