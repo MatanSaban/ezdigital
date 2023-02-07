@@ -1,6 +1,6 @@
 import { NavLink, useParams } from "react-router-dom";
 import "./singleblog.css";
-import { Parallax } from "react-parallax";
+// import { Parallax } from "react-parallax";
 import { useEffect, useState } from "react";
 import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
 import Form from "../Special/Form/Form";
@@ -66,8 +66,9 @@ const SingleBlog = (props) => {
                         console.log(indexes);
                     }
 
-                    setTwoArticles(indexes);
+                    
                 }
+                return setTwoArticles(indexes);
             });
         };
 
