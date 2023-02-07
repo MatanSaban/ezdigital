@@ -151,7 +151,7 @@ function App() {
                             page.id !== 19525
                         ) {
                             const Component =
-                                Components[page.acf.component_name];
+                                Components[page.acf.component_name && page.acf.component_name];
                             if (page.parent && page.acf.grandParentName) {
                                 toReturn = (
                                     <Route key={page.id} exact path={`${page.acf.grandParentPath}/${page.acf.parentPath}/${page.slug}`} element={
