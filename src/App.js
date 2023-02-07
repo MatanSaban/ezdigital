@@ -3,7 +3,7 @@ import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects";
-import Services from "../src/components/services/Services";
+// import Services from "../src/components/services/Services";
 import Socialads from "./components/services/social-ads/Socialads";
 import Facebookpaid from "./components/services/social-ads/Facebookpaid";
 import Facebookorganic from "./components/services/social-ads/Facebookorganic";
