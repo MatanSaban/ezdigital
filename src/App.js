@@ -121,6 +121,7 @@ function App() {
                                     <Route key={page.id} exact path={`${page.acf.parentPath}/${page.slug}`} element={
                                             <Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} /> } />
                                 );
+                                console.log(<Component path={page.slug} pageName={page.title.rendered} parentName={page.acf.parentName} parentPath={page.acf.parentPath} />);
                             }
                         }
                         return toReturn;
