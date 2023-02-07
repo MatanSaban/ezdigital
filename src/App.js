@@ -95,55 +95,8 @@ function App() {
 
                 <Route exact path="Projects" element={<Projects projects={projects} path={"Projects/:link"} pageName={"פרויקטים"} parentName={"עמוד הבית"} parentPath={"/"} />}></Route>
                 <Route exact path="Projects/:link" element={<SingleProject projects={projects} />}></Route>
-                <Route
-                    exact
-                    path="services"
-                    element={
-                        <Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
-
-                
-
-                <Route
-                    exact
-                    path="Blog"
-                    element={
-                        <Blog
-                            posts={posts}
-                            path={"blog"}
-                            pageName={"הבלוג"}
-                            parentName={"עמוד הבית"}
-                            parentPath={"/"}
-                        />
-                    }
-                ></Route>
-                <Route
-                    exact
-                    path="Blog/:link"
-                    element={
-                        <SingleBlog
-                            posts={posts}
-                            parentName={"הבלוג"}
-                            parentPath={"blog"}
-                        />
-                    }
-                ></Route>
-
-                <Route
-                    exact
-                    path="Contact"
-                    element={
-                        <Contact
-                            path={"contact"}
-                            pageName={"יצירת קשר"}
-                            parentName={"עמוד הבית"}
-                            parentPath={"/"}
-                        />
-                    }
-                ></Route>
-
-                <Route path="*" element={<Page404 />}></Route>
-                {/* {pages &&
-                    pages.map((page) => {
+                <Route exact path="services" element={<Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
+                {/* {pages &&pages.map((page) => {
                         let toReturn = null;
                         if (
                             page.id !== 19153 &&
@@ -167,6 +120,15 @@ function App() {
                         }
                         return toReturn;
                     })} */}
+                
+
+                <Route exact path="Blog" element={ <Blog posts={posts} path={"blog"} pageName={"הבלוג"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
+                <Route exact path="Blog/:link" element={ <SingleBlog posts={posts} parentName={"הבלוג"} parentPath={"blog"} /> } ></Route>
+
+                <Route exact path="Contact" element={ <Contact path={"contact"} pageName={"יצירת קשר"} parentName={"עמוד הבית"} parentPath={"/"} /> } ></Route>
+
+                <Route path="*" element={<Page404 />}></Route>
+                
             </Routes>
             <Footer />
             
