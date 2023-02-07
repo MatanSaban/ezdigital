@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Projects from "./components/Projects/Projects.jsx";
 import Services from "./components/Services/Services.jsx";
 import Socialads from "./components/Services/Social-ads/Socialads";
-import Facebookpaid from "./components/Services/Social-ads/Facebookpaid";
+import Facebookpaid from "./components/Services/Social-ads/FacebookPaid";
 import Facebookorganic from "./components/Services/Social-ads/Facebookorganic";
 import Branding from "./components/Services/branding/Branding";
 import Googleads from "./components/Services/google-ads/Googleads";
