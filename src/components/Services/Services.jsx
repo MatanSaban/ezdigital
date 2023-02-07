@@ -1,16 +1,16 @@
-import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
-import Json from "../Header/MenuItems.json";
+// import SinglePagesHero from "../Special/SinglePage/SinglePagesHero/SignlePagesHero";
+// import Json from "../Header/MenuItems.json";
 import "./services.css";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const Services = (props) => {
     return (
         <div id="ServicesPage" className="servicesWrapper">
-            <SinglePagesHero
+            {/* <SinglePagesHero
                 title={props.pageName}
                 parentName={props.parentName}
                 parentPath={props.parentPath}
-            />
+            /> */}
             <div className="allServices">
                 {/* {Object.keys(Json.Services.Submenu).map((keyName, index) => {
                     return (
