@@ -25,4 +25,8 @@
     #ServicesPage .allServices > div > a h2 {
         font-size: 1.2rem;
     }
+    .allServices > div {
+        margin: 0 0 0 100px;
+        width: 70%;
+    }
 }
