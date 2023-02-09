@@ -13,7 +13,6 @@ import { useState, useEffect } from "react";
 import SingleBlog from "./components/Blog/SingleBlog.jsx";
 import axios from "axios";
 import Loader from "./components/Special/Loader/Loader.jsx";
-import Sitemap from "./components/Special/Sitemap/Sitemap.jsx";
 
 
 function App() {
