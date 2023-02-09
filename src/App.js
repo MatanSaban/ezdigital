@@ -74,7 +74,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={ <Home pageName={"עמוד הבית"} homepage={homepage} posts={posts} projects={projects} pages={pages} />}></Route>
 
-                <Route exact path="Sitemap.xml" element={<Sitemap />}></Route>
+                {/* <Route exact path="Sitemap.xml" element={<Sitemap />}></Route> */}
                 <Route exact path="Projects" element={<Projects projects={projects} path={"Projects/:link"} pageName={"פרויקטים"} parentName={"עמוד הבית"} parentPath={"/"} />}></Route>
                 <Route exact path="Projects/:link" element={<SingleProject projects={projects} />}></Route>
                 <Route exact path="services" element={<Services path={"services"} pageName={"כל השירותים"} parentName={"עמוד הבית"} parentPath={"/"}/>}></Route>
