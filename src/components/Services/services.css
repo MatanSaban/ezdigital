@@ -1,9 +1,16 @@
 .allServices {
-    display: flex;
+    grid-template-columns: 50% 50%;
+    display: grid;
     justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: right;
 }
 .allServices > div {
-    margin: 0 100px;
+    margin: 0 0 0 100px;
+    width: 20%;
 }
 
 @media only screen and (max-width: 760px) {
