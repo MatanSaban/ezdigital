@@ -87,6 +87,9 @@ pre {
 ul {
     list-style: none;
 }
+li {
+    margin: 10px 0;
+}
 a {
     text-decoration: none;
 }
