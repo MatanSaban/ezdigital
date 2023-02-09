@@ -83,10 +83,10 @@ const Home = (props) => {
         setForceLoader(true);
         setTimeout(() => {
             window.scrollTo(0, 0)
-        },1000)
+        },500)
         setTimeout(() => {
             setForceLoader(false);
-        },1500)
+        },700)
     },[])
 
     return (
