@@ -73,4 +73,13 @@
         justify-content: space-around;
         grid-template-columns: 90%;
     }
+    #projectsPage .projectContainer .projectContainerCover {
+        opacity: 1;
+        box-shadow: 0 0 10px black;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: translate(0%, 0%);
+    }
 }
