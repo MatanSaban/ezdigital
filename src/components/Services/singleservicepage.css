@@ -176,6 +176,9 @@ section.websiteDevelop__services a:hover {
 .websiteDevelop__services__item:hover svg {
     color: var(--color-primary);
 }
+.singleServicePageWrapper .contentWrapper ul {
+    padding-right: 5px;
+}
 
 @keyframes iconUpDownAnim {
     100% {
