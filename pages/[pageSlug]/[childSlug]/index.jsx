@@ -112,9 +112,9 @@ function ChildPage(props) {
         checkExistance();
         if (!checkExistance()) {
             if (props.navMenu && props.projects) {
-                // if (!checkExistance()) { 
-                //     router.push('/404');
-                // }
+                if (!checkExistance()) { 
+                    router.push('/404');
+                }
             }
         }
     },[props.navMenu, props.projects, props.posts, router, props.pages, pageData])
