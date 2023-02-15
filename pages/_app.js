@@ -87,7 +87,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-      <link rel="favicon" href="/static/favicon.svg"/>
+      <link rel="favicon" href="../public/favicon.svg"/>
     </Head>
     {loading ? <Loader/> : null}
       <Header navMenu={navMenu} mobileView={mobileView} tabletView={tabletView} isLaptop={isLaptop} isLScreen={isLScreen} />
