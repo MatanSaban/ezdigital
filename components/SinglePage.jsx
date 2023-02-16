@@ -27,9 +27,9 @@ function SinglePage(props) {
       {
 	  props.isArchive 
 	  &&
-	  props?.page?.url == '/showcase' ? <ProjectsArchivePage projects={props?.projects}/> : props?.page?.url == '/blog'
+	  props?.page?.url == '/showcase' ? <ProjectsArchivePage projects={props?.projects} page={props?.page}/> : props?.page?.url == '/blog'
 	  ?
-	  <PostsArchivePage posts={props?.posts}/>
+	  <PostsArchivePage posts={props?.posts} page={props.page}/>
 	  : 
 	  props?.page?.url !== '/blog' && router.query.pageSlug == 'blog'
 	  ?
@@ -42,7 +42,9 @@ function SinglePage(props) {
 	  <>
 			<Head>
 				<title>{props.pageData?.acf.page_title}</title>
-				<meta name='description' content={props.pageData?.acf.meta_desc}/>
+				<meta property="og:title" content={props.pageData?.acf.page_title} />
+				<meta property="og:description" content={props.pageData?.acf.meta_desc}/>
+				<meta property="og:image" content={'/static/favicon.svg'}/>
 			</Head>
 			<section className='pageHero aligned-start column p-r-100 p-b-100'>
 				<video autoPlay muted loop src={props.pageData?.acf.background_video}></video> 

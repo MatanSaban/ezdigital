@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link';
 import Form from './Form';
 import SinglePagesHero from './SignlePagesHero';
+import Head from 'next/head';
 
 function SingleBlogPost(props) {
 	const router = useRouter();
@@ -58,108 +59,117 @@ function SingleBlogPost(props) {
 
 	
   return (
-    <div id="singleBlog" className="singleBlogWrapper">
-            {props?.post && 
-			<>
-				<section className="hero">
-					{/* <SinglePagesHero
-						title={post && post.post_title}
-						parentName={props.parentName}
-						parentPath={props.parentPath}
-					/> */}
-					<div className="heading txt-center">
-						<h2>{post && post.pre_post_title}</h2>
-						<div>{RenderHTML(post && post.pre_post_content)}</div> 
-					</div>
-				</section>
-				<section
-					className="blogContent"
-					style={{
-						background: `url(${post && post.featured_image})`,
-					}}
-				>
-					<div className="sections contentWrapper">
-						{post?.post_content.map(
-							(section, index) => {
-								return (
-									<div className="contentSection" key={index}>
-										<h3>
-											{
-												section.content_1.title
-											}
-										</h3>
-										{RenderHTML(
-											section.content_1.text
-										)}
-									</div>
-								);
+	<>
+		<Head>
+			<title>{post?.post_title}</title>
+			<meta property="og:title" content={post?.post_title} />
+			<meta property="og:description" content={post?.pre_post_content}/>
+			<meta property="og:image" content={post?.featured_image}/>
+		</Head>
+		
+		<div id="singleBlog" className="singleBlogWrapper">
+				{props?.post && 
+				<>
+					<section className="hero">
+						{/* <SinglePagesHero
+							title={post && post.post_title}
+							parentName={props.parentName}
+							parentPath={props.parentPath}
+						/> */}
+						<div className="heading txt-center">
+							<h2>{post && post.pre_post_title}</h2>
+							<div>{RenderHTML(post && post.pre_post_content)}</div> 
+						</div>
+					</section>
+					<section
+						className="blogContent"
+						style={{
+							background: `url(${post && post.featured_image})`,
+						}}
+					>
+						<div className="sections contentWrapper">
+							{post?.post_content.map(
+								(section, index) => {
+									return (
+										<div className="contentSection" key={index}>
+											<h3>
+												{
+													section.content_1.title
+												}
+											</h3>
+											{RenderHTML(
+												section.content_1.text
+											)}
+										</div>
+									);
+								}
+							)}
+						</div>
+					</section>
+					<section
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							alignItems: "center",
+							minHeight: "fit-content",
+							marginTop: "100px",
+						}}
+					>
+						<Form
+							formStyle={"longForm"}
+							title={
+								<>
+									<h3>רוצה לדבר איתנו?</h3>
+									<p>פרטים בקטנה וכבר נחזור אליך!</p>
+								</>
 							}
-						)}
-					</div>
-            	</section>
-				<section
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "center",
-						alignItems: "center",
-						minHeight: "fit-content",
-						marginTop: "100px",
-					}}
-				>
-					<Form
-						formStyle={"longForm"}
-						title={
-							<>
-								<h3>רוצה לדבר איתנו?</h3>
-								<p>פרטים בקטנה וכבר נחזור אליך!</p>
-							</>
-						}
-					/>
-            	</section>
-				<section className="nextandprevblogpostsWrapper">
-					<div className="nextandprevblogposts">
-						{twoArticles &&
-							twoArticles.map((i, index) => {
-								return (
-									posts[i] !== undefined && (
-										<Link
-											onClick={() => pageLoad}
-											className={
-												i > currentArticleNumber
-													? "prevBlog"
-													: "nextBlog"
-											}
-											key={index}
-											href={`/blog/${
-												posts[i] &&
-												posts[i].acf.slug
-											}`}
-										>
-											<div
-												style={{
-													background: `url(${
-														posts[i] &&
-														posts[i].acf.featured_image
-													})`,
-												}}
+						/>
+					</section>
+					<section className="nextandprevblogpostsWrapper">
+						<div className="nextandprevblogposts">
+							{twoArticles &&
+								twoArticles.map((i, index) => {
+									return (
+										posts[i] !== undefined && (
+											<Link
+												onClick={() => pageLoad}
+												className={
+													i > currentArticleNumber
+														? "prevBlog"
+														: "nextBlog"
+												}
+												key={index}
+												href={`/blog/${
+													posts[i] &&
+													posts[i].acf.slug
+												}`}
 											>
-												<div className="blogItemCover">
-													<h3>
-														{posts[i] &&
-															posts[i].acf.post_title}
-													</h3>
-													<button>מעבר לכתבה</button>
+												<div
+													style={{
+														background: `url(${
+															posts[i] &&
+															posts[i].acf.featured_image
+														})`,
+													}}
+												>
+													<div className="blogItemCover">
+														<h3>
+															{posts[i] &&
+																posts[i].acf.post_title}
+														</h3>
+														<button>מעבר לכתבה</button>
+													</div>
 												</div>
-											</div>
-										</Link>
-									)
-								);
-							})}
-					</div>
-				</section>
-			</>}
-        </div>
+											</Link>
+										)
+									);
+								})}
+						</div>
+					</section>
+				</>}
+			</div>
+		</>
   )
 }
 

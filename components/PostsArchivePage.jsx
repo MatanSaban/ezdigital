@@ -1,9 +1,17 @@
+import Head from 'next/head';
 import Link from 'next/link'
 import React from 'react'
 
 function PostsArchivePage(props) {
     const posts = props.posts;
   return (
+    <>
+        <Head>
+            <title>{props.page?.title}</title>
+            <meta property="og:title" content={props.page?.title} />
+            <meta property="og:description" content={"התעדכנו בחדשות בעולם האינטרנט, בניית האתרים ועולם ההייטק"}/>
+            <meta property="og:image" content={'/static/favicon.svg'}/>
+        </Head>
         <div id="blogPage" className="blogWrapper">
             <div className="articles">
                 {
@@ -35,6 +43,7 @@ function PostsArchivePage(props) {
                 }
             </div>
         </div>
+    </>
   )
 }
 
