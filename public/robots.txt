@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ezd.co.il
+
+# Sitemaps
+Sitemap: https://ezd.co.il/sitemap.xml
